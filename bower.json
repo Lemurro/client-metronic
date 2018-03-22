@@ -1,0 +1,16 @@
+{
+  "name": "lemurro/client-metronic",
+  "description": "Lemurro Web Client - Web приложение",
+  "main": "",
+  "authors": [
+    "Dmitrii Shcherbakov <info@bestion.ru>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/Lemurro/client-metronic",
+  "dependencies": {
+    "jquery-lightajax": "dimns/jquery.lightajax#^1.0.0",
+    "jsdeferred": "cho45/jsdeferred#^0.3.4",
+    "localforage": "localForage/localForage#^1.5.6",
+    "bowser": "lancedikson/bowser#^1.9.3"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "lemurro/client-metronic",
+  "description": "Lemurro Web Client - Web приложение.",
+  "type": "project",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Dmitrii Shcherbakov",
+      "email": "info@bestion.ru",
+      "homepage": "http://bestion.ru",
+      "role": "Developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Lemurro\\": "app/"
+    }
+  },
+  "require": {
+    "klein/klein": "^2.1"
+  },
+  "require-dev": {
+    "symfony/var-dumper": "^3.3"
+  }
+}

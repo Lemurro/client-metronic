@@ -1,0 +1,95 @@
+/*
+// .88b  d88. d88888b d888888b d8888b.  .d88b.  d8b   db d888888b  .o88b.
+// 88'YbdP`88 88'     `~~88~~' 88  `8D .8P  Y8. 888o  88   `88'   d8P  Y8
+// 88  88  88 88ooooo    88    88oobY' 88    88 88V8o 88    88    8P
+// 88  88  88 88~~~~~    88    88`8b   88    88 88 V8o88    88    8b
+// 88  88  88 88.        88    88 `88. `8b  d8' 88  V888   .88.   Y8b  d8
+// YP  YP  YP Y88888P    YP    88   YD  `Y88P'  VP   V8P Y888888P  `Y88P'
+//
+//
+*/
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    background-color: #eaeaea;
+}
+
+.tooltip,
+.popover,
+.btn,
+.btn.m-btn--custom,
+.m-portlet.m-portlet--creative .m-portlet__head .m-portlet__head-caption .m-portlet__head-title .m-portlet__head-text,
+.vakata-context,
+.vakata-context ul {
+    font-family: 'Roboto', sans-serif;
+}
+
+.nav.nav-pills, .nav.nav-tabs {
+    margin-bottom: 0 !important;
+}
+
+.tab-content {
+    border: 1px solid #dee2e6;
+    border-top: 0;
+}
+
+.form-control,
+.form-control[readonly],
+.form-control[disabled],
+.input-group .input-group-append > .input-group-text,
+.input-group .input-group-prepend > .input-group-text,
+.select2-container--default .select2-selection--multiple,
+.select2-container--default .select2-selection--single {
+    border-color: #bbb;
+}
+
+.note-editor.note-frame,
+.note-editor .note-btn {
+    border-color: #bbb !important;
+}
+
+.note-editor .note-btn.active {
+    background-color: #ddd;
+}
+
+.input-group .input-group-append > .input-group-text,
+.input-group .input-group-prepend > .input-group-text {
+    background-color: #ddd;
+}
+
+.input-group-text > .m-checkbox-inline .m-checkbox,
+.input-group-text > .m-checkbox-inline .m-radio,
+.input-group-text > .m-radio-inline .m-checkbox,
+.input-group-text > .m-radio-inline .m-radio {
+    margin-bottom: 0 !important;
+}
+
+.input-group-text > .m-checkbox-inline .m-checkbox > span,
+.input-group-text > .m-checkbox-inline .m-radio > span,
+.input-group-text > .m-radio-inline .m-checkbox > span,
+.input-group-text > .m-radio-inline .m-radio > span {
+    top: -1px !important;
+}
+
+.m-nav.m-nav--active-bg.m-nav--active-bg-padding-lg .m-nav__item > .m-nav__sub {
+    padding-left: 0.5rem;
+}
+
+.m-nav .m-nav__item > .m-nav__link .m-nav__link-title {
+    width: 90%;
+}
+
+.m-nav.m-nav--active-bg.m-nav--active-bg-padding-lg .m-nav__item > .m-nav__link {
+    padding: 0.85rem 0;
+}
+
+.table th, .table td {
+    border-top: transparent;
+}
+
+.table-bordered,
+.table-bordered th,
+.table-bordered td {
+    border: 1px solid #bbb;
+}

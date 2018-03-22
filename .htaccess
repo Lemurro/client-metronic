@@ -1,0 +1,18 @@
+# Блокирования открытия файла на чтение\запись по полному пути
+php_value allow_url_fopen 0
+php_value display_errors 0
+
+# Блокирование показа папки при отсутствии в ней индексных файлов
+Options -Indexes
+
+# Все отображаемые данные имеют кодировку utf-8
+AddDefaultCharset utf-8
+
+# Правила для ЧПУ
+RewriteEngine On
+Options +FollowSymLinks
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule (.*) index.php [L]
