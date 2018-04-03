@@ -2,7 +2,7 @@
 /**
  * Поиск необходимого файла (bootstrap_*.css или bootstrap_*.js) для определения его точного имени
  *
- * @usage $file_getter = new \Lemurro\Helpers\ScriptStylesheetFilename($this->di);
+ * @usage $file_getter = new \Lemurro\Helpers\ScriptStylesheetFilename();
  * $js_file_name = $file_getter->find('js');
  * $css_file_name = $file_getter->find('css');
  *
