@@ -1,7 +1,7 @@
 /**
  * Хелперы
  *
- * @version 14.03.2018
+ * @version 03.04.2018
  * @author  Дмитрий Щербаков <atomcms@ya.ru>
  */
 
@@ -52,7 +52,44 @@ var helper = (function () {
         });
     }
 
+    //  .o88b. db      d88888b  .d8b.  d8888b. d88888b d888888b d88888b db      d8888b. .d8888.
+    // d8P  Y8 88      88'     d8' `8b 88  `8D 88'       `88'   88'     88      88  `8D 88'  YP
+    // 8P      88      88ooooo 88ooo88 88oobY' 88ooo      88    88ooooo 88      88   88 `8bo.
+    // 8b      88      88~~~~~ 88~~~88 88`8b   88~~~      88    88~~~~~ 88      88   88   `Y8b.
+    // Y8b  d8 88booo. 88.     88   88 88 `88. 88        .88.   88.     88booo. 88  .8D db   8D
+    //  `Y88P' Y88888P Y88888P YP   YP 88   YD YP      Y888888P Y88888P Y88888P Y8888D' `8888Y'
+    //
+    //
+
+    /**
+     * Покажем указанный таб
+     *
+     * @param {object} container jQuery-объект контейнера
+     *
+     * @version 03.04.2018
+     * @author Дмитрий Щербаков <atomcms@ya.ru>
+     */
+    function clearFields(container) {
+        container.find('input[type="text"],input[type="password"],input[type="email"],input[type="number"],input[type="tel"],input[type="url"],input[type="date"],input[type="time"]')
+            .val('');
+
+        container.find('textarea').val('');
+
+        container.find('select').each(function () {
+            $(this).val(null).trigger('change');
+        });
+
+        container.find('input[type="checkbox"]').each(function () {
+            $(this).prop('checked', false);
+        });
+
+        container.find('input[type="radio"]').each(function () {
+            $(this).prop('checked', false);
+        });
+    }
+
     return {
-        showConfirm: showConfirm
+        showConfirm: showConfirm,
+        clearFields: clearFields
     };
 })();
