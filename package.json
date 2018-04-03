@@ -6,6 +6,7 @@
     "gulp-uglify": "^1.5.4",
     "del": "^3.0.0",
     "gulp-md5-plus": "^1.0.3",
-    "jsonfile": "^4.0.0"
+    "jsonfile": "^4.0.0",
+    "gulp-rename": "^1.2.2"
   }
 }
