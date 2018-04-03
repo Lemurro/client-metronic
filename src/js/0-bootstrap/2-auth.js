@@ -1,7 +1,7 @@
 /**
  * Проверка сессии при запуске приложения
  *
- * @version 14.03.2018
+ * @version 03.04.2018
  * @author  Дмитрий Щербаков <atomcms@ya.ru>
  */
 
@@ -27,7 +27,7 @@ var auth = (function () {
     /**
      * Проверка сессии
      *
-     * @version 14.03.2018
+     * @version 03.04.2018
      * @author  Дмитрий Щербаков <atomcms@ya.ru>
      */
     function check() {
@@ -37,7 +37,7 @@ var auth = (function () {
             if (result.hasOwnProperty('errors')) {
                 bootstrap.showErrors(result.errors);
             } else {
-                $('.js-user__auth-id').text(result.data.auth_id);
+                $('.js-user__auth-id').text(result.data.user.auth_id);
 
                 bootstrap.initPage();
             }
