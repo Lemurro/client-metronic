@@ -4,6 +4,7 @@ var concat   = require('gulp-concat');    // Склейка файлов
 var uglify   = require('gulp-uglify');    // Минификация JS
 var del      = require('del');            // Удаление файлов
 var md5      = require('gulp-md5-plus');  // Подстановка в имени файлов md5-хеша
+var rename   = require('gulp-rename');    // Переименование файлов
 
 // Сборка проекта для тестирования
 gulp.task('default', ['watcher', 'js', 'css', 'libs']);
@@ -69,9 +70,14 @@ gulp.task('libs', function () {
         'bower_components/jquery-lightajax/dist/jquery.lightajax.min.css',
         'bower_components/jquery-lightajax/dist/jquery.lightajax.min.js',
         'bower_components/jsdeferred/jsdeferred.nodoc.js',
-        'bower_components/localforage/dist/localforage.min.js'
+        'bower_components/localforage/dist/localforage.min.js',
+        'bower_components/Template7/dist/template7.min.js'
     ];
 
-    return gulp.src(libs)
+    gulp.src(libs)
+        .pipe(gulp.dest('assets/plugins'));
+
+    gulp.src('bower_components/select2/dist/js/i18n/ru.js')
+        .pipe(rename('select2.lang.ru.js'))
         .pipe(gulp.dest('assets/plugins'));
 });

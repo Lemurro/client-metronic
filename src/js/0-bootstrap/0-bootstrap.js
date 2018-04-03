@@ -1,7 +1,7 @@
 /**
  * Загрузочный скрипт приложения
  *
- * @version 14.03.2018
+ * @version 03.04.2018
  * @author  Дмитрий Щербаков <atomcms@ya.ru>
  */
 
@@ -36,7 +36,7 @@ var bootstrap = (function () {
     /**
      * Инициализация
      *
-     * @version 14.03.2018
+     * @version 03.04.2018
      * @author  Дмитрий Щербаков <atomcms@ya.ru>
      */
     function init() {
@@ -56,6 +56,7 @@ var bootstrap = (function () {
 
         _bindPhoneMask();
         _bindCodeMask();
+        _bindSelect2();
 
         // Достанем из локального хранилища ИД сессии, если есть
         localforage.getItem('sessionID', function (err, value) {
@@ -222,6 +223,30 @@ var bootstrap = (function () {
             Inputmask({
                 'mask': '9999'
             }).mask(element);
+        });
+    }
+
+    //         d8888b. d888888b d8b   db d8888b. .d8888. d88888b db      d88888b  .o88b. d888888b .d888b.
+    //         88  `8D   `88'   888o  88 88  `8D 88'  YP 88'     88      88'     d8P  Y8 `~~88~~' VP  `8D
+    //         88oooY'    88    88V8o 88 88   88 `8bo.   88ooooo 88      88ooooo 8P         88       odD'
+    //         88~~~b.    88    88 V8o88 88   88   `Y8b. 88~~~~~ 88      88~~~~~ 8b         88     .88'
+    //         88   8D   .88.   88  V888 88  .8D db   8D 88.     88booo. 88.     Y8b  d8    88    j88.
+    // C88888D Y8888P' Y888888P VP   V8P Y8888D' `8888Y' Y88888P Y88888P Y88888P  `Y88P'    YP    888888D
+    //
+    //
+
+    /**
+     * Подключим Select2
+     *
+     * @version 30.03.2018
+     * @author  Дмитрий Щербаков <atomcms@ya.ru>
+     */
+    function _bindSelect2() {
+        $('.js-select2').each(function () {
+            $(this).select2({
+                language   : 'ru',
+                placeholder: 'Выберите из списка'
+            });
         });
     }
 
