@@ -1,7 +1,7 @@
 /**
  * Операции с табами
  *
- * @version 03.04.2018
+ * @version 05.04.2018
  * @author Дмитрий Щербаков <atomcms@ya.ru>
  */
 
@@ -48,7 +48,7 @@ var tabs = (function () {
      *
      * @param {string} action Действие (show|hide)
      *
-     * @version 03.04.2018
+     * @version 05.04.2018
      * @author Дмитрий Щербаков <atomcms@ya.ru>
      */
     function tabInsertEdit(action) {
@@ -57,11 +57,11 @@ var tabs = (function () {
 
         if (action === 'show') {
             tabsLinks.find('a[data-target="#tab-form"]').parent().show();
-            tabsContents.find('#tab-form').show();
+            tabsContents.find('#tab-form').addClass('active show');
             tabs.showTab('tab-form');
         } else {
             tabsLinks.find('a[data-target="#tab-form"]').parent().hide();
-            tabsContents.find('#tab-form').hide();
+            tabsContents.find('#tab-form').removeClass('active show');
             tabs.showTab('tab-list');
         }
     }
