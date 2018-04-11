@@ -110,5 +110,5 @@ body {
 }
 
 .select2-search__field {
-    width: 140px !important;
+    min-width: 140px;
 }
