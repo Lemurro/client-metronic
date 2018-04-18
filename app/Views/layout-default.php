@@ -4,9 +4,8 @@
  */
 
 use Lemurro\Configs\SettingsGeneral;
-use Lemurro\Helpers\ScriptStylesheetFilename;
 
-$file_getter = new ScriptStylesheetFilename();
+$file_getter = new \LemurroLib\JsCssGetter();
 
 $core_css = $file_getter->find('core_', 'css');
 $core_js = $file_getter->find('core_', 'js');

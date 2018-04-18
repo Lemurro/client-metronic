@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "0fee353a16f4ed7a1f9c6aa8ee3f2e94",
+    "content-hash": "03473b7a1ed7884b4d1daf40971b72b0",
     "packages": [
         {
             "name": "klein/klein",
@@ -61,6 +61,44 @@
                 "sinatra"
             ],
             "time": "2017-02-01T23:08:58+00:00"
+        },
+        {
+            "name": "lemurro/lib-js-css-getter",
+            "version": "v0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Lemurro/lib-js-css-getter.git",
+                "reference": "c4fb16baa47122d873d96e815c61c0c651ec7830"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Lemurro/lib-js-css-getter/zipball/c4fb16baa47122d873d96e815c61c0c651ec7830",
+                "reference": "c4fb16baa47122d873d96e815c61c0c651ec7830",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "LemurroLib\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dmitrii Shcherbakov",
+                    "email": "info@bestion.ru",
+                    "homepage": "http://bestion.ru",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Библиотека для получения имени файла .js и .css",
+            "time": "2018-04-18T06:14:49+00:00"
         }
     ],
     "packages-dev": [
