@@ -7,6 +7,12 @@ use Lemurro\Configs\SettingsGeneral;
 use Lemurro\Helpers\ScriptStylesheetFilename;
 
 $file_getter = new ScriptStylesheetFilename();
+
+$core_css = $file_getter->find('core_', 'css');
+$core_js = $file_getter->find('core_', 'js');
+
+$app_css = $file_getter->find('app_', 'css');
+$app_js = $file_getter->find('app_', 'js');
 ?>
 <!DOCTYPE html>
 
@@ -37,7 +43,8 @@ $file_getter = new ScriptStylesheetFilename();
     <link href="<?=$this->short_root?>assets/plugins/jquery.lightajax.min.css" rel="stylesheet" type="text/css">
 
     <!-- App -->
-    <link href="<?=$this->short_root?>assets/<?=$file_getter->find('css')?>" rel="stylesheet" type="text/css">
+    <?=($core_css != '' ? '<link href="' . $this->short_root . 'assets/' . $core_css . '" rel="stylesheet" type="text/css">' : '')?>
+    <?=($app_css != '' ? '<link href="' . $this->short_root . 'assets/' . $app_css . '" rel="stylesheet" type="text/css">' : '')?>
 
     <title><?=$this->title?></title>
 </head>
@@ -204,6 +211,7 @@ $file_getter = new ScriptStylesheetFilename();
     <script type="text/javascript">
         var pathServerAPI = '<?=SettingsGeneral::API_URL?>';
     </script>
-    <script src="<?=$this->short_root?>assets/<?=$file_getter->find('js')?>" type="text/javascript"></script>
+    <?=($core_js != '' ? '<script src="' . $this->short_root . 'assets/' . $core_js . '" type="text/javascript"></script>' : '')?>
+    <?=($app_js != '' ? '<script src="' . $this->short_root . 'assets/' . $app_js . '" type="text/javascript"></script>' : '')?>
 </body>
 </html>

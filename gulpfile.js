@@ -11,24 +11,24 @@ gulp.task('default', ['watcher', 'js', 'css', 'libs']);
 
 // Сборка проекта для релиза
 gulp.task('build', ['libs'], function () {
-    // bootstrap.js
-    del('assets/bootstrap_*.js', {
+    // app.js
+    del('assets/app_*.js', {
         force: true
     });
 
     gulp.src('src/js/**/*.js')
-        .pipe(concat('bootstrap.js'))
+        .pipe(concat('app.js'))
         .pipe(uglify())
         .pipe(md5(10))
         .pipe(gulp.dest('assets'));
 
-    // bootstrap.css
-    del('assets/bootstrap_*.css', {
+    // app.css
+    del('assets/app_*.css', {
         force: true
     });
 
     gulp.src('src/css/*.css')
-        .pipe(concat('bootstrap.css'))
+        .pipe(concat('app.css'))
         .pipe(cleanCSS())
         .pipe(md5(10))
         .pipe(gulp.dest('assets'));
@@ -40,31 +40,41 @@ gulp.task('watcher', function () {
 });
 
 gulp.task('js', function () {
-    // bootstrap.js
-    del('assets/bootstrap_*.js', {
+    // app.js
+    del('assets/app_*.js', {
         force: true
     });
 
     gulp.src('src/js/**/*.js')
-        .pipe(concat('bootstrap.js'))
+        .pipe(concat('app.js'))
         .pipe(md5(10))
         .pipe(gulp.dest('assets'));
 });
 
 gulp.task('css', function () {
-    // bootstrap.css
-    del('assets/bootstrap_*.css', {
+    // app.css
+    del('assets/app_*.css', {
         force: true
     });
 
     gulp.src('src/css/*.css')
-        .pipe(concat('bootstrap.css'))
+        .pipe(concat('app.css'))
         .pipe(md5(10))
         .pipe(gulp.dest('assets'));
 });
 
 // Перенос необходимых библиотек
 gulp.task('libs', function () {
+    gulp.src('bower_components/lemurro-client-metronic-core/dist/core.min.css')
+        .pipe(rename('core.css'))
+        .pipe(md5(10))
+        .pipe(gulp.dest('assets'));
+
+    gulp.src('bower_components/lemurro-client-metronic-core/dist/core.min.js')
+        .pipe(rename('core.js'))
+        .pipe(md5(10))
+        .pipe(gulp.dest('assets'));
+
     var libs = [
         'bower_components/bowser/src/bowser.js',
         'bower_components/jquery-lightajax/dist/jquery.lightajax.min.css',

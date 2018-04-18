@@ -1,12 +1,12 @@
 <?php
 /**
- * Поиск необходимого файла (bootstrap_*.css или bootstrap_*.js) для определения его точного имени
+ * Поиск необходимого файла (core_*.css или core_*.js) для определения его точного имени
  *
  * @usage $file_getter = new \Lemurro\Helpers\ScriptStylesheetFilename();
- * $js_file_name = $file_getter->find('js');
- * $css_file_name = $file_getter->find('css');
+ * $js_file_name = $file_getter->find('core_', 'js');
+ * $css_file_name = $file_getter->find('core_', 'css');
  *
- * @version 14.03.2018
+ * @version 18.04.2018
  * @author  Дмитрий Щербаков <atomcms@ya.ru>
  */
 
@@ -24,14 +24,15 @@ class ScriptStylesheetFilename
     /**
      * Найдем имя файла
      *
-     * @param string $type Тип файла (js|css)
+     * @param string $prefix Префикс файла (например 'core_' для подключения ядра)
+     * @param string $type   Тип файла (js|css)
      *
      * @return string
      *
-     * @version 14.03.2018
+     * @version 18.04.2018
      * @author  Дмитрий Щербаков <atomcms@ya.ru>
      */
-    public function find($type)
+    public function find($prefix, $type)
     {
         if ($type == 'js' || $type == 'css') {
             $filename = '';
@@ -40,7 +41,7 @@ class ScriptStylesheetFilename
                 while (false !== ($file = readdir($handle))) {
                     $pathinfo = pathinfo($file);
 
-                    if ($pathinfo['extension'] == $type AND substr_count($pathinfo['filename'], 'bootstrap_') > 0) {
+                    if ($pathinfo['extension'] == $type AND substr_count($pathinfo['filename'], $prefix) > 0) {
                         $filename = $file;
                     }
                 }
@@ -49,8 +50,8 @@ class ScriptStylesheetFilename
             }
 
             return $filename;
-        } else {
-            return '';
         }
+
+        return '';
     }
 }
