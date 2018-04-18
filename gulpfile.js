@@ -65,6 +65,16 @@ gulp.task('css', function () {
 
 // Перенос необходимых библиотек
 gulp.task('libs', function () {
+    // core.css
+    del('assets/core_*.css', {
+        force: true
+    });
+
+    // core.js
+    del('assets/core_*.js', {
+        force: true
+    });
+
     gulp.src('bower_components/lemurro-client-metronic-core/dist/core.min.css')
         .pipe(rename('core.css'))
         .pipe(md5(10))
