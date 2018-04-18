@@ -207,10 +207,14 @@ $app_js = $file_getter->find('app_', 'js');
     <script src="<?=$this->short_root?>assets/plugins/select2.lang.ru.js" type="text/javascript"></script>
 
     <!-- App -->
-    <script type="text/javascript">
-        var pathServerAPI = '<?=SettingsGeneral::API_URL?>';
-    </script>
     <?=($core_js != '' ? '<script src="' . $this->short_root . 'assets/' . $core_js . '" type="text/javascript"></script>' : '')?>
     <?=($app_js != '' ? '<script src="' . $this->short_root . 'assets/' . $app_js . '" type="text/javascript"></script>' : '')?>
+    <script type="text/javascript">
+        var pathServerAPI = '<?=SettingsGeneral::API_URL?>';
+
+        $(function () {
+            bootstrap.init();
+        });
+    </script>
 </body>
 </html>
