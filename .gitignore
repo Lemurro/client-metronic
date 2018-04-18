@@ -2,8 +2,10 @@
 .vscode
 assets/metronic-v5.1
 assets/plugins
-assets/bootstrap_*.css
-assets/bootstrap_*.js
+assets/app_*.css
+assets/app_*.js
+assets/core_*.css
+assets/core_*.js
 bower_components
 node_modules
 vendor
