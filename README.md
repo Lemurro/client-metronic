@@ -1,3 +1,3 @@
 # Lemurro Web Client - Web приложение
 
-Подробную инструкцию смотрите в каталоге `/docs`
+Подробную документацию смотрите в репозитории [docs](https://github.com/Lemurro/docs)
