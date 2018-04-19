@@ -184,14 +184,9 @@ var users = (function () {
         var form = $('#js-user-form');
 
         return {
-            'id'     : {
-                table: 'users',
-                value: form.attr('data-id')
-            },
-            'auth_id': {
-                table: 'users',
-                value: form.find('input[name="auth_id"]').val()
-            }
+            id        : form.attr('data-id'),
+            auth_id   : form.find('input[name="auth_id"]').val(),
+            info_users: {}
         };
     }
 
