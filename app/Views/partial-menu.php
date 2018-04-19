@@ -20,6 +20,14 @@
                     </span>
                 </a>
             </li>
+            <li class="m-menu__item<?=(substr_count($this->uri, '/users') > 0 ? ' m-menu__item--active' : '')?>" aria-haspopup="true">
+                <a href="<?=$this->short_root?>users" class="m-menu__link ">
+                    <span class="m-menu__item-here"></span>
+                    <span class="m-menu__link-text">
+                        Пользователи
+                    </span>
+                </a>
+            </li>
         </ul>
     </div>
 </div>

@@ -2,7 +2,7 @@
 /**
  * Маршруты приложения
  *
- * @version 03.04.2018
+ * @version 19.04.2018
  * @author  Дмитрий Щербаков <atomcms@ya.ru>
  */
 
@@ -26,6 +26,10 @@ class SettingsRoutes
         '/guide/[:type]' => [
             'method' => 'GET',
             'page'   => 'Guide',
+        ],
+        '/users'         => [
+            'method' => 'GET',
+            'page'   => 'Users',
         ],
     ];
 }
