@@ -1,7 +1,7 @@
 /**
  * Работа с пользователями
  *
- * @version 19.04.2018
+ * @version 24.04.2018
  * @author Дмитрий Щербаков <atomcms@ya.ru>
  */
 
@@ -94,7 +94,7 @@ var users = (function () {
      *
      * @param {integer} id ИД записи
      *
-     * @version 19.04.2018
+     * @version 24.04.2018
      * @author Дмитрий Щербаков <atomcms@ya.ru>
      */
     function edit(id) {
@@ -102,6 +102,18 @@ var users = (function () {
             var form = $('#js-user-form');
 
             form.find('input[name="auth_id"]').val(result.data.auth_id);
+
+            form.find('.js-role').prop('checked', false);
+
+            for (var page in result.data.roles) {
+                if (page === 'admin') {
+                    form.find('.js-role[data-page="admin"]').prop('checked', true);
+                } else {
+                    for (var i in result.data.roles[page]) {
+                        form.find('.js-role[data-page="' + page + '"][data-access="' + result.data.roles[page][i] + '"]').prop('checked', true);
+                    }
+                }
+            }
         });
     }
 
@@ -177,15 +189,36 @@ var users = (function () {
      *
      * @return {object}
      *
-     * @version 19.04.2018
+     * @version 24.04.2018
      * @author Дмитрий Щербаков <atomcms@ya.ru>
      */
     function _collectData() {
-        var form = $('#js-user-form');
+        var form  = $('#js-user-form');
+        var roles = {};
+
+        form.find('.js-role:checked').each(function () {
+            var elem = $(this);
+            var page = elem.attr('data-page');
+
+            if (page === 'admin') {
+                roles.admin = true;
+            } else {
+                if (!roles.hasOwnProperty(page)) {
+                    roles[page] = [];
+                }
+
+                roles[page].push(elem.attr('data-access'));
+            }
+        });
+
+        if (roles.hasOwnProperty('admin')) {
+            roles = {admin: true};
+        }
 
         return {
             id        : form.attr('data-id'),
             auth_id   : form.find('input[name="auth_id"]').val(),
+            roles     : roles,
             info_users: {}
         };
     }
