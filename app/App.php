@@ -2,7 +2,7 @@
 /**
  * Инициализация приложения
  *
- * @version 14.03.2018
+ * @version 26.04.2018
  * @author  Дмитрий Щербаков <atomcms@ya.ru>
  */
 
@@ -22,7 +22,7 @@ class App
     /**
      * Старт приложения
      *
-     * @version 14.03.2018
+     * @version 26.04.2018
      * @author  Дмитрий Щербаков <atomcms@ya.ru>
      */
     public function start()
@@ -41,6 +41,12 @@ class App
             $service->title = SettingsGeneral::APP_NAME;
             $service->short_root = SettingsGeneral::SHORT_ROOT_PATH;
             $service->external_page = false;
+        });
+
+        $klein->respond('GET', '/403', function ($request, $response, $service) {
+            $service->title = 'Доступ ограничен | ' . SettingsGeneral::APP_NAME;
+            $service->external_page = true;
+            $service->render(SettingsGeneral::FULL_ROOT_PATH . 'app/Views/partial-403.php');
         });
 
         $routes = SettingsRoutes::ROUTES;
