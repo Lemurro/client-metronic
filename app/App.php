@@ -2,7 +2,7 @@
 /**
  * Инициализация приложения
  *
- * @version 26.04.2018
+ * @version 27.04.2018
  * @author  Дмитрий Щербаков <atomcms@ya.ru>
  */
 
@@ -22,7 +22,7 @@ class App
     /**
      * Старт приложения
      *
-     * @version 26.04.2018
+     * @version 27.04.2018
      * @author  Дмитрий Щербаков <atomcms@ya.ru>
      */
     public function start()
@@ -40,6 +40,7 @@ class App
             $service->uri = $request->uri();
             $service->title = SettingsGeneral::APP_NAME;
             $service->short_root = SettingsGeneral::SHORT_ROOT_PATH;
+            $service->app_root_path = SettingsGeneral::FULL_ROOT_PATH . 'app/';
             $service->external_page = false;
         });
 
