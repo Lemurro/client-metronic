@@ -20,7 +20,7 @@ switch ($type) {
                     <div class="m-portlet__body">
                         <ul class="m-nav m-nav--active-bg m-nav--active-bg-padding-lg m-nav--font-lg m-nav--font-bold" id="m_nav" role="tablist">
                             <li class="m-nav__item<?=($type == 'example' ? ' m-nav__item--active' : '')?>">
-                                <a class="m-nav__link" href="<?=$this->path?>guide/example">
+                                <a class="m-nav__link" href="<?=$this->short_root?>guide/example">
                                     <span class="m-nav__link-text">
                                         Пример
                                     </span>
