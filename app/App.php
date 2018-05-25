@@ -2,7 +2,7 @@
 /**
  * Инициализация приложения
  *
- * @version 27.04.2018
+ * @version 18.05.2018
  * @author  Дмитрий Щербаков <atomcms@ya.ru>
  */
 
@@ -22,7 +22,7 @@ class App
     /**
      * Старт приложения
      *
-     * @version 27.04.2018
+     * @version 18.05.2018
      * @author  Дмитрий Щербаков <atomcms@ya.ru>
      */
     public function start()
@@ -52,9 +52,9 @@ class App
 
         $routes = SettingsRoutes::ROUTES;
         if (is_array($routes) && count($routes) > 0) {
-            foreach ($routes as $route_url => $route_info) {
-                $klein->respond($route_info['method'], $route_url, function ($request, $response, $service) use ($route_info) {
-                    $service->render(SettingsGeneral::FULL_ROOT_PATH . 'app/Pages/' . $route_info['page'] . '/view_index.php');
+            foreach ($routes as $route_url => $route_page) {
+                $klein->respond('GET', $route_url, function ($request, $response, $service) use ($route_page) {
+                    $service->render(SettingsGeneral::FULL_ROOT_PATH . 'app/Pages/' . $route_page . '/view_index.php');
                 });
             }
         }
