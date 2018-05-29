@@ -2,15 +2,24 @@
 /**
  * Инициализация приложения
  *
- * @version 18.05.2018
+ * @version 26.05.2018
  * @author  Дмитрий Щербаков <atomcms@ya.ru>
  */
 
 namespace Lemurro;
 
-use Klein\Klein;
 use Lemurro\Configs\SettingsGeneral;
-use Lemurro\Configs\SettingsRoutes;
+use LemurroLib\JsCssGetter;
+use Symfony\Component\Config\FileLocator;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Exception\ResourceNotFoundException;
+use Symfony\Component\Routing\Loader\YamlFileLoader;
+use Symfony\Component\Routing\Matcher\UrlMatcher;
+use Symfony\Component\Routing\RequestContext;
+use Symfony\Component\Templating\Loader\FilesystemLoader;
+use Symfony\Component\Templating\PhpEngine;
+use Symfony\Component\Templating\TemplateNameParser;
 
 /**
  * Class App
@@ -20,59 +29,105 @@ use Lemurro\Configs\SettingsRoutes;
 class App
 {
     /**
+     * \Symfony\Component\Routing\Matcher\UrlMatcher
+     *
+     * @var object
+     */
+    protected $url_matcher;
+
+    /**
+     * \Symfony\Component\HttpFoundation\Request
+     *
+     * @var object
+     */
+    protected $request;
+
+    /**
+     * \Symfony\Component\HttpFoundation\Response
+     *
+     * @var object
+     */
+    protected $response;
+
+    /**
+     * \Symfony\Component\Templating\PhpEngine
+     *
+     * @var object
+     */
+    protected $templating;
+
+    /**
+     * Конструктор
+     *
+     * @version 26.05.2018
+     * @author  Дмитрий Щербаков <atomcms@ya.ru>
+     */
+    public function __construct()
+    {
+        date_default_timezone_set(SettingsGeneral::TIMEZONE);
+
+        $fileLocator = new FileLocator([__DIR__]);
+        $loader = new YamlFileLoader($fileLocator);
+        $routes = $loader->load('routes.yaml');
+
+        $this->request = Request::createFromGlobals();
+        $this->response = new Response();
+
+        $this->response->headers->set('Content-Type', 'text/html; charset=utf-8');
+
+        $context = new RequestContext();
+        $context->fromRequest($this->request);
+
+        $this->url_matcher = new UrlMatcher($routes, $context);
+
+        $filesystemLoader = new FilesystemLoader(__DIR__ . '/%name%');
+        $this->templating = new PhpEngine(new TemplateNameParser(), $filesystemLoader);
+
+        $file_getter = new JsCssGetter();
+        $this->templating->addGlobal('core_css', $file_getter->find('core_', 'css'));
+        $this->templating->addGlobal('core_js', $file_getter->find('core_', 'js'));
+        $this->templating->addGlobal('app_css', $file_getter->find('app_', 'css'));
+        $this->templating->addGlobal('app_js', $file_getter->find('app_', 'js'));
+
+        $this->templating->addGlobal('api_url', SettingsGeneral::API_URL);
+    }
+
+    /**
      * Старт приложения
      *
-     * @version 18.05.2018
+     * @version 26.05.2018
      * @author  Дмитрий Щербаков <atomcms@ya.ru>
      */
     public function start()
     {
-        date_default_timezone_set(SettingsGeneral::TIMEZONE);
+        try {
+            $matcher = $this->url_matcher->match($this->request->getPathInfo());
+            $this->request->attributes->add($matcher);
 
-        // Определим корневую папку, необходимо для правильной работы Klein
-        $_SERVER['REQUEST_URI'] = substr($_SERVER['REQUEST_URI'], strlen(SettingsGeneral::SHORT_ROOT_PATH) - 1);
+            if ($this->request->get('_controller') == 'Error403') {
+                $this->templating->addGlobal('title', 'Доступ ограничен | ' . SettingsGeneral::APP_NAME);
 
-        $klein = new Klein();
-
-        $klein->respond(function ($request, $response, $service, $di) {
-            $service->layout(SettingsGeneral::FULL_ROOT_PATH . 'app/Views/layout-default.php');
-
-            $service->uri = $request->uri();
-            $service->title = SettingsGeneral::APP_NAME;
-            $service->short_root = SettingsGeneral::SHORT_ROOT_PATH;
-            $service->app_root_path = SettingsGeneral::FULL_ROOT_PATH . 'app/';
-            $service->external_page = false;
-        });
-
-        $klein->respond('GET', '/403', function ($request, $response, $service) {
-            $service->title = 'Доступ ограничен | ' . SettingsGeneral::APP_NAME;
-            $service->external_page = true;
-            $service->render(SettingsGeneral::FULL_ROOT_PATH . 'app/Views/partial-403.php');
-        });
-
-        $routes = SettingsRoutes::ROUTES;
-        if (is_array($routes) && count($routes) > 0) {
-            foreach ($routes as $route_url => $route_page) {
-                $klein->respond('GET', $route_url, function ($request, $response, $service) use ($route_page) {
-                    $service->render(SettingsGeneral::FULL_ROOT_PATH . 'app/Pages/' . $route_page . '/view_index.php');
-                });
-            }
-        }
-
-        $klein->onHttpError(function ($code, $router) {
-            if ($code >= 400 && $code < 500) {
-                $template_file = '404';
-                $title = 'Страница не найдена';
+                $content = $this->templating->render('Views/page_403.php');
             } else {
-                $template_file = '500';
-                $title = 'Произошла ошибка';
+                $this->templating->addGlobal('uri', $this->request->getRequestUri());
+                $this->templating->addGlobal('title', SettingsGeneral::APP_NAME);
+                $this->templating->addGlobal('short_root', SettingsGeneral::SHORT_ROOT_PATH);
+
+                $tpl_file = 'Pages/' . $this->request->get('_controller') . '/view_index.php';
+                $tpl_data = array_merge($this->request->attributes->all(), $this->request->query->all());
+
+                $content = $this->templating->render($tpl_file, $tpl_data);
             }
 
-            $router->service()->title = $title . ' | ' . SettingsGeneral::APP_NAME;
-            $router->service()->external_page = true;
-            $router->service()->render(__DIR__ . '/Views/partial-' . $template_file . '.php');
-        });
+            $this->response->setContent($content);
+            $this->response->send();
+        } catch (ResourceNotFoundException $e) {
+            $this->templating->addGlobal('title', 'Страница не найдена | ' . SettingsGeneral::APP_NAME);
 
-        $klein->dispatch();
+            $content = $this->templating->render('Views/page_404.php');
+
+            $this->response->setContent($content);
+            $this->response->send();
+        }
     }
 }

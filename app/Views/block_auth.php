@@ -3,7 +3,7 @@
         <div class="modal-content">
             <div class="modal-body">
                 <div class="auth__logo m--margin-bottom-20">
-                    <img src="<?=$this->short_root?>assets/img/logo.png">
+                    <img src="<?=$short_root?>assets/img/logo.png">
                 </div>
                 <?php
                 switch (\Lemurro\Configs\SettingsGeneral::AUTH_TYPE) {
