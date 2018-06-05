@@ -23,7 +23,7 @@
     "symfony/config": "^4.0",
     "symfony/yaml": "^4.0",
     "symfony/templating": "^4.0",
-    "lemurro/lib-js-css-getter": "^0.1"
+    "symfony/asset": "^4.1"
   },
   "require-dev": {
     "symfony/var-dumper": "^3.3"

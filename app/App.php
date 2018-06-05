@@ -2,14 +2,15 @@
 /**
  * Инициализация приложения
  *
- * @version 26.05.2018
+ * @version 05.06.2018
  * @author  Дмитрий Щербаков <atomcms@ya.ru>
  */
 
 namespace Lemurro;
 
 use Lemurro\Configs\SettingsGeneral;
-use LemurroLib\JsCssGetter;
+use Symfony\Component\Asset\Package;
+use Symfony\Component\Asset\VersionStrategy\JsonManifestVersionStrategy;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -59,7 +60,7 @@ class App
     /**
      * Конструктор
      *
-     * @version 26.05.2018
+     * @version 05.06.2018
      * @author  Дмитрий Щербаков <atomcms@ya.ru>
      */
     public function __construct()
@@ -83,11 +84,11 @@ class App
         $filesystemLoader = new FilesystemLoader(__DIR__ . '/%name%');
         $this->templating = new PhpEngine(new TemplateNameParser(), $filesystemLoader);
 
-        $file_getter = new JsCssGetter();
-        $this->templating->addGlobal('core_css', $file_getter->find('core_', 'css'));
-        $this->templating->addGlobal('core_js', $file_getter->find('core_', 'js'));
-        $this->templating->addGlobal('app_css', $file_getter->find('app_', 'css'));
-        $this->templating->addGlobal('app_js', $file_getter->find('app_', 'js'));
+        $asset = new Package(new JsonManifestVersionStrategy(SettingsGeneral::FULL_ROOT_PATH . 'rev-manifest.json'));
+        $this->templating->addGlobal('core_css', $asset->getUrl('core.min.css'));
+        $this->templating->addGlobal('core_js', $asset->getUrl('core.min.js'));
+        $this->templating->addGlobal('app_css', $asset->getUrl('app.min.css'));
+        $this->templating->addGlobal('app_js', $asset->getUrl('app.min.js'));
 
         $this->templating->addGlobal('api_url', SettingsGeneral::API_URL);
     }

@@ -4,46 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a318040c8b85ee0d405e191d17d7c7ea",
+    "content-hash": "71e60c747f9889aae5fc9d10d574c9ca",
     "packages": [
-        {
-            "name": "lemurro/lib-js-css-getter",
-            "version": "v0.1.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Lemurro/lib-js-css-getter.git",
-                "reference": "14e87bd08ca33f227f2b95b56f23848607e69260"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Lemurro/lib-js-css-getter/zipball/14e87bd08ca33f227f2b95b56f23848607e69260",
-                "reference": "14e87bd08ca33f227f2b95b56f23848607e69260",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.0.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "LemurroLib\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Dmitrii Shcherbakov",
-                    "email": "info@bestion.ru",
-                    "homepage": "http://bestion.ru",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Библиотека для получения имени файла .js и .css",
-            "time": "2018-05-16T10:18:01+00:00"
-        },
         {
             "name": "psr/log",
             "version": "1.0.2",
@@ -90,6 +52,62 @@
                 "psr-3"
             ],
             "time": "2016-10-10T12:19:37+00:00"
+        },
+        {
+            "name": "symfony/asset",
+            "version": "v4.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/asset.git",
+                "reference": "73358508628c10832e87c3ff18db527d48387afc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/asset/zipball/73358508628c10832e87c3ff18db527d48387afc",
+                "reference": "73358508628c10832e87c3ff18db527d48387afc",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1.3"
+            },
+            "require-dev": {
+                "symfony/http-foundation": "~3.4|~4.0",
+                "symfony/http-kernel": "~3.4|~4.0"
+            },
+            "suggest": {
+                "symfony/http-foundation": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Asset\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Asset Component",
+            "homepage": "https://symfony.com",
+            "time": "2018-05-30T07:26:09+00:00"
         },
         {
             "name": "symfony/config",
