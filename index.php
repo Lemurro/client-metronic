@@ -10,5 +10,5 @@ header("Content-type: text/html; charset=UTF-8");
 
 require 'vendor/autoload.php';
 
-$app = new Lemurro\App();
+$app = new Lemurro\Client\App();
 $app->start();

@@ -6,7 +6,7 @@
                     <img src="<?=$short_root?>assets/img/logo.png">
                 </div>
                 <?php
-                switch (\Lemurro\Configs\SettingsGeneral::AUTH_TYPE) {
+                switch (\Lemurro\Client\Configs\SettingsGeneral::AUTH_TYPE) {
                     case 'email':
                         $get_form_data = [
                             'input_label' => 'Электронная почта',
