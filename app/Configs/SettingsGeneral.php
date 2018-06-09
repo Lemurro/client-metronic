@@ -6,12 +6,12 @@
  * @author  Дмитрий Щербаков <atomcms@ya.ru>
  */
 
-namespace Lemurro\Configs;
+namespace Lemurro\Client\Configs;
 
 /**
  * Class SettingsGeneral
  *
- * @package Lemurro\Configs
+ * @package Lemurro\Client\Configs
  */
 class SettingsGeneral
 {
@@ -52,5 +52,5 @@ class SettingsGeneral
     /**
      * URL-адрес API-сервера
      */
-    const API_URL = 'http://lemurro-server.localhost/';
+    const API_URL = 'http://lemurro-api.localhost/';
 }

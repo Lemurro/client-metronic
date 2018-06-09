@@ -6,12 +6,12 @@
  * @author  Дмитрий Щербаков <atomcms@ya.ru>
  */
 
-namespace Lemurro\Configs;
+namespace Lemurro\Client\Configs;
 
 /**
  * Class SettingsUserRoles
  *
- * @package Lemurro\Configs
+ * @package Lemurro\Client\Configs
  */
 class SettingsUserRoles
 {

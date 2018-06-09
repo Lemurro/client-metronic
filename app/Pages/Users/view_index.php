@@ -1,6 +1,6 @@
 <?php
 
-use Lemurro\Configs\SettingsUserRoles;
+use Lemurro\Client\Configs\SettingsUserRoles;
 
 ?>
 <?=$view->render('Views/block_internal_head.php')?>

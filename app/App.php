@@ -6,9 +6,9 @@
  * @author  Дмитрий Щербаков <atomcms@ya.ru>
  */
 
-namespace Lemurro;
+namespace Lemurro\Client;
 
-use Lemurro\Configs\SettingsGeneral;
+use Lemurro\Client\Configs\SettingsGeneral;
 use Symfony\Component\Asset\Package;
 use Symfony\Component\Asset\VersionStrategy\JsonManifestVersionStrategy;
 use Symfony\Component\Config\FileLocator;
@@ -25,7 +25,7 @@ use Symfony\Component\Templating\TemplateNameParser;
 /**
  * Class App
  *
- * @package Lemurro
+ * @package Lemurro\Client
  */
 class App
 {
