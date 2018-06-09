@@ -6,12 +6,12 @@
  * @author  Дмитрий Щербаков <atomcms@ya.ru>
  */
 
-namespace Lemurro\Client\Configs;
+namespace Lemurro\Client\App\Configs;
 
 /**
  * Class SettingsGeneral
  *
- * @package Lemurro\Client\Configs
+ * @package Lemurro\Client\App\Configs
  */
 class SettingsGeneral
 {

@@ -1,19 +1,4 @@
-root:
-  path: /
-  controller: 'Main'
-  methods: [GET]
-
-guide:
-  path: /guide/{type}
-  controller: 'Guide'
-  methods: [GET]
-
-users:
-  path: /users
-  controller: 'Users'
-  methods: [GET]
-
-system_403:
-  path: /403
-  controller: 'Error403'
-  methods: [GET]
+#example:
+#  path: /example
+#  controller: 'Example'
+#  methods: [GET]
