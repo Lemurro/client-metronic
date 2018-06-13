@@ -1,4 +1,5 @@
 #example:
 #  path: /example
-#  controller: 'Example'
+#  controller: 'Pages/Example/view_index.php'
+#  defaults: { _page_type: 'internal OR external' }
 #  methods: [GET]

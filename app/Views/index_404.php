@@ -1,4 +1,3 @@
-<?=$view->render('Views/block_external_head.php')?>
 <div class="m-error-1 text-center">
     <div class="m-error_container">
         <div class="m-error_number">
@@ -12,4 +11,3 @@
         </p>
     </div>
 </div>
-<?=$view->render('Views/block_external_foot.php')?>

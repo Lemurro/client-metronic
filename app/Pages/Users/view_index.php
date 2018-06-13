@@ -3,7 +3,6 @@
 use Lemurro\Client\App\Configs\SettingsUserRoles;
 
 ?>
-<?=$view->render('Views/block_internal_head.php')?>
 <div id="js-page" data-page="users">
     <div class="m-subheader">
         <div class="d-flex align-items-center">
@@ -190,4 +189,3 @@ use Lemurro\Client\App\Configs\SettingsUserRoles;
         </div>
     </div>
 </div>
-<?=$view->render('Views/block_internal_foot.php')?>
