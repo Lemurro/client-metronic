@@ -7,17 +7,8 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
 
-    <!--begin::Web font -->
-    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
-    <script>
-        WebFont.load({
-            google: {"families": ["Roboto:300,400,500,600,700"]},
-            active: function () {
-                sessionStorage.fonts = true;
-            }
-        });
-    </script>
-    <!--end::Web font -->
+    <!-- Roboto Web font -->
+    <link href="<?=$short_root?>assets/fonts/roboto/roboto.css" rel="stylesheet" type="text/css">
 
     <!-- Metronic 5: CSS Here -->
     <link href="<?=$short_root?>assets/metronic-v5.2.1/base/vendors.bundle.css" rel="stylesheet" type="text/css">
