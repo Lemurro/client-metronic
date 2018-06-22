@@ -14,9 +14,6 @@
     <link href="<?=$short_root?>assets/metronic-v5.2.1/base/vendors.bundle.css" rel="stylesheet" type="text/css">
     <link href="<?=$short_root?>assets/metronic-v5.2.1/demo5/style.bundle.css" rel="stylesheet" type="text/css">
 
-    <!-- Font Awesome 4.7.0 -->
-    <link href="<?=$short_root?>assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
     <!-- Plugins -->
     <link href="<?=$short_root?>assets/plugins/jquery.lightajax.min.css" rel="stylesheet" type="text/css">
 

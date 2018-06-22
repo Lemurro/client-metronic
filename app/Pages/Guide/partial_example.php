@@ -1,12 +1,12 @@
 <ul id="js-tabs__links" class="nav nav-tabs nav-tabs-bordered" role="tablist">
     <li class="nav-item">
         <a href="#tab-list" class="nav-link active show" data-toggle="tab" data-target="#tab-list">
-            <i class="fa fa-list"></i> Список
+            <i class="fas fa-list-ul"></i> Список
         </a>
     </li>
     <li class="nav-item hidden">
         <a href="#tab-form" class="nav-link" data-toggle="tab" data-target="#tab-form">
-            <span id="js-tab-form-button"><i class="fa fa-plus"></i> Добавить</span>
+            <span id="js-tab-form-button"><i class="fas fa-plus"></i> Добавить</span>
         </a>
     </li>
 </ul>
@@ -24,18 +24,18 @@
     <div class="tab-pane active show" id="tab-list" role="tabpanel">
         <div id="js-guide__loader">
             <h5>
-                <i class="fa fa-spinner fa-pulse"></i> Загрузка списка
+                <i class="fas fa-spinner fa-pulse"></i> Загрузка списка
             </h5>
         </div>
         <div id="js-guide__empty" class="hidden">
             <div class="text-center">
                 <h2>
-                    <i class="fa fa-info-circle font-100"></i><br>
+                    <i class="fas fa-info-circle font-100"></i><br>
                     Записи отсутствуют
                 </h2>
                 <p class="m--padding-top-20">
                     <button class="btn btn-primary" onclick="example.showInsertForm()">
-                        <i class="fa fa-plus"></i> Добавить
+                        <i class="fas fa-plus"></i> Добавить
                     </button>
                 </p>
             </div>
@@ -43,7 +43,7 @@
         <div id="js-guide__list" class="hidden">
             <form class="form-inline">
                 <button type="button" class="btn btn-primary" onclick="example.showInsertForm()">
-                    <i class="fa fa-plus"></i> Добавить
+                    <i class="fas fa-plus"></i> Добавить
                 </button>&nbsp;&nbsp;
             </form>
 
@@ -82,10 +82,10 @@
             </div>
             <div>
                 <button type="button" id="js-guide__button-insert" class="btn btn-primary float-left" onclick="example.insert()">
-                    <i class="fa fa-plus"></i> Добавить
+                    <i class="fas fa-plus"></i> Добавить
                 </button>
                 <button type="button" id="js-guide__button-save" class="btn btn-success float-left hidden" onclick="example.save()">
-                    <i class="fa fa-save"></i> Сохранить
+                    <i class="fas fa-save"></i> Сохранить
                 </button>
                 &nbsp;
                 <button type="button" class="btn btn-secondary" onclick="tabs.tabInsertEdit('hide')">
@@ -117,12 +117,12 @@
                                 <ul class="m-nav">
                                     <li class="m-nav__item">
                                         <a href="javascript:example.edit({{id}});" class="btn btn-link">
-                                            <i class="fa fa-fw fa-pencil"></i> Редактировать
+                                            <i class="fas fa-fw fa-pencil-alt"></i> Редактировать
                                         </a>
                                     </li>
                                     <li class="m-nav__item">
                                         <a href="javascript:example.remove({{id}});" class="btn btn-link text-danger">
-                                            <i class="fa fa-fw fa-trash"></i> Удалить
+                                            <i class="far fa-fw fa-trash-alt"></i> Удалить
                                         </a>
                                     </li>
                                 </ul>

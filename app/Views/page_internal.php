@@ -40,11 +40,11 @@
                                                 </span>
                                                 <span class="m-topbar__username">
                                                     <span class="js-user-data js-user__auth-id">
-                                                        <i class="fa fa-spinner fa-pulse"></i>
+                                                        <i class="fas fa-spinner fa-pulse"></i>
                                                     </span>
                                                 </span>
                                                 <span class="m-topbar__welcome">
-                                                    <i class="fa fa-chevron-down"></i>
+                                                    <i class="fas fa-chevron-down"></i>
                                                 </span>
                                             </a>
                                             <div class="m-dropdown__wrapper">
@@ -55,7 +55,7 @@
                                                             <ul class="m-nav m-nav--skin-light">
                                                                 <li class="m-nav__item">
                                                                     <a href="javascript:auth.logout();" class="m-nav__link">
-                                                                        <i class="m-nav__link-icon fa fa-power-off"></i>
+                                                                        <i class="m-nav__link-icon fas fa-power-off"></i>
                                                                         <span class="m-nav__link-title">
                                                                             <span class="m-nav__link-wrap">
                                                                                 <span class="m-nav__link-text">

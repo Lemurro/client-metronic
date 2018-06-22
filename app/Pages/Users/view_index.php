@@ -19,12 +19,12 @@ use Lemurro\Client\App\Configs\SettingsUserRoles;
                 <ul id="js-tabs__links" class="nav nav-tabs nav-tabs-bordered" role="tablist">
                     <li class="nav-item">
                         <a href="#tab-list" class="nav-link active show" data-toggle="tab" data-target="#tab-list">
-                            <i class="fa fa-list"></i> Список
+                            <i class="fas fa-list-ul"></i> Список
                         </a>
                     </li>
                     <li class="nav-item hidden">
                         <a href="#tab-form" class="nav-link" data-toggle="tab" data-target="#tab-form">
-                            <span id="js-tab-form-button"><i class="fa fa-plus"></i> Добавить</span>
+                            <span id="js-tab-form-button"><i class="fas fa-plus"></i> Добавить</span>
                         </a>
                     </li>
                 </ul>
@@ -42,7 +42,7 @@ use Lemurro\Client\App\Configs\SettingsUserRoles;
                     <div class="tab-pane active show" id="tab-list" role="tabpanel">
                         <form class="form-inline">
                             <button type="button" class="btn btn-primary" onclick="users.showInsertForm()">
-                                <i class="fa fa-plus"></i> Добавить
+                                <i class="fas fa-plus"></i> Добавить
                             </button>&nbsp;&nbsp;
                         </form>
 
@@ -133,10 +133,10 @@ use Lemurro\Client\App\Configs\SettingsUserRoles;
                             </div>
                             <div>
                                 <button type="button" id="js-user__button-insert" class="btn btn-primary float-left" onclick="users.insert()">
-                                    <i class="fa fa-plus"></i> Добавить
+                                    <i class="fas fa-plus"></i> Добавить
                                 </button>
                                 <button type="button" id="js-user__button-save" class="btn btn-success float-left hidden" onclick="users.save()">
-                                    <i class="fa fa-save"></i> Сохранить
+                                    <i class="fas fa-save"></i> Сохранить
                                 </button>
                                 &nbsp;
                                 <button type="button" class="btn btn-secondary" onclick="tabs.tabInsertEdit('hide')">
@@ -168,12 +168,12 @@ use Lemurro\Client\App\Configs\SettingsUserRoles;
                                                 <ul class="m-nav">
                                                     <li class="m-nav__item">
                                                         <a href="javascript:users.edit({{id}});" class="btn btn-link">
-                                                            <i class="fa fa-fw fa-pencil"></i> Редактировать
+                                                            <i class="fas fa-fw fa-pencil-alt"></i> Редактировать
                                                         </a>
                                                     </li>
                                                     <li class="m-nav__item">
                                                         <a href="javascript:users.remove({{id}});" class="btn btn-link text-danger">
-                                                            <i class="fa fa-fw fa-trash"></i> Удалить
+                                                            <i class="far fa-fw fa-trash-alt"></i> Удалить
                                                         </a>
                                                     </li>
                                                 </ul>

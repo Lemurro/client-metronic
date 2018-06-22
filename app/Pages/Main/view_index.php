@@ -10,6 +10,6 @@
     </div>
     <div class="m-content">
         <p>Проверка API-сервера</p>
-        <p>Статус API-сервера: <strong id="js-api-status"><i class="fa fa-spinner fa-pulse"></i></strong></p>
+        <p>Статус API-сервера: <strong id="js-api-status"><i class="fas fa-spinner fa-pulse"></i></strong></p>
     </div>
 </div>
