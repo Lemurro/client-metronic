@@ -1,6 +1,6 @@
 .idea
 .vscode
-assets/metronic-v5.2.1
+assets/metronic-*
 assets/plugins
 assets/app-*.css
 assets/app-*.js
