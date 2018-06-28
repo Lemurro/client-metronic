@@ -128,7 +128,7 @@
                             <div class="m-dropdown__content">
                                 <ul class="m-nav">
                                     <li class="m-nav__item">
-                                        <a href="javascript:example.edit({{id}});" class="btn btn-link m-btn--icon">
+                                        <a href="javascript:example.edit({{id}});" class="btn m-btn--icon">
                                             <span>
                                                 <i class="fas fa-fw fa-pencil-alt"></i>
                                                 <span>Редактировать</span>
@@ -136,7 +136,7 @@
                                         </a>
                                     </li>
                                     <li class="m-nav__item">
-                                        <a href="javascript:example.remove({{id}});" class="btn btn-link m-btn--icon text-danger">
+                                        <a href="javascript:example.remove({{id}});" class="btn m-btn--icon text-danger">
                                             <span>
                                                 <i class="far fa-fw fa-trash-alt"></i>
                                                 <span>Удалить</span>
