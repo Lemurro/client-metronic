@@ -7,7 +7,12 @@
             Страница не найдена
         </p>
         <p class="m-error_desc">
-            <a href="<?=$short_root?>" class="btn btn-primary"><i class="fas fa-angle-left"></i> Назад на главную</a>
+            <a href="<?=$short_root?>" class="btn btn-primary m-btn--icon">
+                <span>
+                    <i class="fas fa-angle-left"></i>
+                    <span>Назад на главную</span>
+                </span>
+            </a>
         </p>
     </div>
 </div>

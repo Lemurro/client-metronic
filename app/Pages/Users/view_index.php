@@ -41,9 +41,12 @@ use Lemurro\Client\App\Configs\SettingsUserRoles;
                     -->
                     <div class="tab-pane active show" id="tab-list" role="tabpanel">
                         <form class="form-inline">
-                            <button type="button" class="btn btn-primary" onclick="users.showInsertForm()">
-                                <i class="fas fa-plus"></i> Добавить
-                            </button>&nbsp;&nbsp;
+                            <button type="button" class="btn btn-primary m-btn--icon" onclick="users.showInsertForm()">
+                                <span>
+                                    <i class="fas fa-plus"></i>
+                                    <span>Добавить</span>
+                                </span>
+                            </button>
                         </form>
 
                         <table id="js-users__table" class="table table-hover m--margin-top-20">
@@ -132,11 +135,17 @@ use Lemurro\Client\App\Configs\SettingsUserRoles;
                                 </table>
                             </div>
                             <div>
-                                <button type="button" id="js-user__button-insert" class="btn btn-primary float-left" onclick="users.insert()">
-                                    <i class="fas fa-plus"></i> Добавить
+                                <button type="button" id="js-user__button-insert" class="btn btn-primary m-btn--icon" onclick="users.insert()">
+                                    <span>
+                                        <i class="fas fa-plus"></i>
+                                        <span>Добавить</span>
+                                    </span>
                                 </button>
-                                <button type="button" id="js-user__button-save" class="btn btn-success float-left hidden" onclick="users.save()">
-                                    <i class="fas fa-save"></i> Сохранить
+                                <button type="button" id="js-user__button-save" class="btn btn-success m-btn--icon hidden" onclick="users.save()">
+                                    <span>
+                                        <i class="fas fa-save"></i>
+                                        <span>Сохранить</span>
+                                    </span>
                                 </button>
                                 &nbsp;
                                 <button type="button" class="btn btn-secondary" onclick="tabs.tabInsertEdit('hide')">
@@ -167,13 +176,19 @@ use Lemurro\Client\App\Configs\SettingsUserRoles;
                                             <div class="m-dropdown__content">
                                                 <ul class="m-nav">
                                                     <li class="m-nav__item">
-                                                        <a href="javascript:users.edit({{id}});" class="btn btn-link">
-                                                            <i class="fas fa-fw fa-pencil-alt"></i> Редактировать
+                                                        <a href="javascript:users.edit({{id}});" class="btn btn-link m-btn--icon">
+                                                            <span>
+                                                                <i class="fas fa-fw fa-pencil-alt"></i>
+                                                                <span>Редактировать</span>
+                                                            </span>
                                                         </a>
                                                     </li>
                                                     <li class="m-nav__item">
-                                                        <a href="javascript:users.remove({{id}});" class="btn btn-link text-danger">
-                                                            <i class="far fa-fw fa-trash-alt"></i> Удалить
+                                                        <a href="javascript:users.remove({{id}});" class="btn btn-link m-btn--icon text-danger">
+                                                            <span>
+                                                                <i class="far fa-fw fa-trash-alt"></i>
+                                                                <span>Удалить</span>
+                                                            </span>
                                                         </a>
                                                     </li>
                                                 </ul>

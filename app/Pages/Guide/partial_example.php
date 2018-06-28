@@ -34,17 +34,23 @@
                     Записи отсутствуют
                 </h2>
                 <p class="m--padding-top-20">
-                    <button class="btn btn-primary" onclick="example.showInsertForm()">
-                        <i class="fas fa-plus"></i> Добавить
+                    <button class="btn btn-primary m-btn--icon" onclick="example.showInsertForm()">
+                        <span>
+                            <i class="fas fa-plus"></i>
+                            <span>Добавить</span>
+                        </span>
                     </button>
                 </p>
             </div>
         </div>
         <div id="js-guide__list" class="hidden">
             <form class="form-inline">
-                <button type="button" class="btn btn-primary" onclick="example.showInsertForm()">
-                    <i class="fas fa-plus"></i> Добавить
-                </button>&nbsp;&nbsp;
+                <button type="button" class="btn btn-primary m-btn--icon" onclick="example.showInsertForm()">
+                    <span>
+                        <i class="fas fa-plus"></i>
+                        <span>Добавить</span>
+                    </span>
+                </button>
             </form>
 
             <table id="js-guide__table" class="table table-hover m--margin-top-20">
@@ -81,11 +87,17 @@
                 <input type="text" class="form-control m-input" name="name">
             </div>
             <div>
-                <button type="button" id="js-guide__button-insert" class="btn btn-primary float-left" onclick="example.insert()">
-                    <i class="fas fa-plus"></i> Добавить
+                <button type="button" id="js-guide__button-insert" class="btn btn-primary m-btn--icon" onclick="example.insert()">
+                    <span>
+                        <i class="fas fa-plus"></i>
+                        <span>Добавить</span>
+                    </span>
                 </button>
-                <button type="button" id="js-guide__button-save" class="btn btn-success float-left hidden" onclick="example.save()">
-                    <i class="fas fa-save"></i> Сохранить
+                <button type="button" id="js-guide__button-save" class="btn btn-success m-btn--icon hidden" onclick="example.save()">
+                    <span>
+                        <i class="fas fa-save"></i>
+                        <span>Сохранить</span>
+                    </span>
                 </button>
                 &nbsp;
                 <button type="button" class="btn btn-secondary" onclick="tabs.tabInsertEdit('hide')">
@@ -116,13 +128,19 @@
                             <div class="m-dropdown__content">
                                 <ul class="m-nav">
                                     <li class="m-nav__item">
-                                        <a href="javascript:example.edit({{id}});" class="btn btn-link">
-                                            <i class="fas fa-fw fa-pencil-alt"></i> Редактировать
+                                        <a href="javascript:example.edit({{id}});" class="btn btn-link m-btn--icon">
+                                            <span>
+                                                <i class="fas fa-fw fa-pencil-alt"></i>
+                                                <span>Редактировать</span>
+                                            </span>
                                         </a>
                                     </li>
                                     <li class="m-nav__item">
-                                        <a href="javascript:example.remove({{id}});" class="btn btn-link text-danger">
-                                            <i class="far fa-fw fa-trash-alt"></i> Удалить
+                                        <a href="javascript:example.remove({{id}});" class="btn btn-link m-btn--icon text-danger">
+                                            <span>
+                                                <i class="far fa-fw fa-trash-alt"></i>
+                                                <span>Удалить</span>
+                                            </span>
                                         </a>
                                     </li>
                                 </ul>
