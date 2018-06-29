@@ -135,13 +135,13 @@ use Lemurro\Client\App\Configs\SettingsUserRoles;
                                 </table>
                             </div>
                             <div>
-                                <button type="button" id="js-user__button-insert" class="btn btn-primary m-btn--icon" onclick="users.insert()">
+                                <button type="button" id="js-user__button-insert" class="btn btn-primary m-btn--icon float-left" onclick="users.insert()">
                                     <span>
                                         <i class="fas fa-plus"></i>
                                         <span>Добавить</span>
                                     </span>
                                 </button>
-                                <button type="button" id="js-user__button-save" class="btn btn-success m-btn--icon hidden" onclick="users.save()">
+                                <button type="button" id="js-user__button-save" class="btn btn-success m-btn--icon float-left hidden" onclick="users.save()">
                                     <span>
                                         <i class="fas fa-save"></i>
                                         <span>Сохранить</span>

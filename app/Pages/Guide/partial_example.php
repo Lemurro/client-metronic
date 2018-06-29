@@ -87,13 +87,13 @@
                 <input type="text" class="form-control m-input" name="name">
             </div>
             <div>
-                <button type="button" id="js-guide__button-insert" class="btn btn-primary m-btn--icon" onclick="example.insert()">
+                <button type="button" id="js-guide__button-insert" class="btn btn-primary m-btn--icon float-left" onclick="example.insert()">
                     <span>
                         <i class="fas fa-plus"></i>
                         <span>Добавить</span>
                     </span>
                 </button>
-                <button type="button" id="js-guide__button-save" class="btn btn-success m-btn--icon hidden" onclick="example.save()">
+                <button type="button" id="js-guide__button-save" class="btn btn-success m-btn--icon float-left hidden" onclick="example.save()">
                     <span>
                         <i class="fas fa-save"></i>
                         <span>Сохранить</span>
