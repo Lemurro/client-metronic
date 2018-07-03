@@ -12,21 +12,40 @@
                     </span>
                 </a>
             </li>
-            <li class="m-menu__item<?=(substr_count($uri, '/guide/') > 0 ? ' m-menu__item--active' : '')?>" aria-haspopup="true">
-                <a href="<?=$short_root?>guide/example" class="m-menu__link ">
+            <li class="m-menu__item m-menu__item--submenu m-menu__item--rel js-role js-role__guide js-role__admin" style="display: none" m-menu-submenu-toggle="click" aria-haspopup="true">
+                <a href="#" class="m-menu__link m-menu__toggle">
                     <span class="m-menu__item-here"></span>
                     <span class="m-menu__link-text">
-                        Справочники
+                        <i class="fas fa-cogs"></i>
                     </span>
+                    <i class="m-menu__hor-arrow la la-angle-down"></i>
+                    <i class="m-menu__ver-arrow la la-angle-right"></i>
                 </a>
-            </li>
-            <li class="m-menu__item<?=(substr_count($uri, '/users') > 0 ? ' m-menu__item--active' : '')?>" aria-haspopup="true">
-                <a href="<?=$short_root?>users" class="m-menu__link ">
-                    <span class="m-menu__item-here"></span>
-                    <span class="m-menu__link-text">
-                        Пользователи
-                    </span>
-                </a>
+                <div class="m-menu__submenu m-menu__submenu--classic m-menu__submenu--left">
+                    <span class="m-menu__arrow m-menu__arrow--adjust"></span>
+                    <ul class="m-menu__subnav">
+                        <li class="m-menu__item <?=(substr_count($uri, '/guide/') > 0 ? ' m-menu__item--active' : '')?> js-role js-role__guide" style="display: none" m-menu-link-redirect="1" aria-haspopup="true">
+                            <a href="<?=$short_root?>guide/example" class="m-menu__link">
+                                <i class="m-menu__link-bullet m-menu__link-bullet--line">
+                                    <span></span>
+                                </i>
+                                <span class="m-menu__link-text">
+                                    Справочники
+                                </span>
+                            </a>
+                        </li>
+                        <li class="m-menu__item <?=($uri == '/users' ? ' m-menu__item--active' : '')?> js-role js-role__admin" style="display: none" m-menu-link-redirect="1" aria-haspopup="true">
+                            <a href="<?=$short_root?>users" class="m-menu__link">
+                                <i class="m-menu__link-bullet m-menu__link-bullet--line">
+                                    <span></span>
+                                </i>
+                                <span class="m-menu__link-text">
+                                    Пользователи
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </li>
         </ul>
     </div>
