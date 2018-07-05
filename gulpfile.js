@@ -47,7 +47,12 @@ gulp.task('select2.lang', function () {
 });
 
 gulp.task('core', function () {
-    return gulp.src(['bower_components/lemurro-client-metronic-core-frontend/dist/core.min.css', 'bower_components/lemurro-client-metronic-core-frontend/dist/core.min.js'])
+    var core = [
+        'bower_components/lemurro-client-metronic-core-frontend/dist/core.min.css',
+        'bower_components/lemurro-client-metronic-core-frontend/dist/core.min.js'
+    ];
+
+    return gulp.src(core)
         .pipe(rev())
         .pipe(gulp.dest('assets'))
         .pipe(rev.manifest({
