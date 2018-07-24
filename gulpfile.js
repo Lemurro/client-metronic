@@ -6,11 +6,8 @@ var del      = require('del');            // Удаление файлов
 var rename   = require('gulp-rename');    // Переименование файлов
 var rev      = require('gulp-rev');       // Версионность файлов
 
-// Первый запуск
-gulp.task('firststart', ['build']);
-
-// Слежение за изменениями
-gulp.task('watcher', ['watcher.css', 'watcher.js']);
+// Сборка проекта для тестирования
+gulp.task('default', ['build', 'watcher.css', 'watcher.js']);
 
 // Сборка проекта для релиза
 gulp.task('build', ['del.old', 'libs', 'select2.lang', 'core', 'app.css', 'app.js']);
