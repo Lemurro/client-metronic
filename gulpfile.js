@@ -28,12 +28,12 @@ gulp.task('del.old', function () {
 
 gulp.task('libs', function () {
     var libs = [
-        'bower_components/bowser/src/bowser.js',
-        'bower_components/jquery-lightajax/dist/jquery.lightajax.min.css',
-        'bower_components/jquery-lightajax/dist/jquery.lightajax.min.js',
-        'bower_components/jsdeferred/jsdeferred.nodoc.js',
-        'bower_components/localforage/dist/localforage.min.js',
-        'bower_components/Template7/dist/template7.min.js'
+        'node_modules/bowser/src/bowser.js',
+        'node_modules/jquery-lightajax/dist/jquery.lightajax.min.css',
+        'node_modules/jquery-lightajax/dist/jquery.lightajax.min.js',
+        'node_modules/jsdeferred/jsdeferred.nodoc.js',
+        'node_modules/localforage/dist/localforage.min.js',
+        'node_modules/template7/dist/template7.min.js'
     ];
 
     return gulp.src(libs)
@@ -41,15 +41,15 @@ gulp.task('libs', function () {
 });
 
 gulp.task('select2.lang', function () {
-    return gulp.src('bower_components/select2/dist/js/i18n/ru.js')
+    return gulp.src('node_modules/select2/dist/js/i18n/ru.js')
         .pipe(rename('select2.lang.ru.js'))
         .pipe(gulp.dest('assets/plugins'));
 });
 
 gulp.task('core', function () {
     var core = [
-        'bower_components/lemurro-client-metronic-core-frontend/dist/core.min.css',
-        'bower_components/lemurro-client-metronic-core-frontend/dist/core.min.js'
+        'node_modules/lemurro-client-metronic-core-frontend/dist/core.min.css',
+        'node_modules/lemurro-client-metronic-core-frontend/dist/core.min.js'
     ];
 
     return gulp.src(core)
