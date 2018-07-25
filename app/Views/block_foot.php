@@ -5,7 +5,7 @@
     <script src="<?=$short_root?>assets/metronic-v5.3.0/demo5/scripts.bundle.js" type="text/javascript"></script>
 
     <!-- Plugins -->
-    <script src="<?=$short_root?>assets/plugins/bowser.js" type="text/javascript"></script>
+    <script src="<?=$short_root?>assets/plugins/bowser.bundled.js" type="text/javascript"></script>
     <script src="<?=$short_root?>assets/plugins/jquery.lightajax.min.js" type="text/javascript"></script>
     <script src="<?=$short_root?>assets/plugins/jsdeferred.nodoc.js" type="text/javascript"></script>
     <script src="<?=$short_root?>assets/plugins/localforage.min.js" type="text/javascript"></script>

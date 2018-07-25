@@ -10,7 +10,7 @@ var rev      = require('gulp-rev');       // Версионность файло
 gulp.task('default', ['build', 'watcher.css', 'watcher.js']);
 
 // Сборка проекта для релиза
-gulp.task('build', ['del.old', 'libs', 'select2.lang', 'core', 'app.css', 'app.js']);
+gulp.task('build', ['del.old', 'libs', 'select2.lang', 'bowser.bundled', 'core', 'app.css', 'app.js']);
 
 gulp.task('watcher.css', function () {
     return gulp.watch('src/css/*.css', ['app.css']);
@@ -28,7 +28,6 @@ gulp.task('del.old', function () {
 
 gulp.task('libs', function () {
     var libs = [
-        'node_modules/bowser/src/bowser.js',
         'node_modules/jquery-lightajax/dist/jquery.lightajax.min.css',
         'node_modules/jquery-lightajax/dist/jquery.lightajax.min.js',
         'node_modules/jsdeferred/jsdeferred.nodoc.js',
@@ -43,6 +42,12 @@ gulp.task('libs', function () {
 gulp.task('select2.lang', function () {
     return gulp.src('node_modules/select2/dist/js/i18n/ru.js')
         .pipe(rename('select2.lang.ru.js'))
+        .pipe(gulp.dest('assets/plugins'));
+});
+
+gulp.task('bowser.bundled', function () {
+    return gulp.src('node_modules/bowser/bundled.js')
+        .pipe(rename('bowser.bundled.js'))
         .pipe(gulp.dest('assets/plugins'));
 });
 
