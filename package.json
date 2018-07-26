@@ -10,6 +10,7 @@
     "jsonfile": "^4.0.0"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.2.0",
     "bowser": "^2.0.0-alpha.3",
     "jquery-lightajax": "^1.0.1",
     "jsdeferred": "^0.4.0",

@@ -14,6 +14,9 @@
     <!-- Roboto Web font -->
     <link href="<?=$short_root?>assets/fonts/roboto/roboto.css" rel="stylesheet" type="text/css">
 
+    <!-- Fontawesome 5 -->
+    <link rel="stylesheet" href="<?=$short_root?>assets/fonts/fontawesome-free/css/all.min.css">
+
     <!-- Plugins -->
     <link href="<?=$short_root?>assets/plugins/jquery.lightajax.min.css" rel="stylesheet" type="text/css">
 

@@ -10,7 +10,7 @@ var rev      = require('gulp-rev');       // Версионность файло
 gulp.task('default', ['build', 'watcher.css', 'watcher.js']);
 
 // Сборка проекта для релиза
-gulp.task('build', ['del.old', 'libs', 'select2.lang', 'bowser.bundled', 'core', 'app.css', 'app.js']);
+gulp.task('build', ['del.old', 'libs', 'select2.lang', 'bowser.bundled', 'fontawesome', 'core', 'app.css', 'app.js']);
 
 gulp.task('watcher.css', function () {
     return gulp.watch('src/css/*.css', ['app.css']);
@@ -49,6 +49,18 @@ gulp.task('bowser.bundled', function () {
     return gulp.src('node_modules/bowser/bundled.js')
         .pipe(rename('bowser.bundled.js'))
         .pipe(gulp.dest('assets/plugins'));
+});
+
+gulp.task('fontawesome', ['fontawesome.css', 'fontawesome.webfonts']);
+
+gulp.task('fontawesome.css', function () {
+    return gulp.src('node_modules/@fortawesome/fontawesome-free/css/all.min.css')
+        .pipe(gulp.dest('assets/fonts/fontawesome-free/css'));
+});
+
+gulp.task('fontawesome.webfonts', function () {
+    return gulp.src('node_modules/@fortawesome/fontawesome-free/webfonts/*')
+        .pipe(gulp.dest('assets/fonts/fontawesome-free/webfonts'));
 });
 
 gulp.task('core', function () {
