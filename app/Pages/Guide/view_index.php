@@ -2,7 +2,7 @@
 switch ($data['type']) {
     case 'example':
         $title = 'Пример';
-        $partial = 'Pages/Guide/partial_example.php';
+        $partial = 'Pages/Guide/Example/view_index.php';
         break;
 
     default:

@@ -3,10 +3,10 @@
  *
  * @param {integer} id ИД записи
  *
- * @version 13.05.2018
+ * @version 02.08.2018
  * @author Дмитрий Щербаков <atomcms@ya.ru>
  */
-example.remove = function (id) {
+guideExample.remove = function (id) {
     var name = $('#js-guide__items').find('tr[data-item-id="' + id + '"] .name').text();
 
     guide.remove(id, name, function (result) {

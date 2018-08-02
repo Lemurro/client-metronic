@@ -1,7 +1,7 @@
 /**
  * Работа с примером
  *
- * @version 13.05.2018
+ * @version 02.08.2018
  * @author Дмитрий Щербаков <atomcms@ya.ru>
  */
 
@@ -10,4 +10,4 @@
  *
  * @type {object}
  */
-var example = {};
+var guideExample = {};

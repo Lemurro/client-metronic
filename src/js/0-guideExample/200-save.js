@@ -1,11 +1,11 @@
 /**
  * Изменение записи
  *
- * @version 13.05.2018
+ * @version 02.08.2018
  * @author Дмитрий Щербаков <atomcms@ya.ru>
  */
-example.save = function () {
-    guide.save(example._collectData(), function (result) {
+guideExample.save = function () {
+    guide.save(guideExample._collectData(), function (result) {
         var newRecord = $(guide.templates.item(result.data));
 
         $('#js-guide__items')
