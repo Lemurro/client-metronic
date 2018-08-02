@@ -10,9 +10,9 @@
 <table id="js-users__table" class="table table-hover m--margin-top-20">
     <thead>
         <tr>
+            <th class="w1">&nbsp;</th>
             <th class="w1">#</th>
             <th>Идентификатор для входа</th>
-            <th class="w1">&nbsp;</th>
         </tr>
     </thead>
     <!-- Динамический контент -->

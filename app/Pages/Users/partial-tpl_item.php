@@ -1,18 +1,12 @@
 <script id="js-tpl-user__item" type="text/template7">
     <tr data-item-id="{{id}}">
-        <td class="text-nowrap">
-            {{id}}
-        </td>
         <td>
-            <span class="auth_id">{{auth_id}}</span>
-        </td>
-        <td>
-            <div class="m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push" m-dropdown-toggle="click" aria-expanded="true">
+            <div class="m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-left m-dropdown--align-push" m-dropdown-toggle="click" aria-expanded="true">
                 <a href="#" class="m-portlet__nav-link m-dropdown__toggle btn btn-secondary m-btn m-btn--icon">
                     <i class="la la-ellipsis-h"></i>
                 </a>
                 <div class="m-dropdown__wrapper">
-                    <span class="m-dropdown__arrow m-dropdown__arrow--right m-dropdown__arrow--adjust"></span>
+                    <span class="m-dropdown__arrow m-dropdown__arrow--left m-dropdown__arrow--adjust"></span>
                     <div class="m-dropdown__inner">
                         <div class="m-dropdown__body">
                             <div class="m-dropdown__content">
@@ -39,6 +33,12 @@
                     </div>
                 </div>
             </div>
+        </td>
+        <td class="align-middle text-nowrap">
+            {{id}}
+        </td>
+        <td class="align-middle">
+            <span class="auth_id">{{auth_id}}</span>
         </td>
     </tr>
 </script>
