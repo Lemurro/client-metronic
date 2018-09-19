@@ -32,7 +32,7 @@
                         break;
                 }
                 ?>
-                <form id="js-auth__get-form" class="m-form">
+                <div id="js-auth__get-form" class="m-form">
                     <div class="form-group m-form__group">
                         <label><?=$get_form_data['input_label']?></label>
                         <input type="text" name="auth_id" class="form-control m-input <?=$get_form_data['input_class']?>">
@@ -42,8 +42,8 @@
                             Получить код
                         </button>
                     </div>
-                </form>
-                <form id="js-auth__check-form" class="m-form">
+                </div>
+                <div id="js-auth__check-form" class="m-form">
                     <div class="form-group m-form__group">
                         <label><?=$check_form_data['input_label']?></label>
                         <input type="text" name="auth_code" class="form-control m-input js-code-mask">
@@ -63,7 +63,7 @@
                             Запросить код ещё раз
                         </button>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
     </div>
