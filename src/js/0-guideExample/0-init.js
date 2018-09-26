@@ -1,7 +1,7 @@
 /**
  * Работа с примером
  *
- * @version 02.08.2018
+ * @version 26.09.2018
  * @author Дмитрий Щербаков <atomcms@ya.ru>
  */
 
@@ -11,3 +11,13 @@
  * @type {object}
  */
 var guideExample = {};
+
+/**
+ * Инициализация
+ *
+ * @version 26.09.2018
+ * @author  Дмитрий Щербаков <atomcms@ya.ru>
+ */
+guideExample.init = function () {
+    console.log('init fired');
+};
