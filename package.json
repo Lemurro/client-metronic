@@ -14,7 +14,7 @@
     "bowser": "^2.0.0-alpha.3",
     "jquery-lightajax": "^1.0.1",
     "jsdeferred": "^0.4.0",
-    "lemurro-client-metronic-core-frontend": "^0.12.0",
+    "lemurro-client-metronic-core-frontend": "^0.16.0",
     "localforage": "^1.7.2",
     "select2": "^4.0.6-rc.1",
     "template7": "^1.3.8"
