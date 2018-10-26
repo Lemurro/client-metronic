@@ -11,7 +11,7 @@ switch ($data['type']) {
         break;
 }
 ?>
-<div id="js-page" data-page="guide" data-type="<?=$data['type']?>">
+<div id="js-page" data-page="lemurro.guide" data-type="<?=$data['type']?>">
     <div class="m-content">
         <div class="row">
             <div class="col-3">
