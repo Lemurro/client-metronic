@@ -3,11 +3,11 @@
  *
  * @param {integer} id ИД записи
  *
- * @version 13.05.2018
- * @author Дмитрий Щербаков <atomcms@ya.ru>
+ * @version 26.10.2018
+ * @author  Дмитрий Щербаков <atomcms@ya.ru>
  */
 users.edit = function (id) {
-    usersCore.edit(id, function (result) {
+    lemurro.users.edit(id, function (result) {
         var form = $('#js-user-form');
 
         form.find('input[name="auth_id"]').val(result.data.auth_id);

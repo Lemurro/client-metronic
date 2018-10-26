@@ -19,7 +19,7 @@
         var pathServerAPI = '<?=$api_url?>';
 
         $(function () {
-            bootstrap.init();
+            lemurro.init();
         });
     </script>
 </body>

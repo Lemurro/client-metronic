@@ -38,7 +38,7 @@
                         <input type="text" name="auth_id" class="form-control m-input <?=$get_form_data['input_class']?>">
                     </div>
                     <div class="form-group m-form__group text-center">
-                        <button type="button" class="btn btn-primary" onclick="auth.getCode()">
+                        <button type="button" class="btn btn-primary" onclick="lemurro.auth.getCode()">
                             Получить код
                         </button>
                     </div>
@@ -49,7 +49,7 @@
                         <input type="text" name="auth_code" class="form-control m-input js-code-mask">
                     </div>
                     <div class="form-group m-form__group text-center">
-                        <button type="button" class="btn btn-primary" onclick="auth.checkCode()">
+                        <button type="button" class="btn btn-primary" onclick="lemurro.auth.checkCode()">
                             Отправить код
                         </button>
                     </div>
@@ -59,7 +59,7 @@
                         </small>
                     </div>
                     <div class="form-group m-form__group text-center js-resend">
-                        <button type="button" class="btn btn-primary" onclick="auth.getCode()">
+                        <button type="button" class="btn btn-primary" onclick="lemurro.auth.getCode()">
                             Запросить код ещё раз
                         </button>
                     </div>

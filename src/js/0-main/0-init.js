@@ -1,7 +1,7 @@
 /**
  * Скрипт главной страницы
  *
- * @version 13.05.2018
+ * @version 26.10.2018
  * @author  Дмитрий Щербаков <atomcms@ya.ru>
  */
 
@@ -15,18 +15,18 @@ var main = {};
 /**
  * Инициализация
  *
- * @version 13.05.2018
+ * @version 26.10.2018
  * @author  Дмитрий Щербаков <atomcms@ya.ru>
  */
 main.init = function () {
-    bootstrap.lightajax.get(true, pathServerAPI, {}, function (result) {
-        bootstrap.lightajax.preloader('hide');
+    lemurro.lightajax.get(true, pathServerAPI, {}, function (result) {
+        lemurro.lightajax.preloader('hide');
 
         var apiStatusText  = 'Не доступен';
         var apiStatusColor = 'text-danger';
 
         if (result.hasOwnProperty('errors')) {
-            bootstrap.showErrors(result.errors);
+            lemurro.showErrors(result.errors);
         } else {
             apiStatusText  = 'Работает';
             apiStatusColor = 'text-success';

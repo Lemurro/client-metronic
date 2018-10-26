@@ -20,7 +20,7 @@
                                         </a>
                                     </li>
                                     <li class="m-nav__item js-login-by-user">
-                                        <a href="javascript:usersCore.loginByUser('{{id}}');" class="btn m-btn--icon">
+                                        <a href="javascript:lemurro.users.loginByUser('{{id}}');" class="btn m-btn--icon">
                                             <span>
                                                 <i class="fas fa-fw fa-sign-in-alt"></i>
                                                 <span>Войти</span>

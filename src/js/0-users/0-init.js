@@ -1,8 +1,8 @@
 /**
  * Работа с пользователями
  *
- * @version 13.05.2018
- * @author Дмитрий Щербаков <atomcms@ya.ru>
+ * @version 26.10.2018
+ * @author  Дмитрий Щербаков <atomcms@ya.ru>
  */
 
 /**
@@ -22,13 +22,13 @@ users.templates = {};
 /**
  * Инициализация
  *
- * @version 13.05.2018
- * @author Дмитрий Щербаков <atomcms@ya.ru>
+ * @version 26.10.2018
+ * @author  Дмитрий Щербаков <atomcms@ya.ru>
  */
 users.init = function () {
     users.templates = {
         item: Template7.compile($('#js-tpl-user__item').html())
     };
 
-    usersCore.getData();
+    lemurro.users.getData();
 };

@@ -78,7 +78,7 @@ use Lemurro\Client\App\Configs\SettingsUserRoles;
             </span>
         </button>
         &nbsp;
-        <button type="button" class="btn btn-secondary" onclick="tabs.tabInsertEdit('hide')">
+        <button type="button" class="btn btn-secondary" onclick="lemurro.tabs.tabInsertEdit('hide')">
             Закрыть
         </button>
     </div>

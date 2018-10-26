@@ -1,11 +1,11 @@
 /**
  * Покажем форму добавления
  *
- * @version 02.08.2018
- * @author Дмитрий Щербаков <atomcms@ya.ru>
+ * @version 26.10.2018
+ * @author  Дмитрий Щербаков <atomcms@ya.ru>
  */
 guideExample.showInsertForm = function () {
-    guide.showInsertForm(function () {
+    lemurro.guide.showInsertForm(function () {
         // Специфичная очистка формы
     });
 };

@@ -54,7 +54,7 @@
                                                         <div class="m-dropdown__content">
                                                             <ul class="m-nav m-nav--skin-light">
                                                                 <li id="js-user-return" class="m-nav__item" style="display: none;">
-                                                                    <a href="javascript:usersCore.return();" class="m-nav__link">
+                                                                    <a href="javascript:lemurro.users.return();" class="m-nav__link">
                                                                         <i class="m-nav__link-icon fas fa-fw fa-undo-alt"></i>
                                                                         <span class="m-nav__link-title">
                                                                             <span class="m-nav__link-wrap">
@@ -66,7 +66,7 @@
                                                                     </a>
                                                                 </li>
                                                                 <li class="m-nav__item">
-                                                                    <a href="javascript:auth.logout();" class="m-nav__link">
+                                                                    <a href="javascript:lemurro.auth.logout();" class="m-nav__link">
                                                                         <i class="m-nav__link-icon fas fa-fw fa-power-off"></i>
                                                                         <span class="m-nav__link-title">
                                                                             <span class="m-nav__link-wrap">
