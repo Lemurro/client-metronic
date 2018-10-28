@@ -1,24 +1,10 @@
 /**
- * Скрипт главной страницы
- *
- * @version 26.10.2018
- * @author  Дмитрий Щербаков <atomcms@ya.ru>
- */
-
-/**
- * Объект страницы
- *
- * @type {object}
- */
-var main = {};
-
-/**
  * Инициализация
  *
- * @version 26.10.2018
+ * @version 28.10.2018
  * @author  Дмитрий Щербаков <atomcms@ya.ru>
  */
-main.init = function () {
+dashboard.init = function () {
     lemurro.lightajax.get(true, pathServerAPI, {}, function (result) {
         lemurro.lightajax.preloader('hide');
 
@@ -30,8 +16,6 @@ main.init = function () {
         } else {
             apiStatusText  = 'Работает';
             apiStatusColor = 'text-success';
-
-            swal('Main', 'Страница успешно загружена', 'success');
         }
 
         $('#js-api-status')

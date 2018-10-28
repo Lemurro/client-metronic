@@ -8,7 +8,7 @@
                 <a href="<?=$short_root?>" class="m-menu__link ">
                     <span class="m-menu__item-here"></span>
                     <span class="m-menu__link-text">
-                        Main
+                        Dashboard
                     </span>
                 </a>
             </li>

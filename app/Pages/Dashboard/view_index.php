@@ -1,9 +1,9 @@
-<div id="js-page" data-page="main">
+<div id="js-page" data-page="dashboard">
     <div class="m-subheader">
         <div class="d-flex align-items-center">
             <div class="mr-auto">
                 <h3 class="m-subheader__title">
-                    Main
+                    Dashboard
                 </h3>
             </div>
         </div>
