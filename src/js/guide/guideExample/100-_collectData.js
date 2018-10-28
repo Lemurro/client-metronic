@@ -4,7 +4,7 @@
  * @return {object}
  *
  * @version 02.08.2018
- * @author Дмитрий Щербаков <atomcms@ya.ru>
+ * @author  Дмитрий Щербаков <atomcms@ya.ru>
  */
 guideExample._collectData = function () {
     var form = $('#js-guide-form');
