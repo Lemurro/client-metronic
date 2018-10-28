@@ -8,6 +8,7 @@
     <script src="<?=$short_root?>assets/plugins/bowser.bundled.js" type="text/javascript"></script>
     <script src="<?=$short_root?>assets/plugins/jquery.lightajax.min.js" type="text/javascript"></script>
     <script src="<?=$short_root?>assets/plugins/jsdeferred.nodoc.js" type="text/javascript"></script>
+    <script src="<?=$short_root?>assets/plugins/isEmpty.min.js" type="text/javascript"></script>
     <script src="<?=$short_root?>assets/plugins/localforage.min.js" type="text/javascript"></script>
     <script src="<?=$short_root?>assets/plugins/template7.min.js" type="text/javascript"></script>
     <script src="<?=$short_root?>assets/plugins/select2.lang.ru.js" type="text/javascript"></script>

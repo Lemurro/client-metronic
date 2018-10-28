@@ -28,6 +28,7 @@ gulp.task('del.old', function () {
 
 gulp.task('libs', function () {
     var libs = [
+        'node_modules/dimns-is-empty-js/dist/isEmpty.min.js',
         'node_modules/jquery-lightajax/dist/jquery.lightajax.min.css',
         'node_modules/jquery-lightajax/dist/jquery.lightajax.min.js',
         'node_modules/jsdeferred/jsdeferred.nodoc.js',
