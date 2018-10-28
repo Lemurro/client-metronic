@@ -14,7 +14,7 @@
                         <div class="m-dropdown__inner">
                             <div class="m-dropdown__body">
                                 <div class="m-dropdown__content">
-                                    <div class="m-scrollable m-scroller ps ps--active-y" data-scrollable="true" data-height="200" style="height: 200px; overflow: hidden;">
+                                    <div class="m-scrollable m-scroller ps ps--active-y" data-scrollable="true" data-height="135" style="height: 135px; overflow: hidden;">
                                         <ul class="m-nav">
                                             <li class="m-nav__section">
                                                 <span class="m-nav__section-text">Настройки</span>
