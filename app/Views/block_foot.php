@@ -19,7 +19,9 @@
         var pathServerAPI = '<?=$api_url?>';
 
         $(function () {
-            lemurro.init();
+            lemurro.init({
+                onLoad: app.init
+            });
         });
     </script>
 </body>
