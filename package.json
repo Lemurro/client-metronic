@@ -16,7 +16,7 @@
     "jquery-lightajax": "^1.0.1",
     "jquery-tablefilter": "^1.0.1",
     "jsdeferred": "^0.4.0",
-    "lemurro-client-metronic-core-frontend": "^0.18.1",
+    "lemurro-client-metronic-core-frontend": "^0.21.0",
     "localforage": "^1.7.3",
     "select2": "^4.0.6-rc.1",
     "template7": "^1.4.0"

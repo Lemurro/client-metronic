@@ -12,6 +12,14 @@
                     </span>
                 </a>
             </li>
+            <li class="m-menu__item<?=($uri == '/example' ? ' m-menu__item--active' : '')?> js-role js-role__example" style="display: none;" aria-haspopup="true">
+                <a href="<?=$short_root?>example" class="m-menu__link ">
+                    <span class="m-menu__item-here"></span>
+                    <span class="m-menu__link-text">
+                        Example
+                    </span>
+                </a>
+            </li>
         </ul>
     </div>
 </div>

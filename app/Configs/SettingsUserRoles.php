@@ -2,7 +2,7 @@
 /**
  * Роли пользователей
  *
- * @version 24.04.2018
+ * @version 28.10.2018
  * @author  Дмитрий Щербаков <atomcms@ya.ru>
  */
 
@@ -18,12 +18,20 @@ class SettingsUserRoles
     /**
      * Список ролей
      */
-    const LIST = [];
+    const LIST = [
+        'example' => [
+            'read',
+            'create-update',
+            'delete',
+        ],
+    ];
 
     /**
      * Справочник названий ролей
      */
-    const GUIDE_PAGES = [];
+    const GUIDE_PAGES = [
+        'example' => 'Example',
+    ];
 
     /**
      * Справочник названий ролей
