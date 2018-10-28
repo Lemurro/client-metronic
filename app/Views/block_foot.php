@@ -7,6 +7,7 @@
     <!-- Plugins -->
     <script src="<?=$short_root?>assets/plugins/bowser.bundled.js" type="text/javascript"></script>
     <script src="<?=$short_root?>assets/plugins/jquery.lightajax.min.js" type="text/javascript"></script>
+    <script src="<?=$short_root?>assets/plugins/jquery.tablefilter.min.js" type="text/javascript"></script>
     <script src="<?=$short_root?>assets/plugins/jsdeferred.nodoc.js" type="text/javascript"></script>
     <script src="<?=$short_root?>assets/plugins/isEmpty.min.js" type="text/javascript"></script>
     <script src="<?=$short_root?>assets/plugins/localforage.min.js" type="text/javascript"></script>

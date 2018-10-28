@@ -31,6 +31,7 @@ gulp.task('libs', function () {
         'node_modules/dimns-is-empty-js/dist/isEmpty.min.js',
         'node_modules/jquery-lightajax/dist/jquery.lightajax.min.css',
         'node_modules/jquery-lightajax/dist/jquery.lightajax.min.js',
+        'node_modules/jquery-tablefilter/dist/jquery.tablefilter.min.js',
         'node_modules/jsdeferred/jsdeferred.nodoc.js',
         'node_modules/localforage/dist/localforage.min.js',
         'node_modules/template7/dist/template7.min.js'
