@@ -5,6 +5,8 @@
             <span>Добавить</span>
         </span>
     </button>
+    &nbsp;&nbsp;
+    <input type="text" class="form-control m-input tablefilter" style="min-width: 300px;" data-tablefilter="#js-users__table" placeholder="Начните вводить для фильтрации">
 </form>
 
 <table id="js-users__table" class="table table-hover m--margin-top-20">
