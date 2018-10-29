@@ -2,7 +2,7 @@
 /**
  * Роли пользователей
  *
- * @version 28.10.2018
+ * @version 29.10.2018
  * @author  Дмитрий Щербаков <atomcms@ya.ru>
  */
 
@@ -16,7 +16,7 @@ namespace Lemurro\Client\App\Configs;
 class SettingsUserRoles
 {
     /**
-     * Список ролей
+     * Список ролей с правами доступа
      */
     const LIST = [
         'example' => [
@@ -34,7 +34,7 @@ class SettingsUserRoles
     ];
 
     /**
-     * Справочник названий ролей
+     * Справочник названий прав доступа
      */
     const GUIDE_ACCESS = [
         'read'          => 'Просмотр',
