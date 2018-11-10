@@ -21,7 +21,7 @@
   },
   "require": {
     "php": ">=7.0.0",
-    "lemurro/client-metronic-core-backend": "^0.3"
+    "lemurro/client-metronic-core-backend": "^0.4"
   },
   "require-dev": {
     "symfony/var-dumper": "^3.3"
