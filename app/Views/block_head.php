@@ -17,9 +17,6 @@
     <!-- Fontawesome 5 -->
     <link href="<?=$short_root?>assets/fonts/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
-    <!-- Plugins -->
-    <link href="<?=$short_root?>assets/plugins/jquery.lightajax.min.css" rel="stylesheet" type="text/css">
-
     <!-- App -->
     <?=($core_css != '' ? '<link href="' . $short_root . 'assets/' . $core_css . '" rel="stylesheet" type="text/css">' : '')?>
     <?=($app_css != '' ? '<link href="' . $short_root . 'assets/' . $app_css . '" rel="stylesheet" type="text/css">' : '')?>

@@ -3,14 +3,13 @@ var cleanCSS = require('gulp-clean-css'); // Минификация CSS
 var concat   = require('gulp-concat');    // Склейка файлов
 var uglify   = require('gulp-uglify');    // Минификация JS
 var del      = require('del');            // Удаление файлов
-var rename   = require('gulp-rename');    // Переименование файлов
 var rev      = require('gulp-rev');       // Версионность файлов
 
 // Сборка проекта для тестирования
 gulp.task('default', ['build', 'watcher.css', 'watcher.js']);
 
 // Сборка проекта для релиза
-gulp.task('build', ['del.old', 'libs', 'select2.lang', 'bowser.bundled', 'fontawesome', 'core', 'app.css', 'app.js']);
+gulp.task('build', ['del.old', 'libs', 'fontawesome', 'core', 'app.css', 'app.js']);
 
 gulp.task('watcher.css', function () {
     return gulp.watch('src/css/*.css', ['app.css']);
@@ -28,28 +27,10 @@ gulp.task('del.old', function () {
 
 gulp.task('libs', function () {
     var libs = [
-        'node_modules/dimns-is-empty-js/dist/isEmpty.min.js',
-        'node_modules/jquery-lightajax/dist/jquery.lightajax.min.css',
-        'node_modules/jquery-lightajax/dist/jquery.lightajax.min.js',
-        'node_modules/jquery-tablefilter/dist/jquery.tablefilter.min.js',
-        'node_modules/jsdeferred/jsdeferred.nodoc.js',
-        'node_modules/localforage/dist/localforage.min.js',
-        'node_modules/template7/dist/template7.min.js'
+        'node_modules/jsdeferred/jsdeferred.nodoc.js'
     ];
 
     return gulp.src(libs)
-        .pipe(gulp.dest('assets/plugins'));
-});
-
-gulp.task('select2.lang', function () {
-    return gulp.src('node_modules/select2/dist/js/i18n/ru.js')
-        .pipe(rename('select2.lang.ru.js'))
-        .pipe(gulp.dest('assets/plugins'));
-});
-
-gulp.task('bowser.bundled', function () {
-    return gulp.src('node_modules/bowser/bundled.js')
-        .pipe(rename('bowser.bundled.js'))
         .pipe(gulp.dest('assets/plugins'));
 });
 
