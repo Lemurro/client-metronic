@@ -11,6 +11,9 @@
       "role": "Developer"
     }
   ],
+  "config": {
+    "vendor-dir": "../lemurro-composer-vendors/client"
+  },
   "autoload": {
     "psr-4": {
       "Lemurro\\Client\\App\\": "app/"
