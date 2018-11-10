@@ -5,8 +5,8 @@ assets/metronic-*
 assets/plugins
 assets/app-*.css
 assets/app-*.js
-assets/core-*.css
-assets/core-*.js
+assets/lemurro-*.css
+assets/lemurro-*.js
 bower_components
 node_modules
 vendor

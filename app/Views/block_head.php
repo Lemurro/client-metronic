@@ -18,7 +18,7 @@
     <link href="<?=$short_root?>assets/fonts/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
     <!-- App -->
-    <?=($core_css != '' ? '<link href="' . $short_root . 'assets/' . $core_css . '" rel="stylesheet" type="text/css">' : '')?>
+    <?=($lemurro_css != '' ? '<link href="' . $short_root . 'assets/' . $lemurro_css . '" rel="stylesheet" type="text/css">' : '')?>
     <?=($app_css != '' ? '<link href="' . $short_root . 'assets/' . $app_css . '" rel="stylesheet" type="text/css">' : '')?>
 
     <title><?=$title?></title>

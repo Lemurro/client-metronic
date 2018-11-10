@@ -9,7 +9,7 @@ var rev      = require('gulp-rev');       // Версионность файло
 gulp.task('default', ['build', 'watcher.css', 'watcher.js']);
 
 // Сборка проекта для релиза
-gulp.task('build', ['del.old', 'libs', 'fontawesome', 'core', 'app.css', 'app.js']);
+gulp.task('build', ['del.old', 'libs', 'fontawesome', 'lemurro', 'app.css', 'app.js']);
 
 gulp.task('watcher.css', function () {
     return gulp.watch('src/css/*.css', ['app.css']);
@@ -46,13 +46,13 @@ gulp.task('fontawesome.webfonts', function () {
         .pipe(gulp.dest('assets/fonts/fontawesome-free/webfonts'));
 });
 
-gulp.task('core', function () {
-    var core = [
-        'node_modules/lemurro-client-metronic-core-frontend/dist/core.min.css',
-        'node_modules/lemurro-client-metronic-core-frontend/dist/core.min.js'
+gulp.task('lemurro', function () {
+    var lemurro = [
+        'node_modules/lemurro-client-metronic-core-frontend/dist/lemurro.min.css',
+        'node_modules/lemurro-client-metronic-core-frontend/dist/lemurro.min.js'
     ];
 
-    return gulp.src(core)
+    return gulp.src(lemurro)
         .pipe(rev())
         .pipe(gulp.dest('assets'))
         .pipe(rev.manifest({

@@ -8,7 +8,7 @@
     <script src="<?=$short_root?>assets/plugins/jsdeferred.nodoc.js" type="text/javascript"></script>
 
     <!-- App -->
-    <?=($core_js != '' ? '<script src="' . $short_root . 'assets/' . $core_js . '" type="text/javascript"></script>' : '')?>
+    <?=($lemurro_js != '' ? '<script src="' . $short_root . 'assets/' . $lemurro_js . '" type="text/javascript"></script>' : '')?>
     <?=($app_js != '' ? '<script src="' . $short_root . 'assets/' . $app_js . '" type="text/javascript"></script>' : '')?>
     <script type="text/javascript">
         var pathServerAPI = '<?=$api_url?>';
