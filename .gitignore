@@ -1,14 +1,3 @@
-.idea
-.vscode
-assets/fonts/fontawesome-free
-assets/metronic-*
-assets/plugins
-assets/app-*.css
-assets/app-*.js
-assets/lemurro-*.css
-assets/lemurro-*.js
-bower_components
+build
+assets/metronic*
 node_modules
-vendor
-composer.lock
-rev-manifest.json
