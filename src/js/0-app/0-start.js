@@ -1,7 +1,7 @@
 /**
  * Загрузочный скрипт приложения
  *
- * @version 28.10.2018
+ * @version 30.11.2018
  * @author  Дмитрий Щербаков <atomcms@ya.ru>
  */
 
@@ -11,3 +11,26 @@
  * @type {object}
  */
 var app = {};
+
+/**
+ * Параметр для определения запущено приложение или только запускается
+ *
+ * @type {boolean}
+ */
+app.started = false;
+
+/**
+ * Объект страницы
+ *
+ * @type {object}
+ */
+app.page = {
+    name  : '500',
+    title : 'Внутренняя ошибка',
+    onLoad: null,
+    params: {}
+};
+
+$(function () {
+    lemurro.start();
+});

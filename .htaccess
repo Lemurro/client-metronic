@@ -4,6 +4,12 @@ Options -Indexes
 # Все отображаемые данные имеют кодировку utf-8
 AddDefaultCharset utf-8
 
+# Заголовки безопасности
+Header set X-XSS-Protection "1;mode=block"
+Header set X-Content-Type-Options "nosniff"
+Header set X-Frame-Options "SAMEORIGIN"
+Header set Referrer-Policy "no-referrer"
+
 # Правила для ЧПУ
 RewriteEngine On
 Options +FollowSymLinks
@@ -11,4 +17,4 @@ Options +FollowSymLinks
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
-RewriteRule (.*) index.php [L]
+RewriteRule (.*) index.html [L]

@@ -1,0 +1,60 @@
+<form id="js-user-form" data-id="0">
+    <h5 class="js-title m--margin-bottom-20">
+        Добавление пользователя
+    </h5>
+    <div class="form-group m-form__group">
+        <label>Идентификатор для входа</label>
+        <input type="text" class="form-control m-input" name="auth_id" title="Идентификатор для входа">
+    </div>
+    <div class="form-group m-form__group">
+        <label>Права доступа</label>
+        <div class="m-checkbox-inline">
+            <label class="m-checkbox">
+                <input type="checkbox" class="js-role" data-page="admin"> Администратор
+                <span></span>
+            </label>
+        </div>
+        <table id="js-user__roles" class="table table-hover">
+            <tr>
+                <td class="w1 text-nowrap">
+                    <strong>Справочники</strong>
+                </td>
+                <td>
+                    <div class="m-checkbox-inline">
+                        <label class="m-checkbox">
+                            <input type="checkbox" class="js-role" data-page="guide" data-access="read"> Просмотр
+                            <span></span>
+                        </label>
+                        <label class="m-checkbox">
+                            <input type="checkbox" class="js-role" data-page="guide" data-access="create-update"> Добавление и изменение
+                            <span></span>
+                        </label>
+                        <label class="m-checkbox">
+                            <input type="checkbox" class="js-role" data-page="guide" data-access="delete"> Удаление
+                            <span></span>
+                        </label>
+                    </div>
+                </td>
+            </tr>
+            <!-- Сюда будет загружен список всех ролей из настроек -->
+        </table>
+    </div>
+    <div>
+        <button type="button" id="js-user__button-insert" class="btn btn-primary m-btn--icon" onclick="users.insert()">
+            <span>
+                <i class="fas fa-plus"></i>
+                <span>Добавить</span>
+            </span>
+        </button>
+        <button type="button" id="js-user__button-save" class="btn btn-success m-btn--icon" onclick="users.save()">
+            <span>
+                <i class="fas fa-save"></i>
+                <span>Сохранить</span>
+            </span>
+        </button>
+        &nbsp;
+        <button type="button" class="btn btn-secondary" onclick="lemurro.tabs.tabInsertEdit('hide')">
+            Закрыть
+        </button>
+    </div>
+</form>

@@ -1,5 +1,0 @@
-example:
-  path: /example
-  controller: 'Pages/Example/view_index.php'
-  defaults: { _page_type: 'internal' }
-  methods: [GET]

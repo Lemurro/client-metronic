@@ -5,12 +5,14 @@
     "gulp-clean-css": "^3.10.0",
     "gulp-concat": "^2.6.0",
     "gulp-rev": "^8.1.1",
+    "gulp-rev-rewrite": "^1.1.2",
     "gulp-uglify": "^1.5.4",
-    "jsonfile": "^4.0.0"
+    "gulp-x-includer": "^0.1.2",
+    "jsonfile": "^4.0.0",
+    "run-sequence": "^2.2.1"
   },
   "dependencies": {
     "lemurro-client-metronic-core-frontend": "^0.23.0",
-    "@fortawesome/fontawesome-free": "^5.4.2",
-    "jsdeferred": "^0.4.0"
+    "@fortawesome/fontawesome-free": "^5.4.2"
   }
 }
