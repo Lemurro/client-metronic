@@ -38,7 +38,7 @@ app.routes = {
         'guide/example': function () {
             app.page = {
                 name  : 'guide', // Всегда guide для всех справочников
-                title : 'Пример',
+                title : 'Пример | Справочник',
                 onLoad: function () {
                     lemurro.guide.init('example', 'guideExample');
                 },
