@@ -1,7 +1,7 @@
 /**
  * Маршруты
  *
- * @version 06.12.2018
+ * @version 07.12.2018
  * @author  Дмитрий Щербаков <atomcms@ya.ru>
  */
 app.routes = {
@@ -57,14 +57,14 @@ app.routes = {
         },
 
         // Основной маршрут (должен находиться в конце)
-        '/': function (params) {
+        '/': function () {
             app.page = {
                 name  : 'dashboard',
                 title : 'Главная',
                 onLoad: function () {
                     dashboard.init();
                 },
-                params: params
+                params: {}
             };
         }
     }
