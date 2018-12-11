@@ -1,7 +1,7 @@
 /**
  * Настройки
  *
- * @version 27.11.2018
+ * @version 11.12.2018
  * @author  Дмитрий Щербаков <atomcms@ya.ru>
  */
 app.config = {
@@ -43,18 +43,17 @@ app.config = {
     // Роли пользователей
     userRoles: {
         // Список ролей с правами доступа
-        list: {
-            'example': [
-                'read',
-                'create-update',
-                'delete'
-            ]
-        },
-
-        // Справочник названий ролей
-        guidePages: {
-            'example': 'Example'
-        },
+        list: [
+            {
+                name  : 'example',
+                title : 'Example',
+                access: [
+                    'read',
+                    'create-update',
+                    'delete'
+                ]
+            }
+        ],
 
         // Справочник названий прав доступа
         guideAccess: {

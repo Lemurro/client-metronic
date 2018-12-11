@@ -3,7 +3,7 @@
  *
  * @return {object}
  *
- * @version 13.05.2018
+ * @version 11.12.2018
  * @author  Дмитрий Щербаков <atomcms@ya.ru>
  */
 users._collectData = function () {
@@ -12,16 +12,16 @@ users._collectData = function () {
 
     form.find('.js-role:checked').each(function () {
         var elem = $(this);
-        var page = elem.attr('data-page');
+        var role = elem.attr('data-role');
 
-        if (page === 'admin') {
+        if (role === 'admin') {
             roles.admin = true;
         } else {
-            if (!roles.hasOwnProperty(page)) {
-                roles[page] = [];
+            if (!roles.hasOwnProperty(role)) {
+                roles[role] = [];
             }
 
-            roles[page].push(elem.attr('data-access'));
+            roles[role].push(elem.attr('data-access'));
         }
     });
 

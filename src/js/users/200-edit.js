@@ -3,7 +3,7 @@
  *
  * @param {integer} id ИД записи
  *
- * @version 26.10.2018
+ * @version 11.12.2018
  * @author  Дмитрий Щербаков <atomcms@ya.ru>
  */
 users.edit = function (id) {
@@ -14,12 +14,12 @@ users.edit = function (id) {
 
         form.find('.js-role').prop('checked', false);
 
-        for (var page in result.data.roles) {
-            if (page === 'admin') {
-                form.find('.js-role[data-page="admin"]').prop('checked', true);
+        for (var role in result.data.roles) {
+            if (role === 'admin') {
+                form.find('.js-role[data-role="admin"]').prop('checked', true);
             } else {
-                for (var i in result.data.roles[page]) {
-                    form.find('.js-role[data-page="' + page + '"][data-access="' + result.data.roles[page][i] + '"]').prop('checked', true);
+                for (var i in result.data.roles[role]) {
+                    form.find('.js-role[data-role="' + role + '"][data-access="' + result.data.roles[role][i] + '"]').prop('checked', true);
                 }
             }
         }
