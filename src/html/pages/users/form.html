@@ -4,7 +4,27 @@
     </h5>
     <div class="form-group m-form__group">
         <label>Идентификатор для входа</label>
-        <input type="text" class="form-control m-input" name="auth_id" title="Идентификатор для входа">
+        <input type="text" class="form-control m-input" name="auth_id" title="Идентификатор для входа" required>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <div class="form-group m-form__group">
+                <label>Фамилия</label>
+                <input type="text" name="last_name" class="form-control m-input" title="Фамилия" required>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="form-group m-form__group">
+                <label>Имя</label>
+                <input type="text" name="first_name" class="form-control m-input" title="Имя" required>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="form-group m-form__group">
+                <label>Отчество</label>
+                <input type="text" name="second_name" class="form-control m-input" title="Отчество">
+            </div>
+        </div>
     </div>
     <div class="form-group m-form__group">
         <label>Права доступа</label>

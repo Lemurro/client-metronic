@@ -1,13 +1,17 @@
 /**
  * Добавление записи
  *
- * @version 26.10.2018
+ * @version 12.12.2018
  * @author  Дмитрий Щербаков <atomcms@ya.ru>
  */
 users.insert = function () {
-    lemurro.users.insert(users._collectData(), function (result) {
-        $('#js-users__items').prepend(users.templates.item(result.data));
+    var data = users._collectData();
 
-        lemurro.tabs.tabInsertEdit('hide');
-    });
+    if (Object.keys(data).length > 0) {
+        lemurro.users.insert(data, function (result) {
+            $('#js-users__items').prepend(users.templates.item(result.data));
+
+            lemurro.tabs.tabInsertEdit('hide');
+        });
+    }
 };

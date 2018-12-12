@@ -1,19 +1,23 @@
 /**
  * Изменение записи
  *
- * @version 26.10.2018
+ * @version 12.12.2018
  * @author  Дмитрий Щербаков <atomcms@ya.ru>
  */
 users.save = function () {
-    lemurro.users.save(users._collectData(), function (result) {
-        var newRecord = $(users.templates.item(result.data));
+    var data = users._collectData();
 
-        $('#js-users__items')
-            .find('tr[data-item-id="' + result.data.id + '"]')
-            .html(newRecord.html());
+    if (Object.keys(data).length > 0) {
+        lemurro.users.save(data, function (result) {
+            var newRecord = $(users.templates.item(result.data));
 
-        lemurro.tabs.tabInsertEdit('hide');
+            $('#js-users__items')
+                .find('tr[data-item-id="' + result.data.id + '"]')
+                .html(newRecord.html());
 
-        swal('Выполнено', 'Запись успешно изменена', 'success');
-    });
+            lemurro.tabs.tabInsertEdit('hide');
+
+            swal('Выполнено', 'Запись успешно изменена', 'success');
+        });
+    }
 };
