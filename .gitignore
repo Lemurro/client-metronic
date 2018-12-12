@@ -1,3 +1,4 @@
 build
-assets/metronic*
+src/assets/metronic*
 node_modules
+package-lock.json
