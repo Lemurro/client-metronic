@@ -12,7 +12,7 @@
     "run-sequence": "^2.2.1"
   },
   "dependencies": {
-    "lemurro-client-metronic-core-frontend": "^1.0.0",
+    "lemurro-client-metronic-core-frontend": "1.0.*",
     "@fortawesome/fontawesome-free": "^5.4.2"
   }
 }
