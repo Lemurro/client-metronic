@@ -9,7 +9,7 @@
     "jsonfile": "^4.0.0"
   },
   "dependencies": {
-    "lemurro-client-metronic-core-frontend": "^0.23.0",
+    "lemurro-client-metronic-core-frontend": "^0.24.0",
     "@fortawesome/fontawesome-free": "^5.4.2",
     "jsdeferred": "^0.4.0"
   }
