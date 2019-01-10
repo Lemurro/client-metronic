@@ -1,7 +1,7 @@
 /**
  * Инициализация
  *
- * @version 28.10.2018
+ * @version 08.01.2019
  * @author  Дмитрий Щербаков <atomcms@ya.ru>
  */
 example.init = function () {
@@ -11,8 +11,11 @@ example.init = function () {
      * @type {object}
      */
     example._templates = {
-        item: Template7.compile($('#js-tpl-example__item').html())
+        item: Template7.compile($('#js-tpl-example__item').html()),
+        file: Template7.compile($('#js-tpl-example__file').html())
     };
+
+    example._initFile();
 
     example._getData();
 };

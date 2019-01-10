@@ -1,7 +1,7 @@
 /**
  * Покажем форму добавления
  *
- * @version 28.10.2018
+ * @version 08.01.2019
  * @author  Дмитрий Щербаков <atomcms@ya.ru>
  */
 example.showInsertForm = function () {
@@ -11,6 +11,8 @@ example.showInsertForm = function () {
     form.find('.js-title').text('Добавление записи');
 
     lemurro.helper.clearFields(form);
+
+    $('#js-files__box').html('');
 
     form.find('.js-action__insert').show();
     form.find('.js-action__save').hide();

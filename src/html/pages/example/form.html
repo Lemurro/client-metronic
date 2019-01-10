@@ -6,6 +6,19 @@
         <label>Наименование</label>
         <input type="text" class="form-control m-input" name="name" title="Наименование" required>
     </div>
+    <div class="form-group m-form__group">
+        <label>Файлы</label>
+        <table class="table">
+            <!-- Динамический контент -->
+            <tbody id="js-files__box"></tbody>
+        </table>
+        <button type="button" id="js-files__upload" class="btn btn-brand btn-sm m-btn--icon">
+            <span>
+                <i class="fas fa-plus"></i>
+                <span>Загрузить файл</span>
+            </span>
+        </button>
+    </div>
     <div>
         <button type="button" class="btn btn-primary m-btn--icon js-action__insert" onclick="example.insert()">
             <span>
