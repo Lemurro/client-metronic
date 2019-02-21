@@ -4,6 +4,7 @@
     "gulp": "^4.0.0",
     "gulp-clean-css": "^3.10.0",
     "gulp-concat": "^2.6.0",
+    "gulp-rename": "^1.2.2",
     "gulp-rev": "^8.1.1",
     "gulp-rev-rewrite": "^1.1.2",
     "gulp-uglify": "^1.5.4",

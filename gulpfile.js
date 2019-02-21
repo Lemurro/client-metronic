@@ -3,6 +3,7 @@ var cleanCSS   = require('gulp-clean-css');   // Минификация CSS
 var concat     = require('gulp-concat');      // Склейка css и js файлов
 var del        = require('del');              // Удаление файлов
 var includer   = require('gulp-x-includer');  // Склейка html файлов
+var rename     = require('gulp-rename');      // Переименование файлов
 var rev        = require('gulp-rev');         // Версионность файлов
 var revRewrite = require('gulp-rev-rewrite'); // Внедрение ссылок на css и js файлы в index.html
 var uglify     = require('gulp-uglify');      // Минификация JS
@@ -119,23 +120,36 @@ function indexHTML() {
         .pipe(gulp.dest('build'));
 }
 
+function envProd() {
+    return gulp.src('src/env/env.js')
+        .pipe(gulp.dest('build/assets'));
+}
+
+function envDev() {
+    return gulp.src('src/env/env-dev.js')
+        .pipe(rename('env.js'))
+        .pipe(gulp.dest('build/assets'));
+}
+
 // VARS
 
-var fontawesome = gulp.parallel(fontawesomeCSS, fontawesomeWebfonts);
-
-// TASKS
-
-gulp.task('build', gulp.series(
+var all = gulp.series(
     clean,
-    gulp.parallel(htaccess, plugins, assets, fontawesome),
+    gulp.parallel(htaccess, plugins, assets, fontawesomeCSS, fontawesomeWebfonts),
     lemurro,
     appCSS,
     appJS,
-    gulp.parallel(pagesHTML, indexHTML)
-));
+    pagesHTML,
+    indexHTML
+);
 
-gulp.task('watcher', gulp.series('build', gulp.parallel(
-    watcherCSS,
-    watcherJS,
-    watcherHTML
-)));
+// TASKS
+
+gulp.task('build', gulp.series(all, envProd));
+
+gulp.task('build-dev', gulp.series(all, envDev));
+
+gulp.task('watcher', gulp.series(
+    'build-dev',
+    gulp.parallel(watcherCSS, watcherJS, watcherHTML)
+));

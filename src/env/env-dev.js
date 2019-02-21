@@ -1,0 +1,1 @@
+var pathServerAPI = 'http://lemurro-api.localhost/';
