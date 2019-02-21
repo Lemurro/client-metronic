@@ -12,7 +12,7 @@
     "jsonfile": "^4.0.0"
   },
   "dependencies": {
-    "lemurro-client-metronic-core-frontend": "~1.1.0",
+    "lemurro-client-metronic-core-frontend": "~1.2.0",
     "@fortawesome/fontawesome-free": "~5.4.2"
   }
 }
