@@ -1,11 +1,11 @@
 /**
  * Список элементов
  *
- * @version 15.11.2018
+ * @version 21.02.2019
  * @author  Дмитрий Щербаков <atomcms@ya.ru>
  */
 example._getData = function () {
-    lemurro.lightajax.get(true, app.config.apiUrl + 'example', {}, function (result) {
+    lemurro.lightajax.get(true, pathServerAPI + 'example', {}, function (result) {
         lemurro.lightajax.preloader('hide');
 
         $('#js-example__loader').hide();

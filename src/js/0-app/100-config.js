@@ -1,15 +1,12 @@
 /**
  * Настройки
  *
- * @version 11.12.2018
+ * @version 21.02.2019
  * @author  Дмитрий Щербаков <atomcms@ya.ru>
  */
 app.config = {
     // Название приложения
     title: 'Lemurro',
-
-    // URL-адрес API-сервера (обязательно с конечной "/")
-    apiUrl: 'http://lemurro-api.localhost/',
 
     // Вид аутентификации
     //   email: по электронной почте (код через email)

@@ -1,14 +1,14 @@
 /**
  * Изменение записи
  *
- * @version 15.11.2018
+ * @version 21.02.2019
  * @author  Дмитрий Щербаков <atomcms@ya.ru>
  */
 example.save = function () {
     var data = example._collectData();
 
     if (!isEmpty(data)) {
-        lemurro.lightajax.post(true, app.config.apiUrl + 'example/' + data.id, {
+        lemurro.lightajax.post(true, pathServerAPI + 'example/' + data.id, {
             data: data
         }, function (result) {
             lemurro.lightajax.preloader('hide');

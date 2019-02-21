@@ -3,11 +3,11 @@
  *
  * @param {integer} id ИД записи
  *
- * @version 08.01.2019
+ * @version 21.02.2019
  * @author  Дмитрий Щербаков <atomcms@ya.ru>
  */
 example.edit = function (id) {
-    lemurro.lightajax.get(true, app.config.apiUrl + 'example/' + id, {}, function (result) {
+    lemurro.lightajax.get(true, pathServerAPI + 'example/' + id, {}, function (result) {
         lemurro.lightajax.preloader('hide');
 
         if (result.hasOwnProperty('errors')) {

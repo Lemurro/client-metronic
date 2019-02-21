@@ -3,7 +3,7 @@
  *
  * @param {integer} id ИД записи
  *
- * @version 15.11.2018
+ * @version 21.02.2019
  * @author  Дмитрий Щербаков <atomcms@ya.ru>
  */
 example.remove = function (id) {
@@ -16,7 +16,7 @@ example.remove = function (id) {
         cancelButtonText : 'Отмена'
     }).then(function (result) {
         if (result.value) {
-            lemurro.lightajax.post(true, app.config.apiUrl + 'example/' + id + '/remove', {}, function (result) {
+            lemurro.lightajax.post(true, pathServerAPI + 'example/' + id + '/remove', {}, function (result) {
                 lemurro.lightajax.preloader('hide');
 
                 if (result.hasOwnProperty('errors')) {
