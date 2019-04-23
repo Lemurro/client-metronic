@@ -1,5 +1,6 @@
 build
 src/assets/metronic*
+src/env/dev.js
 node_modules
 vendor
 package-lock.json
