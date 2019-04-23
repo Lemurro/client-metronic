@@ -121,12 +121,13 @@ function indexHTML() {
 }
 
 function envProd() {
-    return gulp.src('src/env/env.js')
+    return gulp.src('src/env/prod.js')
+        .pipe(rename('env.js'))
         .pipe(gulp.dest('build/assets'));
 }
 
 function envDev() {
-    return gulp.src('src/env/env-dev.js')
+    return gulp.src('src/env/dev.js')
         .pipe(rename('env.js'))
         .pipe(gulp.dest('build/assets'));
 }
