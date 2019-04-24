@@ -28,7 +28,7 @@ app.page = {
     name  : '500',
     title : 'Внутренняя ошибка',
     onLoad: null,
-    params: {},
+    params: null,
     query : ''
 };
 
