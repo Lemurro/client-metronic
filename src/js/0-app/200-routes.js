@@ -1,7 +1,7 @@
 /**
  * Маршруты
  *
- * @version 22.04.2019
+ * @version 24.04.2019
  * @author  Дмитрий Щербаков <atomcms@ya.ru>
  */
 app.routes = {
@@ -16,7 +16,7 @@ app.routes = {
     },
     pages   : {
         // Пользовательские маршруты
-        'example': function (params, query) {
+        '/example': function (params, query) {
             app.page = {
                 name  : 'example',
                 title : 'Пример',
@@ -28,17 +28,8 @@ app.routes = {
             };
         },
 
-        // Системные маршруты
-        '403'          : function (params, query) {
-            app.page = {
-                name  : '403',
-                title : 'Доступ ограничен',
-                onLoad: null,
-                params: params,
-                query : query
-            };
-        },
-        'guide/example': function (params, query) {
+        // Справочники
+        '/guide/example': function (params, query) {
             app.page = {
                 name  : 'guide', // Всегда guide для всех справочников
                 title : 'Пример | Справочник',
@@ -49,7 +40,18 @@ app.routes = {
                 query : query
             };
         },
-        'users'        : function (params, query) {
+
+        // Системные маршруты
+        '/403'  : function (params, query) {
+            app.page = {
+                name  : '403',
+                title : 'Доступ ограничен',
+                onLoad: null,
+                params: params,
+                query : query
+            };
+        },
+        '/users': function (params, query) {
             app.page = {
                 name  : 'users',
                 title : 'Пользователи',
