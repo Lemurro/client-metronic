@@ -1,7 +1,7 @@
 /**
  * Загрузочный скрипт приложения
  *
- * @version 22.04.2019
+ * @version 24.04.2019
  * @author  Дмитрий Щербаков <atomcms@ya.ru>
  */
 
@@ -29,7 +29,7 @@ app.page = {
     title : 'Внутренняя ошибка',
     onLoad: null,
     params: {},
-    query : {}
+    query : ''
 };
 
 $(function () {
