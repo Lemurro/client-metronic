@@ -1,5 +1,5 @@
 build
-src/assets/metronic*
+src/copy-to-build/assets/metronic*
 src/env/dev.js
 node_modules
 vendor

@@ -32,11 +32,6 @@ function watcherHTML() {
 
 // APP
 
-function htaccess() {
-    return gulp.src('.htaccess')
-        .pipe(gulp.dest('build'));
-}
-
 function plugins(done) {
     if (pathsPlugins.length > 0) {
         return gulp.src(pathsPlugins)
@@ -46,9 +41,9 @@ function plugins(done) {
     }
 }
 
-function assets() {
-    return gulp.src('src/assets/**/*')
-        .pipe(gulp.dest('build/assets'));
+function copyToBuild() {
+    return gulp.src('src/copy-to-build/**/*')
+        .pipe(gulp.dest('build'));
 }
 
 function fontawesomeCSS() {
@@ -136,7 +131,12 @@ function envDev() {
 
 var all = gulp.series(
     clean,
-    gulp.parallel(htaccess, plugins, assets, fontawesomeCSS, fontawesomeWebfonts),
+    gulp.parallel(
+        copyToBuild,
+        plugins,
+        fontawesomeCSS,
+        fontawesomeWebfonts
+    ),
     lemurro,
     appCSS,
     appJS,
