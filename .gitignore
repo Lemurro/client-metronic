@@ -1,6 +1,7 @@
 build
 src/copy-to-build/assets/metronic*
 src/env/dev.js
+src/env/prod.js
 node_modules
 vendor
 package-lock.json
