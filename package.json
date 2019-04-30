@@ -12,7 +12,8 @@
     "jsonfile": "^4.0.0"
   },
   "dependencies": {
-    "lemurro-client-metronic-core-frontend": "~1.4.2",
-    "@fortawesome/fontawesome-free": "~5.4.2"
+    "@fortawesome/fontawesome-free": "~5.4.2",
+    "gulp-sort": "^2.0.0",
+    "lemurro-client-metronic-core-frontend": "~1.4.2"
   }
 }
