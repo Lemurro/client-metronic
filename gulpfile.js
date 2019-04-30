@@ -43,7 +43,7 @@ function plugins(done) {
 }
 
 function copyToBuild() {
-    return gulp.src('src/copy-to-build/**/*')
+    return gulp.src(['src/copy-to-build/**/*', 'src/copy-to-build/.htaccess'])
         .pipe(gulp.dest('build'));
 }
 
