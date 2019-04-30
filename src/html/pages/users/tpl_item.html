@@ -52,7 +52,11 @@
             {{last_name}} {{first_name}} {{second_name}}
         </td>
         <td class="align-middle text-nowrap">
+            {{#if last_action_date}}
             {{lemurrolocaltime last_action_date "DD.MM.YYYY HH:mm"}}
+            {{else}}
+            отсутствует
+            {{/if}}
         </td>
     </tr>
 </script>
