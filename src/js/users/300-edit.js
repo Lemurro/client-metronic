@@ -1,7 +1,7 @@
 /**
  * Редактирование записи
  *
- * @param {integer} id ИД записи
+ * @param {string} id ИД записи
  *
  * @version 12.12.2018
  * @author  Дмитрий Щербаков <atomcms@ya.ru>

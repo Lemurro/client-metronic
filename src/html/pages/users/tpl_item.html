@@ -19,6 +19,7 @@
                                             </span>
                                         </a>
                                     </li>
+                                    {{#js_if "this.id !== '1'"}}
                                     <li class="m-nav__item js-login-by-user">
                                         <a href="javascript:lemurro.users.loginByUser('{{id}}');" class="btn m-btn--icon">
                                             <span>
@@ -35,6 +36,24 @@
                                             </span>
                                         </a>
                                     </li>
+                                    {{else}}
+                                    <li class="m-nav__item">
+                                        <span class="btn m-btn--icon disabled">
+                                            <span>
+                                                <i class="fas fa-fw fa-sign-in-alt"></i>
+                                                <span>Войти</span>
+                                            </span>
+                                        </span>
+                                    </li>
+                                    <li class="m-nav__item">
+                                        <span class="btn m-btn--icon disabled">
+                                            <span>
+                                                <i class="far fa-fw fa-trash-alt"></i>
+                                                <span>Удалить</span>
+                                            </span>
+                                        </span>
+                                    </li>
+                                    {{/js_if}}
                                 </ul>
                             </div>
                         </div>
