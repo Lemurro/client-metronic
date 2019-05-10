@@ -13,8 +13,17 @@ var pathsPlugins = [];
 
 // CLEAN
 
-function clean() {
+function cleanBefore() {
     return del('build/**', {force: true});
+}
+
+function cleanAfter() {
+    var files = [
+        'build/assets/app.min.css',
+        'build/assets/app.min.js'
+    ];
+
+    return del(files, {force: true});
 }
 
 // WATCHER
@@ -77,13 +86,6 @@ function appCSS() {
     return gulp.src('src/css/*.css')
         .pipe(sort())
         .pipe(concat('app.min.css'))
-        .pipe(cleanCSS())
-        .pipe(rev())
-        .pipe(gulp.dest('build/assets'))
-        .pipe(rev.manifest('build/rev-manifest.json', {
-            base : 'build/assets',
-            merge: true
-        }))
         .pipe(gulp.dest('build/assets'));
 }
 
@@ -91,7 +93,28 @@ function appJS() {
     return gulp.src('src/js/**/*.js')
         .pipe(sort())
         .pipe(concat('app.min.js'))
+        .pipe(gulp.dest('build/assets'));
+}
+
+function minAppCSS() {
+    return gulp.src('build/assets/app.min.css')
+        .pipe(cleanCSS())
+        .pipe(gulp.dest('build/assets'));
+}
+
+function minAppJS() {
+    return gulp.src('build/assets/app.min.js')
         .pipe(uglify())
+        .pipe(gulp.dest('build/assets'));
+}
+
+function revManifest() {
+    var files = [
+        'build/assets/app.min.css',
+        'build/assets/app.min.js'
+    ];
+
+    return gulp.src(files)
         .pipe(rev())
         .pipe(gulp.dest('build/assets'))
         .pipe(rev.manifest('build/rev-manifest.json', {
@@ -132,8 +155,15 @@ function envDev() {
 
 // VARS
 
-var all = gulp.series(
-    clean,
+var start = gulp.series(
+    cleanBefore
+);
+
+var end = gulp.series(
+    cleanAfter
+);
+
+var allFirst = gulp.series(
     gulp.parallel(
         copyToBuild,
         plugins,
@@ -142,18 +172,42 @@ var all = gulp.series(
     ),
     lemurro,
     appCSS,
-    appJS,
+    appJS
+);
+
+var allSecond = gulp.series(
+    revManifest,
     pagesHTML,
     indexHTML
 );
 
 // TASKS
 
-gulp.task('build', gulp.series(all, envProd));
+gulp.task('build', gulp.series(
+    start,
+    allFirst,
+    gulp.parallel(
+        minAppCSS,
+        minAppJS
+    ),
+    allSecond,
+    envProd,
+    end
+));
 
-gulp.task('build-dev', gulp.series(all, envDev));
+gulp.task('build-dev', gulp.series(
+    start,
+    allFirst,
+    allSecond,
+    envDev,
+    end
+));
 
 gulp.task('watcher', gulp.series(
     'build-dev',
-    gulp.parallel(watcherCSS, watcherJS, watcherHTML)
+    gulp.parallel(
+        watcherCSS,
+        watcherJS,
+        watcherHTML
+    )
 ));
