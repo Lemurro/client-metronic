@@ -13,31 +13,53 @@ var pathsPlugins = [];
 
 // CLEAN
 
-function cleanBefore() {
+function cleanBuild() {
     return del('build/**', {force: true});
 }
 
-function cleanAfter() {
-    var files = [
-        'build/assets/app.min.css',
-        'build/assets/app.min.js'
-    ];
+function cleanAppCSS() {
+    return del('build/assets/app-*.min.css');
+}
 
-    return del(files, {force: true});
+function cleanAppJS() {
+    return del('build/assets/app-*.min.js');
+}
+
+function cleanAppMinCSS() {
+    return del('build/assets/app.min.css');
+}
+
+function cleanAppMinJS() {
+    return del('build/assets/app.min.js');
 }
 
 // WATCHER
 
 function watcherCSS() {
-    return gulp.watch('src/css/*.css', gulp.series(appCSS, indexHTML));
+    return gulp.watch('src/css/*.css', gulp.series(
+        cleanAppCSS,
+        appCSS,
+        revManifestAppCSS,
+        cleanAppMinCSS,
+        indexHTML
+    ));
 }
 
 function watcherJS() {
-    return gulp.watch('src/js/**/*.js', gulp.series(appJS, indexHTML));
+    return gulp.watch('src/js/**/*.js', gulp.series(
+        cleanAppJS,
+        appJS,
+        revManifestAppJS,
+        cleanAppMinJS,
+        indexHTML
+    ));
 }
 
 function watcherHTML() {
-    return gulp.watch('src/html/**/*.html', gulp.parallel(pagesHTML, indexHTML));
+    return gulp.watch('src/html/**/*.html', gulp.parallel(
+        pagesHTML,
+        indexHTML
+    ));
 }
 
 // APP
@@ -108,13 +130,19 @@ function minAppJS() {
         .pipe(gulp.dest('build/assets'));
 }
 
-function revManifest() {
-    var files = [
-        'build/assets/app.min.css',
-        'build/assets/app.min.js'
-    ];
+function revManifestAppCSS() {
+    return gulp.src('build/assets/app.min.css')
+        .pipe(rev())
+        .pipe(gulp.dest('build/assets'))
+        .pipe(rev.manifest('build/rev-manifest.json', {
+            base : 'build/assets',
+            merge: true
+        }))
+        .pipe(gulp.dest('build/assets'));
+}
 
-    return gulp.src(files)
+function revManifestAppJS() {
+    return gulp.src('build/assets/app.min.js')
         .pipe(rev())
         .pipe(gulp.dest('build/assets'))
         .pipe(rev.manifest('build/rev-manifest.json', {
@@ -155,14 +183,6 @@ function envDev() {
 
 // VARS
 
-var start = gulp.series(
-    cleanBefore
-);
-
-var end = gulp.series(
-    cleanAfter
-);
-
 var allFirst = gulp.series(
     gulp.parallel(
         copyToBuild,
@@ -176,7 +196,10 @@ var allFirst = gulp.series(
 );
 
 var allSecond = gulp.series(
-    revManifest,
+    revManifestAppCSS,
+    revManifestAppJS,
+    cleanAppMinCSS,
+    cleanAppMinJS,
     pagesHTML,
     indexHTML
 );
@@ -184,23 +207,21 @@ var allSecond = gulp.series(
 // TASKS
 
 gulp.task('build', gulp.series(
-    start,
+    cleanBuild,
     allFirst,
     gulp.parallel(
         minAppCSS,
         minAppJS
     ),
     allSecond,
-    envProd,
-    end
+    envProd
 ));
 
 gulp.task('build-dev', gulp.series(
-    start,
+    cleanBuild,
     allFirst,
     allSecond,
-    envDev,
-    end
+    envDev
 ));
 
 gulp.task('watcher', gulp.series(
