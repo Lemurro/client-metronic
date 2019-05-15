@@ -1,7 +1,7 @@
 /**
  * Инициализация загрузки файлов
  *
- * @version 08.01.2019
+ * @version 15.05.2019
  * @author  Дмитрий Щербаков <atomcms@ya.ru>
  */
 example._initFile = function () {
@@ -11,7 +11,7 @@ example._initFile = function () {
 
     // Вешаем загрузчик на кнопку
     var btn      = $('#js-files__upload');
-    var callback = function (fileID, fileAction, fileName) {
+    var callback = function (fileID, fileAction, fileName, btn) {
         $('#js-files__box').append(example._templates.file({
             id    : fileID,
             action: fileAction,
