@@ -10,13 +10,13 @@ example._initFile = function () {
     lemurro.file.init(classFile);
 
     // Вешаем загрузчик на кнопку
-    var btn      = $('#js-files__upload');
-    var callback = function (fileID, fileAction, fileName, btn) {
+    var btn        = $('#js-files__upload');
+    var onComplete = function (fileID, fileAction, fileName, btn) {
         $('#js-files__box').append(example._templates.file({
             id    : fileID,
             action: fileAction,
             name  : fileName
         }));
     };
-    lemurro.file.bindUpload(btn, callback);
+    lemurro.file.bindUpload(btn, onComplete);
 };
