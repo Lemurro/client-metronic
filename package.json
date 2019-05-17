@@ -14,6 +14,6 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "~5.4.2",
-    "lemurro-client-metronic-core-frontend": "~1.4.2"
+    "lemurro-client-metronic-core-frontend": "~1.5.0"
   }
 }
