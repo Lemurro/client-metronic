@@ -20,6 +20,7 @@
                                         </a>
                                     </li>
                                     {{#js_if "this.id !== '1'"}}
+                                    {{#unless locked}}
                                     <li class="m-nav__item js-login-by-user">
                                         <a href="javascript:lemurro.users.loginByUser('{{id}}');" class="btn m-btn--icon">
                                             <span>
@@ -27,6 +28,24 @@
                                                 <span>Войти</span>
                                             </span>
                                         </a>
+                                    </li>
+                                    {{/unless}}
+                                    <li class="m-nav__item">
+                                        {{#if locked}}
+                                        <a href="javascript:lemurro.users.unlock('{{id}}');" class="btn m-btn--icon">
+                                            <span>
+                                                <i class="fas fa-fw fa-unlock"></i>
+                                                <span>Разблокировать</span>
+                                            </span>
+                                        </a>
+                                        {{else}}
+                                        <a href="javascript:lemurro.users.lock('{{id}}');" class="btn m-btn--icon">
+                                            <span>
+                                                <i class="fas fa-fw fa-lock"></i>
+                                                <span>Заблокировать</span>
+                                            </span>
+                                        </a>
+                                        {{/if}}
                                     </li>
                                     <li class="m-nav__item">
                                         <a href="javascript:users.remove('{{id}}');" class="btn m-btn--icon text-danger">
@@ -42,6 +61,14 @@
                                             <span>
                                                 <i class="fas fa-fw fa-sign-in-alt"></i>
                                                 <span>Войти</span>
+                                            </span>
+                                        </span>
+                                    </li>
+                                    <li class="m-nav__item">
+                                        <span class="btn m-btn--icon disabled">
+                                            <span>
+                                                <i class="fas fa-fw fa-lock"></i>
+                                                <span>Заблокировать</span>
                                             </span>
                                         </span>
                                     </li>
@@ -66,6 +93,9 @@
         </td>
         <td class="align-middle text-nowrap">
             <span class="auth_id">{{auth_id}}</span>
+            {{#if locked}}
+            <i class="fas fa-fw fa-lock text-warning" title="Пользователь заблокирован"></i>
+            {{/if}}
         </td>
         <td class="align-middle">
             {{last_name}} {{first_name}} {{second_name}}
