@@ -1,0 +1,66 @@
+<button type="button" id="js-access-sets__button-add" class="btn btn-primary m-btn--icon" onclick="lemurro.accessSets.showInsertForm()">
+    <span>
+        <i class="fas fa-plus"></i>
+        <span>Добавить</span>
+    </span>
+</button>
+
+<form id="js-access-sets-form" class="hidden" data-id="0">
+    <div class="m-alert m-alert--outline alert alert-info fade show m--padding-20" role="alert">
+        <h5 class="js-title m--margin-bottom-20">
+            Добавление набора
+        </h5>
+        <div class="form-group m-form__group">
+            <label>Имя набора</label>
+            <input type="text" name="name" title="Имя набора" class="form-control m-input" required>
+        </div>
+        <div class="form-group m-form__group">
+            <label>Права доступа</label>
+            <table id="js-access-sets__roles" class="table table-hover">
+                <!-- Сюда будет загружен список всех ролей из формы добавления пользователя -->
+            </table>
+        </div>
+        <div>
+            <button type="button" id="js-access-sets__button-insert" class="btn btn-primary m-btn--icon" onclick="lemurro.accessSets.insert()">
+                <span>
+                    <i class="fas fa-plus"></i>
+                    <span>Добавить</span>
+                </span>
+            </button>
+            <button type="button" id="js-access-sets__button-save" class="btn btn-success m-btn--icon" onclick="lemurro.accessSets.save()">
+                <span>
+                    <i class="fas fa-save"></i>
+                    <span>Сохранить</span>
+                </span>
+            </button>
+            &nbsp;
+            <button type="button" class="btn btn-secondary" onclick="lemurro.accessSets.closeForm()">
+                Закрыть
+            </button>
+        </div>
+    </div>
+</form>
+
+<table id="js-access-sets__table" class="table table-hover m--margin-top-20">
+    <thead>
+        <tr>
+            <th class="w1">
+                &nbsp;
+            </th>
+            <th class="w1">
+                #
+            </th>
+            <th>
+                Имя набора
+            </th>
+            <th>
+                Права доступа
+            </th>
+        </tr>
+    </thead>
+    <!-- Динамический контент -->
+    <tbody id="js-access-sets__items"></tbody>
+</table>
+
+<!-- include "users/tpl_access_sets__item.html" -->
+<!-- include "users/tpl_access_sets__roles.html" -->
