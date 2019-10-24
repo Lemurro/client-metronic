@@ -1,8 +1,8 @@
 /**
  * Настройки
  *
- * @version 05.06.2019
  * @author  Дмитрий Щербаков <atomcms@ya.ru>
+ * @version 24.10.2019
  */
 app.config = {
     // Название приложения
@@ -11,6 +11,7 @@ app.config = {
     // Вид аутентификации
     //   email: по электронной почте (код через email)
     //   phone: по номеру телефона (код через смс)
+    //   mixed: смешанная аутентификация (в поле auth_id может быть email или номер телефона)
     auth: {
         type   : 'email',
         strings: {
@@ -32,6 +33,16 @@ app.config = {
                 checkForm: {
                     inputLabel   : 'Код из смс',
                     repeatMessage: 'Не пришло смс?'
+                }
+            },
+            mixed: {
+                getForm  : {
+                    inputLabel: 'Логин',
+                    inputClass: ''
+                },
+                checkForm: {
+                    inputLabel   : 'Код для входа',
+                    repeatMessage: 'Не пришёл код?'
                 }
             }
         }
