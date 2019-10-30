@@ -1,90 +1,53 @@
 <script id="js-tpl-user__item" type="text/template7">
     <tr data-item-id="{{id}}">
         <td>
-            <div class="m-dropdown m-dropdown--up m-dropdown--inline m-dropdown--arrow m-dropdown--align-left m-dropdown--align-push" m-dropdown-toggle="click" aria-expanded="true">
-                <a href="#" class="m-portlet__nav-link m-dropdown__toggle btn btn-secondary m-btn m-btn--icon">
+            <div class="btn-group dropup">
+                <button type="button" class="btn btn-sm btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fas fa-ellipsis-h"></i>
-                </a>
-                <div class="m-dropdown__wrapper">
-                    <div class="m-dropdown__inner">
-                        <div class="m-dropdown__body">
-                            <div class="m-dropdown__content">
-                                <ul class="m-nav">
-                                    <li class="m-nav__item">
-                                        <a href="javascript:users.edit('{{id}}');" class="btn m-btn--icon">
-                                            <span>
-                                                <i class="fas fa-fw fa-pencil-alt"></i>
-                                                <span>Редактировать</span>
-                                            </span>
-                                        </a>
-                                    </li>
-                                    {{#js_if "this.id !== '1'"}}
-                                    {{#unless locked}}
-                                    <li class="m-nav__item js-login-by-user">
-                                        <a href="javascript:lemurro.users.loginByUser('{{id}}');" class="btn m-btn--icon">
-                                            <span>
-                                                <i class="fas fa-fw fa-sign-in-alt"></i>
-                                                <span>Войти</span>
-                                            </span>
-                                        </a>
-                                    </li>
-                                    {{/unless}}
-                                    <li class="m-nav__item">
-                                        {{#if locked}}
-                                        <a href="javascript:lemurro.users.unlock('{{id}}');" class="btn m-btn--icon">
-                                            <span>
-                                                <i class="fas fa-fw fa-unlock"></i>
-                                                <span>Разблокировать</span>
-                                            </span>
-                                        </a>
-                                        {{else}}
-                                        <a href="javascript:lemurro.users.lock('{{id}}');" class="btn m-btn--icon">
-                                            <span>
-                                                <i class="fas fa-fw fa-lock"></i>
-                                                <span>Заблокировать</span>
-                                            </span>
-                                        </a>
-                                        {{/if}}
-                                    </li>
-                                    <li class="m-nav__item">
-                                        <a href="javascript:users.remove('{{id}}');" class="btn m-btn--icon text-danger">
-                                            <span>
-                                                <i class="far fa-fw fa-trash-alt"></i>
-                                                <span>Удалить</span>
-                                            </span>
-                                        </a>
-                                    </li>
-                                    {{else}}
-                                    <li class="m-nav__item">
-                                        <span class="btn m-btn--icon disabled">
-                                            <span>
-                                                <i class="fas fa-fw fa-sign-in-alt"></i>
-                                                <span>Войти</span>
-                                            </span>
-                                        </span>
-                                    </li>
-                                    <li class="m-nav__item">
-                                        <span class="btn m-btn--icon disabled">
-                                            <span>
-                                                <i class="fas fa-fw fa-lock"></i>
-                                                <span>Заблокировать</span>
-                                            </span>
-                                        </span>
-                                    </li>
-                                    <li class="m-nav__item">
-                                        <span class="btn m-btn--icon disabled">
-                                            <span>
-                                                <i class="far fa-fw fa-trash-alt"></i>
-                                                <span>Удалить</span>
-                                            </span>
-                                        </span>
-                                    </li>
-                                    {{/js_if}}
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <span class="m-dropdown__arrow m-dropdown__arrow--left m-dropdown__arrow--adjust"></span>
+                </button>
+                <div class="dropdown-menu" x-placement="top-start">
+                    <a href="javascript:users.edit('{{id}}');" class="dropdown-item text-primary">
+                        <i class="fas fa-fw fa-pencil-alt"></i>
+                        Редактировать
+                    </a>
+                    {{#js_if "this.id !== '1'"}}
+                    {{#unless locked}}
+                    <a href="javascript:lemurro.users.loginByUser('{{id}}');" class="dropdown-item text-primary js-login-by-user">
+                        <i class="fas fa-fw fa-sign-in-alt"></i>
+                        Войти
+                    </a>
+                    {{/unless}}
+                    {{#if locked}}
+                    <a href="javascript:lemurro.users.unlock('{{id}}');" class="dropdown-item text-primary">
+                        <i class="fas fa-fw fa-unlock"></i>
+                        Разблокировать
+                    </a>
+                    {{else}}
+                    <a href="javascript:lemurro.users.lock('{{id}}');" class="dropdown-item text-primary">
+                        <i class="fas fa-fw fa-lock"></i>
+                        Заблокировать
+                    </a>
+                    {{/if}}
+                    <div class="dropdown-divider"></div>
+                    <a href="javascript:users.remove('{{id}}');" class="dropdown-item text-danger">
+                        <i class="far fa-fw fa-trash-alt"></i>
+                        Удалить
+                    </a>
+                    {{else}}
+                    <a href="javascript:;" class="dropdown-item disabled">
+                        <i class="fas fa-fw fa-sign-in-alt"></i>
+                        Войти
+                    </a>
+                    <a href="javascript:;" class="dropdown-item disabled">
+                        <i class="fas fa-fw fa-lock"></i>
+                        Заблокировать
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="javascript:;" class="dropdown-item disabled">
+                        <i class="far fa-fw fa-trash-alt"></i>
+                        Удалить
+                    </a>
+                    {{/js_if}}
                 </div>
             </div>
         </td>
