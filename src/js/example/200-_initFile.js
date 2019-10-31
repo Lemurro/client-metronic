@@ -1,8 +1,8 @@
 /**
  * Инициализация загрузки файлов
  *
- * @version 15.05.2019
  * @author  Дмитрий Щербаков <atomcms@ya.ru>
+ * @version 31.10.2019
  */
 example._initFile = function () {
     // Подключаем плагин загрузки файлов
@@ -17,6 +17,8 @@ example._initFile = function () {
             action: fileAction,
             name  : fileName
         }));
+
+        swal('Выполнено', 'Файл <strong>' + fileName + '</strong>' + ' успешно загружен', 'success');
     };
     lemurro.file.bindUpload(btn, onComplete);
 };
