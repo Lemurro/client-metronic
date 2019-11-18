@@ -1,8 +1,8 @@
 /**
  * Добавление записи
  *
- * @version 21.02.2019
  * @author  Дмитрий Щербаков <atomcms@ya.ru>
+ * @version 01.11.2019
  */
 example.insert = function () {
     var data = example._collectData();
@@ -16,7 +16,11 @@ example.insert = function () {
             if (result.hasOwnProperty('errors')) {
                 lemurro.showErrors(result.errors);
             } else {
-                $('#js-example__items').append(example._getNewRecord(data, result.data));
+                var container = $('#js-example__items');
+                container.prepend(example._getNewRecord(data, result.data));
+
+                var row = container.find('tr[data-id="' + result.data.id + '"]');
+                lemurro.helper.initBootstrapConfirmation(row, null);
 
                 lemurro.tabs.tabInsertEdit('hide');
 
