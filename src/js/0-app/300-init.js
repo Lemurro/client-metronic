@@ -3,9 +3,11 @@
  *
  * @param {function} callback Функция которая запускает страницу, выбранную маршрутизатором
  *
- * @version 09.05.2019
  * @author  Дмитрий Щербаков <atomcms@ya.ru>
+ * @version 21.01.2020
  */
 app.init = function (callback) {
-    callback();
+    if (typeof callback === 'function') {
+        callback();
+    }
 };
