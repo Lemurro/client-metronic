@@ -18,12 +18,12 @@
                     </a>
                     {{/unless}}
                     {{#if locked}}
-                    <a href="javascript:lemurro.users.unlock('{{id}}');" class="dropdown-item text-primary" data-toggle="confirmation">
+                    <a href="javascript:users.unlock('{{id}}');" class="dropdown-item text-primary" data-toggle="confirmation">
                         <i class="fas fa-fw fa-unlock"></i>
                         Разблокировать
                     </a>
                     {{else}}
-                    <a href="javascript:lemurro.users.lock('{{id}}');" class="dropdown-item text-primary" data-toggle="confirmation">
+                    <a href="javascript:users.lock('{{id}}');" class="dropdown-item text-primary" data-toggle="confirmation">
                         <i class="fas fa-fw fa-lock"></i>
                         Заблокировать
                     </a>
