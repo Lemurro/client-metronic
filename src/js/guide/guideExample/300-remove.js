@@ -3,22 +3,12 @@
  *
  * @param {integer} id ИД записи
  *
- * @version 26.10.2018
  * @author  Дмитрий Щербаков <atomcms@ya.ru>
+ *
+ * @version 17.04.2020
  */
 guideExample.remove = function (id) {
     var name = $('#js-guide__items').find('tr[data-item-id="' + id + '"] .name').text();
 
-    lemurro.guide.remove(id, name, function (result) {
-        var container = $('#js-guide__items');
-
-        container.find('tr[data-item-id="' + result.data.id + '"]').remove();
-
-        if (container.find('tr').length === 0) {
-            $('#js-guide__empty').show();
-            $('#js-guide__list').hide();
-        }
-
-        swal('Выполнено', 'Запись успешно удалена', 'success');
-    });
+    lemurro.guide.remove(id, name, null);
 };
