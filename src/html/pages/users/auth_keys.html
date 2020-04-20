@@ -1,0 +1,26 @@
+<button type="button" class="btn btn-primary m-btn--icon" onclick="lemurro.authKeys.getData()">
+    <span>
+        <i class="fas fa-eye"></i>
+        <span>Показать ключи</span>
+    </span>
+</button>
+
+<table class="table table-hover m--margin-top-20">
+    <thead>
+        <tr>
+            <th class="w1 text-nowrap">
+                Ключ доступа
+            </th>
+            <th class="w1 text-nowrap">
+                ID пользователя
+            </th>
+            <th>
+                Логин пользователя
+            </th>
+        </tr>
+    </thead>
+    <!-- Динамический контент -->
+    <tbody id="js-auth-keys__items"></tbody>
+</table>
+
+<!-- include "users/tpl_auth_keys__items.html" -->
