@@ -1,0 +1,35 @@
+<script id="js-tpl-profile__info" type="text/template">
+    <div class="text-center">
+        <h3>
+            {{last_name}}
+        </h3>
+        <h5>
+            {{first_name}} {{second_name}}
+        </h5>
+
+        {{#if admin}}
+        <span class="m-badge m-badge--brand m-badge--wide m--margin-top-5">
+            Администратор
+        </span>
+        {{/if}}
+    </div>
+
+    <table class="table table-hover m--margin-top-10">
+        <tr>
+            <th class="w1 text-nowrap">
+                Идентификатор:
+            </th>
+            <th>
+                {{user_id}}
+            </th>
+        </tr>
+        <tr>
+            <th class="w1 text-nowrap">
+                Логин:
+            </th>
+            <th>
+                {{auth_id}}
+            </th>
+        </tr>
+    </table>
+</script>

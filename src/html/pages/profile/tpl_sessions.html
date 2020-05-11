@@ -1,0 +1,19 @@
+<script id="js-tpl-profile__sessions" type="text/template">
+    {{#each this}}
+    <div class="row" data-id="{{session}}">
+        <div class="col-8">
+            <strong>{{device_platform}}{{#js_if "notEmpty(this.geo)"}} • {{geo}}{{/js_if}}</strong><br>
+            {{datetime}}
+            {{#js_if "notEmpty(this.device_manufacturer) || notEmpty(this.device_model)"}} • {{device_manufacturer}} {{device_model}}{{/js_if}}
+            {{#js_if "@global.sessionID === this.session"}}<span class="m-badge m-badge--brand m-badge--wide">Активный сеанс</span>{{/js_if}}
+        </div>
+        <div class="col-4 text-right">
+            {{#js_if "@global.sessionID !== this.session"}}
+            <a href="javascript:lemurro.profile.resetSession('{{session}}');" class="btn btn-sm btn-danger" data-toggle="confirmation">
+                Завершить сеанс
+            </a>
+            {{/js_if}}
+        </div>
+    </div>
+    {{/each}}
+</script>
