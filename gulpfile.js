@@ -1,15 +1,15 @@
-var gulp       = require('gulp');             // Сам Gulp JS
-var cleanCSS   = require('gulp-clean-css');   // Минификация CSS
-var concat     = require('gulp-concat');      // Склейка css и js файлов
-var rename     = require('gulp-rename');      // Переименование файлов
-var rev        = require('gulp-rev');         // Версионность файлов
-var revRewrite = require('gulp-rev-rewrite'); // Внедрение ссылок на css и js файлы в index.html
-var sort       = require('gulp-sort');        // Сортировка списка файлов
-var uglify     = require('gulp-uglify');      // Минификация JS
-var includer   = require('gulp-x-includer');  // Склейка html файлов
-var del        = require('del');              // Удаление файлов
+const gulp        = require('gulp');              // Сам Gulp JS
+const cleanCSS    = require('gulp-clean-css');    // Минификация CSS
+const concat      = require('gulp-concat');       // Склейка css и js файлов
+const rename      = require('gulp-rename');       // Переименование файлов
+const rev         = require('gulp-rev');          // Версионность файлов
+const revRewrite  = require('gulp-rev-rewrite');  // Внедрение ссылок на css и js файлы в index.html
+const sort        = require('gulp-sort');         // Сортировка списка файлов
+const uglify      = require('gulp-uglify');       // Минификация JS
+const includer    = require('gulp-x-includer');   // Склейка html файлов
+const del         = require('del');               // Удаление файлов
 
-var pathsPlugins = [];
+const pathsPlugins = [];
 
 // CLEAN
 
@@ -89,7 +89,7 @@ function fontawesomeWebfonts() {
 }
 
 function lemurro() {
-    var files = [
+    const files = [
         'node_modules/lemurro-client-metronic-core-frontend/dist/lemurro.min.css',
         'node_modules/lemurro-client-metronic-core-frontend/dist/lemurro.min.js'
     ];
@@ -159,7 +159,7 @@ function pagesHTML() {
 }
 
 function indexHTML() {
-    var manifest = gulp.src('build/rev-manifest.json');
+    const manifest = gulp.src('build/rev-manifest.json');
 
     return gulp.src('src/html/index.html')
         .pipe(includer())
@@ -183,7 +183,7 @@ function envDev() {
 
 // VARS
 
-var allFirst = gulp.series(
+const allFirst = gulp.series(
     gulp.parallel(
         copyToBuild,
         plugins,
@@ -195,7 +195,7 @@ var allFirst = gulp.series(
     appJS
 );
 
-var allSecond = gulp.series(
+const allSecond = gulp.series(
     revManifestAppCSS,
     revManifestAppJS,
     cleanAppMinCSS,
