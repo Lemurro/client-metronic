@@ -1,12 +1,12 @@
 const gulp        = require('gulp');              // Сам Gulp JS
 const cleanCSS    = require('gulp-clean-css');    // Минификация CSS
 const concat      = require('gulp-concat');       // Склейка css и js файлов
+const fileinclude = require('gulp-file-include'); // Склейка html файлов
 const rename      = require('gulp-rename');       // Переименование файлов
 const rev         = require('gulp-rev');          // Версионность файлов
 const revRewrite  = require('gulp-rev-rewrite');  // Внедрение ссылок на css и js файлы в index.html
 const sort        = require('gulp-sort');         // Сортировка списка файлов
 const uglify      = require('gulp-uglify');       // Минификация JS
-const includer    = require('gulp-x-includer');   // Склейка html файлов
 const del         = require('del');               // Удаление файлов
 
 const pathsPlugins = [];
@@ -153,19 +153,35 @@ function revManifestAppJS() {
 }
 
 function pagesHTML() {
-    return gulp.src('src/html/pages/*.html')
-        .pipe(includer())
+    return gulp
+        .src('src/html/pages/*.html')
+        .pipe(
+            fileinclude({
+                prefix: '<!-- ',
+                suffix: ' -->',
+                basepath: './src/html',
+            })
+        )
         .pipe(gulp.dest('build'));
 }
 
 function indexHTML() {
     const manifest = gulp.src('build/rev-manifest.json');
 
-    return gulp.src('src/html/index.html')
-        .pipe(includer())
-        .pipe(revRewrite({
-            manifest: manifest
-        }))
+    return gulp
+        .src('src/html/index.html')
+        .pipe(
+            fileinclude({
+                prefix: '<!-- ',
+                suffix: ' -->',
+                basepath: './src/html',
+            })
+        )
+        .pipe(
+            revRewrite({
+                manifest: manifest,
+            })
+        )
         .pipe(gulp.dest('build'));
 }
 
