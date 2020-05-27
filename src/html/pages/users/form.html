@@ -2,54 +2,89 @@
     <h5 class="js-title m--margin-bottom-20">
         Добавление пользователя
     </h5>
-    <div class="form-group m-form__group">
-        <label>Идентификатор для входа</label>
-        <input type="text" name="auth_id" title="Идентификатор для входа" class="form-control m-input js-user-id-1" required>
-    </div>
-    <div class="row">
-        <div class="col-4">
+
+    <div class="m-portlet m-portlet--info m-portlet--head-solid-bg m-portlet--bordered">
+        <div class="m-portlet__head">
+            <div class="m-portlet__head-caption">
+                <div class="m-portlet__head-title">
+                    <span class="m-portlet__head-icon">
+                        <i class="fas fa-lock"></i>
+                    </span>
+                    <h3 class="m-portlet__head-text">
+                        Системные данные
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <div class="m-portlet__body">
             <div class="form-group m-form__group">
-                <label>Фамилия</label>
-                <input type="text" name="last_name" title="Фамилия" class="form-control m-input js-user-id-1" required>
+                <label>Идентификатор для входа</label>
+                <input type="text" name="auth_id" title="Идентификатор для входа" class="form-control m-input js-user-id-1" required>
             </div>
-        </div>
-        <div class="col-4">
-            <div class="form-group m-form__group">
-                <label>Имя</label>
-                <input type="text" name="first_name" title="Имя" class="form-control m-input js-user-id-1" required>
-            </div>
-        </div>
-        <div class="col-4">
-            <div class="form-group m-form__group">
-                <label>Отчество</label>
-                <input type="text" name="second_name" title="Отчество" class="form-control m-input js-user-id-1">
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-8">
-            <label>Права доступа</label>
-            <div class="m-checkbox-inline m--margin-left-10 m--margin-top-10">
-                <label class="m-checkbox">
-                    <input type="checkbox" class="js-role js-user-id-1" data-role="admin"> Администратор
-                    <span></span>
-                </label>
-            </div>
-        </div>
-        <div class="col-4">
-            <div id="js-user__access-sets" class="hidden">
-                <label>Применить набор прав доступа</label>
-                <select class="form-control m-input" onchange="lemurro.accessSets.apply()">
-                    <!-- Сюда будет загружен список наборов прав доступа -->
-                </select>
+            <div class="row">
+                <div class="col-4">
+                    <div class="form-group m-form__group">
+                        <label>Фамилия</label>
+                        <input type="text" name="last_name" title="Фамилия" class="form-control m-input js-user-id-1" required>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="form-group m-form__group">
+                        <label>Имя</label>
+                        <input type="text" name="first_name" title="Имя" class="form-control m-input js-user-id-1" required>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="form-group m-form__group">
+                        <label>Отчество</label>
+                        <input type="text" name="second_name" title="Отчество" class="form-control m-input js-user-id-1">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="form-group m-form__group">
-        <table id="js-user__roles" class="table table-hover">
-            <!-- Сюда будет загружен список всех ролей из настроек -->
-        </table>
+
+    <div class="m-portlet m-portlet--info m-portlet--head-solid-bg m-portlet--bordered">
+        <div class="m-portlet__head">
+            <div class="m-portlet__head-caption">
+                <div class="m-portlet__head-title">
+                    <span class="m-portlet__head-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </span>
+                    <h3 class="m-portlet__head-text">
+                        Права доступа
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <div class="m-portlet__body">
+            <div class="row">
+                <div class="col-8">
+                    <label>Основные роли</label>
+                    <div class="m-checkbox-inline">
+                        <label class="m-checkbox">
+                            <input type="checkbox" class="js-role js-user-id-1" data-role="admin"> Администратор
+                            <span></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div id="js-user__access-sets" class="hidden">
+                        <label>Применить набор прав доступа</label>
+                        <select class="form-control form-control-sm m-input" onchange="lemurro.accessSets.apply()">
+                            <!-- Сюда будет загружен список наборов прав доступа -->
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <table id="js-user__roles" class="table table-hover">
+                    <!-- Сюда будет загружен список всех ролей из настроек -->
+                </table>
+            </div>
+        </div>
     </div>
+
     <div>
         <button type="button" id="js-user__button-insert" class="btn btn-primary m-btn--icon" onclick="users.insert()">
             <span>
