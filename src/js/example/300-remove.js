@@ -4,13 +4,14 @@
  * @param {integer} id ИД записи
  *
  * @author  Дмитрий Щербаков <atomcms@ya.ru>
- * @version 01.11.2019
+ *
+ * @version 19.06.2020
  */
 example.remove = function (id) {
     lemurro.lightajax.post(true, pathServerAPI + 'example/' + id + '/remove', {}, function (result) {
         lemurro.lightajax.preloader('hide');
 
-        if (result.hasOwnProperty('errors')) {
+        if (lemurro.hasErrors(result)) {
             lemurro.showErrors(result.errors);
         } else {
             var container = $('#js-example__items');

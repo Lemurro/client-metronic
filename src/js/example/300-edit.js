@@ -3,17 +3,18 @@
  *
  * @param {integer} id ИД записи
  *
- * @version 21.02.2019
  * @author  Дмитрий Щербаков <atomcms@ya.ru>
+ *
+ * @version 19.06.2020
  */
 example.edit = function (id) {
     lemurro.lightajax.get(true, pathServerAPI + 'example/' + id, {}, function (result) {
         lemurro.lightajax.preloader('hide');
 
-        if (result.hasOwnProperty('errors')) {
+        if (lemurro.hasErrors(result)) {
             lemurro.showErrors(result.errors);
         } else {
-            var form     = $('#js-example-form');
+            var form = $('#js-example-form');
             var filesBox = $('#js-files__box');
 
             form.attr('data-id', id);
@@ -27,11 +28,13 @@ example.edit = function (id) {
                 if (result.data.files.hasOwnProperty(i)) {
                     var file = result.data.files[i];
 
-                    filesBox.append(example._templates.file({
-                        id    : file.id,
-                        action: 'exist',
-                        name  : file.name + '.' + file.ext
-                    }));
+                    filesBox.append(
+                        example._templates.file({
+                            id: file.id,
+                            action: 'exist',
+                            name: file.name + '.' + file.ext,
+                        })
+                    );
                 }
             }
 
