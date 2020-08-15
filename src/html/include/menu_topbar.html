@@ -1,114 +1,54 @@
-<div class="m-stack__item m-stack__item--right m-header-head" id="m_header_nav">
-    <div id="m_header_topbar" class="m-topbar  m-stack m-stack--ver m-stack--general">
-        <div class="m-stack__item m-topbar__nav-wrapper">
-            <ul class="m-topbar__nav m-nav m-nav--inline">
-                <li class="d-none js-role js-role__admin m-nav__item m-topbar__user-profile m-dropdown m-dropdown--arrow m-dropdown--align-right m-dropdown--mobile-full-width m-dropdown--skin-light" m-dropdown-toggle="click">
-                    <a href="#" class="m-nav__link m-dropdown__toggle">
-                        <span class="m-topbar__username">
-                            <span class="text-muted">
-                                <i class="fas fa-cogs"></i>
-                            </span>
-                        </span>
-                        <span class="m-topbar__welcome">
-                            <i class="fas fa-angle-down"></i>
-                        </span>
-                    </a>
-                    <div class="m-dropdown__wrapper">
-                        <span class="m-dropdown__arrow m-dropdown__arrow--right m-dropdown__arrow--adjust"></span>
-                        <div class="m-dropdown__inner">
-                            <div class="m-dropdown__body">
-                                <div class="m-dropdown__content">
-                                    <ul class="m-nav m-nav--skin-light">
-                                        <li class="m-nav__item">
-                                            <a href="/guide/example" data-navigo class="m-nav__link">
-                                                <i class="m-nav__link-icon fas fa-fw fa-book-open"></i>
-                                                <span class="m-nav__link-title">
-                                                    <span class="m-nav__link-wrap">
-                                                        <span class="m-nav__link-text">
-                                                            Справочники
-                                                        </span>
-                                                    </span>
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li class="m-nav__item">
-                                            <a href="/users" data-navigo class="m-nav__link">
-                                                <i class="m-nav__link-icon fas fa-fw fa-users"></i>
-                                                <span class="m-nav__link-title">
-                                                    <span class="m-nav__link-wrap">
-                                                        <span class="m-nav__link-text">
-                                                            Пользователи
-                                                        </span>
-                                                    </span>
-                                                </span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="m-nav__item m-topbar__user-profile m-dropdown m-dropdown--arrow m-dropdown--align-right m-dropdown--mobile-full-width m-dropdown--skin-light" m-dropdown-toggle="click">
-                    <a href="#" class="m-nav__link m-dropdown__toggle">
-                        <span class="m-topbar__username">
-                            <span class="js-user-data js-user__auth-id">
-                                <i class="fas fa-spinner fa-pulse"></i>
-                            </span>
-                        </span>
-                        <span class="m-topbar__welcome">
-                            <i class="fas fa-angle-down"></i>
-                        </span>
-                    </a>
-                    <div class="m-dropdown__wrapper">
-                        <span class="m-dropdown__arrow m-dropdown__arrow--right m-dropdown__arrow--adjust"></span>
-                        <div class="m-dropdown__inner">
-                            <div class="m-dropdown__body">
-                                <div class="m-dropdown__content">
-                                    <ul class="m-nav m-nav--skin-light">
-                                        <li id="js-user-return" class="m-nav__item d-none">
-                                            <a href="javascript:lemurro.users.return();" class="m-nav__link">
-                                                <i class="m-nav__link-icon fas fa-fw fa-undo-alt"></i>
-                                                <span class="m-nav__link-title">
-                                                    <span class="m-nav__link-wrap">
-                                                        <span class="m-nav__link-text">
-                                                            Вернуться
-                                                        </span>
-                                                    </span>
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li class="m-nav__item">
-                                            <a href="/profile" data-navigo class="m-nav__link">
-                                                <i class="m-nav__link-icon fas fa-fw fa-user-circle"></i>
-                                                <span class="m-nav__link-title">
-                                                    <span class="m-nav__link-wrap">
-                                                        <span class="m-nav__link-text">
-                                                            Мой профиль
-                                                        </span>
-                                                    </span>
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li class="m-nav__item">
-                                            <a href="javascript:lemurro.auth.logout();" class="m-nav__link">
-                                                <i class="m-nav__link-icon fas fa-fw fa-power-off"></i>
-                                                <span class="m-nav__link-title">
-                                                    <span class="m-nav__link-wrap">
-                                                        <span class="m-nav__link-text">
-                                                            Выход
-                                                        </span>
-                                                    </span>
-                                                </span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-            </ul>
+<!--begin::Topbar-->
+<div class="topbar">
+    <!--begin::Settings-->
+    <div class="topbar-item ml-3 d-none js-role js-role__admin">
+        <div class="btn-group dropleft">
+            <button
+                class="btn btn-light dropdown-toggle"
+                type="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+            >
+                <i class="fas fa-cogs"></i>
+            </button>
+            <div class="dropdown-menu">
+                <a href="/guide/example" data-navigo class="dropdown-item">
+                    <i class="fas fa-fw fa-book-open mr-3"></i> Справочники
+                </a>
+                <a href="/users" data-navigo class="dropdown-item">
+                    <i class="fas fa-fw fa-users mr-3"></i> Пользователи
+                </a>
+            </div>
         </div>
     </div>
+    <!--end::Settings-->
+
+    <!--begin::User-->
+    <div class="topbar-item ml-3">
+        <div class="btn-group dropleft">
+            <button
+                class="btn btn-light dropdown-toggle js-user-data js-user__auth-id"
+                type="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+            >
+                <i class="fas fa-spinner fa-pulse"></i>
+            </button>
+            <div class="dropdown-menu">
+                <a id="js-user-return" href="javascript:lemurro.users.return();" class="dropdown-item d-none">
+                    <i class="fas fa-fw fa-undo-alt mr-3"></i> Вернуться
+                </a>
+                <a href="/profile" data-navigo class="dropdown-item">
+                    <i class="fas fa-fw fa-user-circle mr-3"></i> Мой профиль
+                </a>
+                <a href="javascript:lemurro.auth.logout();" class="dropdown-item">
+                    <i class="fas fa-fw fa-power-off mr-3"></i> Выход
+                </a>
+            </div>
+        </div>
+    </div>
+    <!--end::User-->
 </div>
+<!--end::Topbar-->

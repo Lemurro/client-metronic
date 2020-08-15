@@ -1,77 +1,86 @@
 <form id="js-user-form" data-id="0">
-    <h5 class="js-title m--margin-bottom-20">
+    <h5 class="js-title">
         Добавление пользователя
     </h5>
 
-    <div class="m-portlet m-portlet--info m-portlet--head-solid-bg m-portlet--bordered">
-        <div class="m-portlet__head">
-            <div class="m-portlet__head-caption">
-                <div class="m-portlet__head-title">
-                    <span class="m-portlet__head-icon">
-                        <i class="fas fa-lock"></i>
-                    </span>
-                    <h3 class="m-portlet__head-text">
-                        Системные данные
-                    </h3>
-                </div>
+    <div class="card card-custom card-fit card-border mb-5">
+        <div class="card-header">
+            <div class="card-title">
+                <span class="card-icon">
+                    <i class="fas fa-lock text-primary"></i>
+                </span>
+                <h3 class="card-label">
+                    Системные данные
+                </h3>
             </div>
         </div>
-        <div class="m-portlet__body">
-            <div class="form-group m-form__group">
+        <div class="card-body pt-2">
+            <div class="form-group">
                 <label>Идентификатор для входа</label>
-                <input type="text" name="auth_id" title="Идентификатор для входа" class="form-control m-input js-user-id-1" required>
+                <input
+                    type="text"
+                    name="auth_id"
+                    title="Идентификатор для входа"
+                    class="form-control js-user-id-1"
+                    required
+                />
             </div>
             <div class="row">
                 <div class="col-4">
-                    <div class="form-group m-form__group">
+                    <div class="form-group">
                         <label>Фамилия</label>
-                        <input type="text" name="last_name" title="Фамилия" class="form-control m-input js-user-id-1" required>
+                        <input
+                            type="text"
+                            name="last_name"
+                            title="Фамилия"
+                            class="form-control js-user-id-1"
+                            required
+                        />
                     </div>
                 </div>
                 <div class="col-4">
-                    <div class="form-group m-form__group">
+                    <div class="form-group">
                         <label>Имя</label>
-                        <input type="text" name="first_name" title="Имя" class="form-control m-input js-user-id-1" required>
+                        <input type="text" name="first_name" title="Имя" class="form-control js-user-id-1" required />
                     </div>
                 </div>
                 <div class="col-4">
-                    <div class="form-group m-form__group">
+                    <div class="form-group">
                         <label>Отчество</label>
-                        <input type="text" name="second_name" title="Отчество" class="form-control m-input js-user-id-1">
+                        <input type="text" name="second_name" title="Отчество" class="form-control js-user-id-1" />
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="m-portlet m-portlet--info m-portlet--head-solid-bg m-portlet--bordered">
-        <div class="m-portlet__head">
-            <div class="m-portlet__head-caption">
-                <div class="m-portlet__head-title">
-                    <span class="m-portlet__head-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </span>
-                    <h3 class="m-portlet__head-text">
-                        Права доступа
-                    </h3>
-                </div>
+    <div class="card card-custom card-fit card-border mb-5">
+        <div class="card-header">
+            <div class="card-title">
+                <span class="card-icon">
+                    <i class="fas fa-shield-alt text-primary"></i>
+                </span>
+                <h3 class="card-label">
+                    Права доступа
+                </h3>
             </div>
         </div>
-        <div class="m-portlet__body">
+        <div class="card-body pt-2">
             <div class="row">
                 <div class="col-8">
                     <label>Основные роли</label>
-                    <div class="m-checkbox-inline">
-                        <label class="m-checkbox">
-                            <input type="checkbox" class="js-role js-user-id-1" data-role="admin"> Администратор
+                    <div class="checkbox-inline">
+                        <label class="checkbox">
+                            <input type="checkbox" class="js-role js-user-id-1" data-role="admin" />
                             <span></span>
+                            Администратор
                         </label>
                     </div>
                 </div>
                 <div class="col-4">
                     <div id="js-user__access-sets" class="hidden">
                         <label>Применить набор прав доступа</label>
-                        <select class="form-control form-control-sm m-input" onchange="lemurro.accessSets.apply()">
+                        <select class="form-control form-control-sm" onchange="lemurro.accessSets.apply()">
                             <!-- Сюда будет загружен список наборов прав доступа -->
                         </select>
                     </div>
@@ -86,20 +95,16 @@
     </div>
 
     <div>
-        <button type="button" id="js-user__button-insert" class="btn btn-primary m-btn--icon" onclick="users.insert()">
-            <span>
-                <i class="fas fa-plus"></i>
-                <span>Добавить</span>
-            </span>
+        <button type="button" id="js-user__button-insert" class="btn btn-primary" onclick="users.insert()">
+            <i class="fas fa-plus"></i>
+            Добавить
         </button>
-        <button type="button" id="js-user__button-save" class="btn btn-success m-btn--icon" onclick="users.save()">
-            <span>
-                <i class="fas fa-save"></i>
-                <span>Сохранить</span>
-            </span>
+        <button type="button" id="js-user__button-save" class="btn btn-success" onclick="users.save()">
+            <i class="fas fa-save"></i>
+            Сохранить
         </button>
         &nbsp;
-        <button type="button" class="btn btn-secondary" onclick="lemurro.tabs.tabInsertEdit('hide')">
+        <button type="button" class="btn btn-light" onclick="lemurro.tabs.tabInsertEdit('hide')">
             Закрыть
         </button>
     </div>

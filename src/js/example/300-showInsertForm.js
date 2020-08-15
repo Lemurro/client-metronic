@@ -1,8 +1,9 @@
 /**
  * Покажем форму добавления
  *
- * @version 08.01.2019
  * @author  Дмитрий Щербаков <atomcms@ya.ru>
+ *
+ * @version 15.08.2020
  */
 example.showInsertForm = function () {
     var form = $('#js-example-form');
@@ -17,7 +18,7 @@ example.showInsertForm = function () {
     form.find('.js-action__insert').show();
     form.find('.js-action__save').hide();
 
-    $('#js-tab-form-button').html('<i class="fas fa-plus"></i> Добавить');
+    $('#js-tab-form-button').html(lemurro.tabs.getTabTitle('add'));
 
     lemurro.tabs.tabInsertEdit('show');
 };

@@ -1,25 +1,33 @@
-<div class="m-stack__item m-stack__item--middle m-stack__item--fluid">
-    <button class="m-aside-header-menu-mobile-close  m-aside-header-menu-mobile-close--skin-light " id="m_aside_header_menu_mobile_close_btn">
-        <i class="fas fa-times"></i>
-    </button>
-    <div id="m_header_menu" class="m-header-menu m-aside-header-menu-mobile m-aside-header-menu-mobile--offcanvas  m-header-menu--skin-dark m-header-menu--submenu-skin-light m-aside-header-menu-mobile--skin-light m-aside-header-menu-mobile--submenu-skin-light ">
-        <ul class="m-menu__nav  m-menu__nav--submenu-arrow ">
-            <li class="m-menu__item js-link js-link__dashboard" data-active-class="m-menu__item--active" aria-haspopup="true">
-                <a href="/" data-navigo class="m-menu__link ">
-                    <span class="m-menu__item-here"></span>
-                    <span class="m-menu__link-text">
+<!--begin::Header Menu Wrapper-->
+<div class="header-menu-wrapper header-menu-wrapper-left" id="kt_header_menu_wrapper">
+    <!--begin::Header Menu-->
+    <div
+        id="kt_header_menu"
+        class="header-menu header-menu-left header-menu-mobile header-menu-layout-default header-menu-root-arrow"
+    >
+        <!--begin::Header Nav-->
+        <ul class="menu-nav">
+            <li class="menu-item js-link js-link__dashboard" data-active-class="menu-item-active" aria-haspopup="true">
+                <a href="/" data-navigo class="menu-link">
+                    <span class="menu-text">
                         Dashboard
                     </span>
                 </a>
             </li>
-            <li class="m-menu__item js-link js-link__example d-none js-role js-role__example--read" data-active-class="m-menu__item--active" aria-haspopup="true">
-                <a href="/example" data-navigo class="m-menu__link ">
-                    <span class="m-menu__item-here"></span>
-                    <span class="m-menu__link-text">
+            <li
+                class="menu-item js-link js-link__example d-none js-role js-role__example--read"
+                data-active-class="menu-item-active"
+                aria-haspopup="true"
+            >
+                <a href="/example" data-navigo class="menu-link">
+                    <span class="menu-text">
                         Example
                     </span>
                 </a>
             </li>
         </ul>
+        <!--end::Header Nav-->
     </div>
+    <!--end::Header Menu-->
 </div>
+<!--end::Header Menu Wrapper-->

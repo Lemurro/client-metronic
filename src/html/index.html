@@ -1,86 +1,40 @@
 <!DOCTYPE html>
 
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<html lang="en">
+    <head>
+        <base href="" />
 
-    <link rel="shortcut icon" type="image/png" href="/favicon.png">
+        <meta charset="utf-8" />
+        <meta name="description" content="Updates and statistics" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-    <!-- include('include/css.html') -->
+        <link rel="shortcut icon" type="image/png" href="favicon.png" />
 
-    <title>...</title>
-</head>
-<body class="m-page--wide m-header--fixed m-header--fixed-mobile m-footer--push m-aside--offcanvas-default">
-    <div class="m-grid m-grid--hor m-grid--root m-page">
-        <!-- begin::Header -->
-        <header class="m-grid__item m-header" data-minimize="minimize" data-minimize-offset="200" data-minimize-mobile-offset="200">
-            <div class="m-header__top">
-                <div class="m-container m-container--responsive m-container--xxl m-container--full-height m-page__container">
-                    <div class="m-stack m-stack--ver m-stack--desktop">
-                        <!-- begin::Brand -->
-                        <div class="m-stack__item m-brand m-stack__item--left">
-                            <div class="m-stack m-stack--ver m-stack--general m-stack--inline">
-                                <div class="m-stack__item m-stack__item--middle m-brand__logo">
-                                    <a href="/" data-navigo class="m-brand__logo-wrapper">
-                                        <img src="/assets/img/logo.png" style="height: 30px;">
-                                    </a>
-                                </div>
-                                <div class="m-stack__item m-stack__item--middle m-brand__tools">
-                                    <!-- begin::Responsive Header Menu Toggler-->
-                                    <a id="m_aside_header_menu_mobile_toggle" href="javascript:;" class="m-brand__icon m-brand__toggler m--visible-tablet-and-mobile-inline-block">
-                                        <span></span>
-                                    </a>
-                                    <!-- end::Responsive Header Menu Toggler-->
-                                    <!-- begin::Topbar Toggler-->
-                                    <a id="m_aside_header_topbar_mobile_toggle" href="javascript:;" class="m-brand__icon m--visible-tablet-and-mobile-inline-block">
-                                        <i class="flaticon-more"></i>
-                                    </a>
-                                    <!--end::Topbar Toggler-->
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end::Brand -->
-                        <!-- begin::Topbar -->
-                        <!-- include('include/menu_topbar.html') -->
-                        <!-- end::Topbar -->
+        <!-- include('include/css.html') -->
+
+        <title>...</title>
+    </head>
+    <body id="kt_body" class="header-fixed header-mobile-fixed subheader-enabled page-loading">
+        <!-- include('include/header_mobile.html') -->
+
+        <div class="d-flex flex-column flex-root">
+            <div class="d-flex flex-row flex-column-fluid page">
+                <div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
+                    <!-- include('include/header.html') -->
+
+                    <div id="js-page" class="content d-flex flex-column flex-column-fluid">
+                        <!-- Основное содержимое страницы -->
                     </div>
                 </div>
-            </div>
-            <div class="m-header__bottom">
-                <div class="m-container m-container--responsive m-container--xxl m-container--full-height m-page__container">
-                    <div class="m-stack m-stack--ver m-stack--desktop">
-                        <!-- begin::Horizontal Menu -->
-                        <!-- include('include/menu_horizontal.html') -->
-                        <!-- end::Horizontal Menu -->
-                    </div>
-                </div>
-            </div>
-        </header>
-        <!-- end::Header -->
-        <!-- begin::Body -->
-        <div class="m-grid__item m-grid__item--fluid  m-grid m-grid--ver-desktop m-grid--desktop m-container m-container--responsive m-container--xxl m-page__container m-body">
-            <div id="js-page" class="m-grid__item m-grid__item--fluid m-wrapper">
-                <!-- Основное содержимое страницы -->
             </div>
         </div>
-        <!-- end::Body -->
-    </div>
-    <!-- end:: Page -->
 
-    <!-- begin::Scroll Top -->
-    <div class="m-scroll-top m-scroll-top--skin-top" data-toggle="m-scroll-top" data-scroll-offset="500" data-scroll-speed="300">
-        <i class="fas fa-arrow-up"></i>
-    </div>
-    <!-- end::Scroll Top -->
+        <!-- include('include/scrolltop.html') -->
+        <!-- include('include/preload_overlay.html') -->
+        <!-- include('include/auth.html') -->
 
-    <!-- begin::Preloader Overlay -->
-    <div id="js-preloader-overlay" class="preloader-overlay"></div>
-    <!-- end::Preloader Overlay -->
+        <!-- include('include/tpl_tab_title.html') -->
 
-    <!-- include('include/auth.html') -->
-    <!-- include('include/js.html') -->
-</body>
+        <!-- include('include/js.html') -->
+    </body>
 </html>

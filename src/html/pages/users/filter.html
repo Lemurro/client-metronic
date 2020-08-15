@@ -1,72 +1,88 @@
-<div class="m--margin-bottom-20">
+<div class="mb-5">
     <div class="d-inline-block">
-        <button type="button" class="btn btn-primary m-btn--icon" onclick="users.showInsertForm()">
-            <span>
-                <i class="fas fa-plus"></i>
-                <span>Добавить</span>
-            </span>
+        <button type="button" class="btn btn-primary" onclick="users.showInsertForm()">
+            <i class="fas fa-plus"></i>
+            Добавить
         </button>
     </div>
     <div class="d-inline-block w10">
         &nbsp;
     </div>
     <div class="d-inline-block">
-        <button type="button" class="btn btn-brand m-btn--icon" onclick="lemurro.users.toggleFilter()">
-            <span>
-                <i class="fas fa-filter"></i>
-                <span>Фильтр</span>
-                &nbsp;&nbsp;&nbsp;
-                <i class="fas fa-angle-down js-filter__angle"></i>
-            </span>
+        <button type="button" class="btn btn-info" onclick="lemurro.users.toggleFilter()">
+            <i class="fas fa-filter"></i>
+            Фильтр
+            <i class="fas fa-angle-down ml-3 js-filter__angle"></i>
         </button>
     </div>
 </div>
 
 <div class="js-filter hidden" data-visible="0">
-    <div class="alert alert-info m-alert--outline fade show" role="alert">
+    <div class="border rounded border-info p-5 mb-5">
         <div class="row">
             <div class="col-4">
-                <div class="form-group m-form__group">
+                <div class="form-group">
                     <label>ID пользователя</label>
-                    <input type="text" class="form-control m-input js-filter__element" name="user_id" title="ID пользователя">
+                    <input
+                        type="text"
+                        class="form-control js-filter__element"
+                        name="user_id"
+                        title="ID пользователя"
+                    />
                 </div>
             </div>
             <div class="col-8">
-                <div class="form-group m-form__group">
+                <div class="form-group">
                     <label>ФИО пользователя</label>
-                    <input type="text" class="form-control m-input js-filter__element" name="lemurro_user_fio" title="ФИО пользователя">
+                    <input
+                        type="text"
+                        class="form-control js-filter__element"
+                        name="lemurro_user_fio"
+                        title="ФИО пользователя"
+                    />
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-4">
-                <div class="form-group m-form__group">
+                <div class="form-group">
                     <label>Идентификатор для входа</label>
-                    <input type="text" class="form-control m-input js-filter__element" name="auth_id" title="Идентификатор для входа">
+                    <input
+                        type="text"
+                        class="form-control js-filter__element"
+                        name="auth_id"
+                        title="Идентификатор для входа"
+                    />
                 </div>
             </div>
             <div class="col-6">
-                <div class="form-group m-form__group">
+                <div class="form-group">
                     <label>Права доступа</label>
                     <div class="input-group">
                         <div class="input-group-prepend">
-                            <select class="form-control js-filter__element" name="lemurro_roles_type" title="Вид поиска">
+                            <select
+                                class="form-control js-filter__element"
+                                name="lemurro_roles_type"
+                                title="Вид поиска"
+                            >
                                 <option value="1">Есть</option>
                                 <option value="0">Нет</option>
                             </select>
                         </div>
                         <select class="form-control js-filter__element" name="lemurro_roles" title="Права доступа">
-                            <option value="all">Любой</option><!-- Этот пункт должен быть во всех элементах select -->
+                            <option value="all">Любой</option>
+                            <!-- Этот пункт должен быть во всех элементах select -->
                             <!-- Автоматическое наполнение списка при инициализации раздела -->
                         </select>
                     </div>
                 </div>
             </div>
             <div class="col-2">
-                <div class="form-group m-form__group">
+                <div class="form-group">
                     <label>Блокировка</label>
                     <select class="form-control js-filter__element" name="locked" title="Блокировка">
-                        <option value="all">Неважно</option><!-- Этот пункт должен быть во всех элементах select -->
+                        <option value="all">Неважно</option>
+                        <!-- Этот пункт должен быть во всех элементах select -->
                         <option value="0">Рабочий</option>
                         <option value="1">Заблокирован</option>
                     </select>
@@ -75,29 +91,25 @@
         </div>
         <div class="row">
             <div class="col-6">
-                <button type="button" class="btn btn-brand m-btn--icon" onclick="lemurro.users.applyFilter()">
-                    <span>
-                        <i class="fas fa-binoculars"></i>
-                        <span>Найти пользователей</span>
-                    </span>
+                <button type="button" class="btn btn-info" onclick="lemurro.users.applyFilter()">
+                    <i class="fas fa-binoculars"></i>
+                    Найти пользователей
                 </button>
             </div>
             <div class="col-6 text-right">
-                <button type="button" class="btn btn-secondary m-btn--icon" onclick="lemurro.users.clearFilter()">
-                    <span>
-                        <i class="fas fa-eraser"></i>
-                        <span>Очистить форму</span>
-                    </span>
+                <button type="button" class="btn btn-light" onclick="lemurro.users.clearFilter()">
+                    <i class="fas fa-eraser"></i>
+                    Очистить форму
                 </button>
             </div>
         </div>
     </div>
 </div>
 
-<div class="js-message__default alert alert-warning m-alert--outline text-dark" role="alert">
+<div class="js-message__default alert alert-info" role="alert">
     Показаны только 50 пользователей (по времени активности), воспользуйтесь фильтром для поиска
 </div>
 
-<div class="js-message__notfound alert alert-warning text-dark hidden" role="alert">
+<div class="js-message__notfound alert alert-warning hidden" role="alert">
     Пользователи не найдены, измените условия поиска
 </div>
