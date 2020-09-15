@@ -1,3 +1,4 @@
+.vscode
 build
 src/copy-to-build/assets/metronic*
 src/env/dev.js
