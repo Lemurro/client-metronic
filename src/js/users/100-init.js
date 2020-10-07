@@ -1,8 +1,7 @@
 /**
- * Инициализация
- *
- * @version 28.10.2018
  * @author  Дмитрий Щербаков <atomcms@ya.ru>
+ *
+ * @version 07.10.2020
  */
 users.init = function () {
     /**
@@ -11,8 +10,6 @@ users.init = function () {
      * @type {object}
      */
     users.templates = {
-        item: Template7.compile($('#js-tpl-user__item').html())
+        item: Template7.compile($('#js-tpl-user__item').html()),
     };
-
-    lemurro.users.getData();
 };
