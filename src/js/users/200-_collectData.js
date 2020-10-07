@@ -5,7 +5,7 @@
  *
  * @author  Дмитрий Щербаков <atomcms@ya.ru>
  *
- * @version 18.08.2020
+ * @version 07.10.2020
  */
 users._collectData = function () {
     var form = $('#js-user-form');
@@ -23,7 +23,7 @@ users._collectData = function () {
             },
         };
     } else {
-        swal('Внимание!', 'Заполните все поля, помеченные красным', 'warning');
+        Swal.fire('Внимание!', 'Заполните все поля, помеченные красным', 'warning');
 
         return {};
     }
