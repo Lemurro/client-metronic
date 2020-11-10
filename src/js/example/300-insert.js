@@ -3,7 +3,7 @@
  *
  * @author  Дмитрий Щербаков <atomcms@ya.ru>
  *
- * @version 07.10.2020
+ * @version 10.11.2020
  */
 example.insert = function () {
     var data = example._collectData();
@@ -26,6 +26,9 @@ example.insert = function () {
 
                     var row = container.find('tr[data-id="' + result.data.id + '"]');
                     lemurro.helper.initBootstrapConfirmation(row, null);
+
+                    $('#js-example__empty').hide();
+                    $('#js-example__list').show();
 
                     lemurro.tabs.tabInsertEdit('hide');
 
