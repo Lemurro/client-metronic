@@ -21,33 +21,27 @@
 </div>
 <div id="js-example__list" class="hidden">
     <div class="row">
-        <div class="col-12">
-            <form class="form-inline">
-                <button type="button" class="btn btn-primary" onclick="example.showInsertForm()">
-                    <i class="fas fa-plus"></i>
-                    Добавить
-                </button>
-                &nbsp;&nbsp;
-                <input
-                    type="text"
-                    class="form-control tablefilter"
-                    style="min-width: 300px;"
-                    data-tablefilter="#js-example__table"
-                    placeholder="Начните вводить для фильтрации"
-                />
-            </form>
+        <div class="col-12 form-inline">
+            <button type="button" class="btn btn-primary" onclick="example.showInsertForm()">
+                <i class="fas fa-plus"></i>
+                Добавить
+            </button>
+            &nbsp;&nbsp;
+            <input
+                type="text"
+                class="form-control tablefilter"
+                style="min-width: 300px"
+                data-tablefilter="#js-example__table"
+                placeholder="Начните вводить для фильтрации"
+            />
         </div>
     </div>
 
     <table id="js-example__table" class="table table-hover">
         <thead>
             <tr>
-                <th class="w1">
-                    &nbsp;
-                </th>
-                <th>
-                    Наименование
-                </th>
+                <th class="w1">&nbsp;</th>
+                <th>Наименование</th>
             </tr>
         </thead>
         <!-- Динамический контент -->
