@@ -14,6 +14,7 @@ users.edit = function (id) {
         form.find('input[name="last_name"]').val(result.data.last_name);
         form.find('input[name="first_name"]').val(result.data.first_name);
         form.find('input[name="second_name"]').val(result.data.second_name);
+        form.find('input[name="email"]').val(result.data.email);
 
         lemurro.users.setRoles(form, result.data.roles);
     });

@@ -17,7 +17,8 @@ users._collectData = function () {
             info_users: {
                 last_name  : form.find('input[name="last_name"]').val(),
                 first_name : form.find('input[name="first_name"]').val(),
-                second_name: form.find('input[name="second_name"]').val()
+                second_name: form.find('input[name="second_name"]').val(),
+                email: form.find('input[name="email"]').val()
             }
         };
     } else {
