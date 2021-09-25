@@ -1,15 +1,15 @@
-const gulp        = require('gulp');              // Сам Gulp JS
-const cleanCSS    = require('gulp-clean-css');    // Минификация CSS
-const concat      = require('gulp-concat');       // Склейка css и js файлов
-const fileinclude = require('gulp-file-include'); // Склейка html файлов
-const rename      = require('gulp-rename');       // Переименование файлов
-const rev         = require('gulp-rev');          // Версионность файлов
-const revRewrite  = require('gulp-rev-rewrite');  // Внедрение ссылок на css и js файлы в index.html
-const sort        = require('gulp-sort');         // Сортировка списка файлов
-const uglify      = require('gulp-uglify');       // Минификация JS
-const del         = require('del');               // Удаление файлов
+var gulp = require('gulp');              // Сам Gulp JS
+var cleanCSS = require('gulp-clean-css');    // Минификация CSS
+var concat = require('gulp-concat');       // Склейка css и js файлов
+var fileinclude = require('gulp-file-include'); // Склейка html файлов
+var rename = require('gulp-rename');       // Переименование файлов
+var rev = require('gulp-rev');          // Версионность файлов
+var revRewrite = require('gulp-rev-rewrite');  // Внедрение ссылок на css и js файлы в index.html
+var sort = require('gulp-sort');         // Сортировка списка файлов
+var uglify = require('gulp-uglify');       // Минификация JS
+var del = require('del');               // Удаление файлов
 
-const pathsPlugins = [];
+var pathsPlugins = [];
 
 // CLEAN
 
@@ -89,17 +89,16 @@ function fontawesomeWebfonts() {
 }
 
 function lemurro() {
-    const files = [
-        'node_modules/lemurro-client-metronic-core-frontend/dist/lemurro.min.css',
-        'node_modules/lemurro-client-metronic-core-frontend/dist/lemurro.min.js'
-    ];
-
-    return gulp.src(files)
+    return gulp
+        .src([
+            'node_modules/lemurro-client-metronic-core-frontend/dist/lemurro.min.css',
+            'node_modules/lemurro-client-metronic-core-frontend/dist/lemurro.min.js',
+        ])
         .pipe(rev())
         .pipe(gulp.dest('build/assets'))
         .pipe(rev.manifest('build/rev-manifest.json', {
-            base : 'build/assets',
-            merge: true
+            base: 'build/assets',
+            merge: true,
         }))
         .pipe(gulp.dest('build/assets'));
 }
@@ -135,8 +134,8 @@ function revManifestAppCSS() {
         .pipe(rev())
         .pipe(gulp.dest('build/assets'))
         .pipe(rev.manifest('build/rev-manifest.json', {
-            base : 'build/assets',
-            merge: true
+            base: 'build/assets',
+            merge: true,
         }))
         .pipe(gulp.dest('build/assets'));
 }
@@ -146,8 +145,8 @@ function revManifestAppJS() {
         .pipe(rev())
         .pipe(gulp.dest('build/assets'))
         .pipe(rev.manifest('build/rev-manifest.json', {
-            base : 'build/assets',
-            merge: true
+            base: 'build/assets',
+            merge: true,
         }))
         .pipe(gulp.dest('build/assets'));
 }
@@ -166,8 +165,6 @@ function pagesHTML() {
 }
 
 function indexHTML() {
-    const manifest = gulp.src('build/rev-manifest.json');
-
     return gulp
         .src('src/html/index.html')
         .pipe(
@@ -179,7 +176,7 @@ function indexHTML() {
         )
         .pipe(
             revRewrite({
-                manifest: manifest,
+                manifest: gulp.src('build/rev-manifest.json'),
             })
         )
         .pipe(gulp.dest('build'));
@@ -199,7 +196,7 @@ function envDev() {
 
 // VARS
 
-const allFirst = gulp.series(
+var allFirst = gulp.series(
     gulp.parallel(
         copyToBuild,
         plugins,
@@ -211,7 +208,7 @@ const allFirst = gulp.series(
     appJS
 );
 
-const allSecond = gulp.series(
+var allSecond = gulp.series(
     revManifestAppCSS,
     revManifestAppJS,
     cleanAppMinCSS,
