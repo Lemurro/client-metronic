@@ -17,7 +17,7 @@ example.showInsertForm = function () {
     form.find('.js-action__insert').show();
     form.find('.js-action__save').hide();
 
-    $('#js-tab-form-button').html('<i class="fas fa-plus"></i> Добавить');
+    $('#js-tab-form-button').html(lemurro.tabs.getTabTitle('add'));
 
     lemurro.tabs.tabInsertEdit('show');
 };

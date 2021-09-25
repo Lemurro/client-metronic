@@ -41,7 +41,7 @@ example.edit = function (id) {
             form.find('.js-action__insert').hide();
             form.find('.js-action__save').show();
 
-            $('#js-tab-form-button').html('<i class="fas fa-pencil-alt"></i> Редактировать');
+            $('#js-tab-form-button').html(lemurro.tabs.getTabTitle('edit'));
 
             lemurro.tabs.tabInsertEdit('show');
         }
