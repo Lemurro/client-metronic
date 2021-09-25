@@ -27,6 +27,9 @@ example.insert = function () {
                     var row = container.find('tr[data-id="' + result.data.id + '"]');
                     lemurro.helper.initBootstrapConfirmation(row, null);
 
+                    $('#js-example__empty').hide();
+                    $('#js-example__list').show();
+
                     lemurro.tabs.tabInsertEdit('hide');
 
                     swal('Выполнено', 'Запись успешно добавлена', 'success');
