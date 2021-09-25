@@ -13,6 +13,4 @@ users.init = function () {
     users.templates = {
         item: Template7.compile($('#js-tpl-user__item').html())
     };
-
-    lemurro.users.getData();
 };
