@@ -2,38 +2,38 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-body">
-                <div class="auth__logo m--margin-bottom-20">
+                <div class="auth__logo mb-5">
                     <img src="/assets/img/logo.png">
                 </div>
-                <div id="js-auth__get-form" class="m-form">
-                    <div class="form-group m-form__group">
+                <div id="js-auth__get-form">
+                    <div class="form-group">
                         <label class="js-auth__auth-id">[app.config.auth.strings[type].getForm.inputLabel]</label>
-                        <input type="text" name="auth_id" class="form-control m-input" title="Логин">
+                        <input type="text" name="auth_id" class="form-control" title="Логин">
                     </div>
-                    <div class="form-group m-form__group text-center">
+                    <div class="form-group text-center">
                         <button type="button" class="btn btn-primary" onclick="lemurro.auth.getCode()">
                             Получить код
                         </button>
                     </div>
                 </div>
-                <div id="js-auth__check-form" class="m-form">
-                    <div class="form-group m-form__group">
+                <div id="js-auth__check-form">
+                    <div class="form-group">
                         <label class="js-auth__auth-code">[app.config.auth.strings[type].checkForm.inputLabel]</label>
-                        <input type="text" name="auth_code" class="form-control m-input js-code-mask" title="Код для входа">
+                        <input type="text" name="auth_code" class="form-control js-code-mask" title="Код для входа">
                     </div>
-                    <div class="form-group m-form__group text-center">
+                    <div class="form-group text-center">
                         <button type="button" class="btn btn-primary" onclick="lemurro.auth.checkCode()">
                             Отправить код
                         </button>
                     </div>
-                    <div class="form-group m-form__group js-timer">
+                    <div class="form-group js-timer">
                         <small>
                             <span class="js-auth__repeat">[app.config.auth.strings[type].checkForm.repeatMessage]</span>
                             Повторно запросить код можно через
                             <span class="js-timer__count">60</span> сек.
                         </small>
                     </div>
-                    <div class="form-group m-form__group text-center js-resend">
+                    <div class="form-group text-center js-resend">
                         <button type="button" class="btn btn-primary" onclick="lemurro.auth.getCode()">
                             Запросить код ещё раз
                         </button>

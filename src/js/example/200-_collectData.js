@@ -3,19 +3,20 @@
  *
  * @return {object}
  *
- * @version 08.01.2019
  * @author  Дмитрий Щербаков <atomcms@ya.ru>
+ *
+ * @version 07.10.2020
  */
 example._collectData = function () {
-    var form  = $("#js-example-form");
+    var form = $('#js-example-form');
     var files = [];
 
     form.find('.js-files__file').each(function () {
-        var elem   = $(this);
+        var elem = $(this);
         var action = elem.attr('data-file-action');
-        var file   = {
+        var file = {
             file_id: elem.attr('data-file-id'),
-            action : action
+            action: action,
         };
 
         if (action === 'add') {
@@ -27,12 +28,12 @@ example._collectData = function () {
 
     if (form.valid()) {
         return {
-            id   : form.attr("data-id"),
-            name : form.find('input[name="name"]').val(),
-            files: files
+            id: form.attr('data-id'),
+            name: form.find('input[name="name"]').val(),
+            files: files,
         };
     } else {
-        swal('Внимание!', 'Заполните все поля, помеченные красным', 'warning');
+        Swal.fire('Внимание!', 'Заполните все поля, помеченные красным', 'warning');
 
         return {};
     }

@@ -1,18 +1,18 @@
-<script id="js-tpl-access-sets__item" type="text/template7">
+<script id="js-tpl-access-sets__item" type="text/template">
     <tr data-item-id="{{id}}">
         <td>
             <div class="btn-group dropup">
-                <button type="button" class="btn btn-sm btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button type="button" class="btn btn-sm btn-outline-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fas fa-ellipsis-h"></i>
                 </button>
                 <div class="dropdown-menu" x-placement="top-start">
                     <a href="javascript:lemurro.accessSets.edit('{{id}}');" class="dropdown-item text-primary">
-                        <i class="fas fa-fw fa-pencil-alt"></i>
+                        <i class="fas fa-fw fa-pencil-alt mr-3"></i>
                         Редактировать
                     </a>
                     <div class="dropdown-divider"></div>
                     <a href="javascript:lemurro.accessSets.remove('{{id}}');" class="dropdown-item text-danger" data-toggle="confirmation">
-                        <i class="far fa-fw fa-trash-alt"></i>
+                        <i class="far fa-fw fa-trash-alt mr-3"></i>
                         Удалить
                     </a>
                 </div>

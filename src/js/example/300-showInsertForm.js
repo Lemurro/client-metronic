@@ -1,8 +1,9 @@
 /**
  * Покажем форму добавления
  *
- * @version 08.01.2019
  * @author  Дмитрий Щербаков <atomcms@ya.ru>
+ *
+ * @version 15.08.2020
  */
 example.showInsertForm = function () {
     var form = $('#js-example-form');

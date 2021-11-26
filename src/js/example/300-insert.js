@@ -3,7 +3,7 @@
  *
  * @author  Дмитрий Щербаков <atomcms@ya.ru>
  *
- * @version 19.06.2020
+ * @version 10.11.2020
  */
 example.insert = function () {
     var data = example._collectData();
@@ -13,7 +13,7 @@ example.insert = function () {
             true,
             pathServerAPI + 'example',
             {
-                data: data,
+                json: JSON.stringify(data),
             },
             function (result) {
                 lemurro.lightajax.preloader('hide');
@@ -32,7 +32,7 @@ example.insert = function () {
 
                     lemurro.tabs.tabInsertEdit('hide');
 
-                    swal('Выполнено', 'Запись успешно добавлена', 'success');
+                    Swal.fire('Выполнено', 'Запись успешно добавлена', 'success');
                 }
             }
         );

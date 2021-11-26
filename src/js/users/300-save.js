@@ -2,7 +2,8 @@
  * Изменение записи
  *
  * @author  Дмитрий Щербаков <atomcms@ya.ru>
- * @version 01.11.2019
+ *
+ * @version 07.10.2020
  */
 users.save = function () {
     var data = users._collectData();
@@ -10,7 +11,7 @@ users.save = function () {
     if (Object.keys(data).length > 0) {
         lemurro.users.save(data, function (result) {
             var newRecord = $(users.templates.item(result.data));
-            var row       = $('#js-users__items').find('tr[data-item-id="' + result.data.id + '"]');
+            var row = $('#js-users__items').find('tr[data-item-id="' + result.data.id + '"]');
 
             row.html(newRecord.html());
 
@@ -18,7 +19,7 @@ users.save = function () {
 
             lemurro.tabs.tabInsertEdit('hide');
 
-            swal('Выполнено', 'Запись успешно изменена', 'success');
+            Swal.fire('Выполнено', 'Запись успешно изменена', 'success');
         });
     }
 };

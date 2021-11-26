@@ -1,35 +1,33 @@
 <div id="js-guide__loader">
     <h5>
-        <i class="fas fa-spinner fa-pulse"></i> Загрузка списка
+        <i class="fas fa-spinner fa-pulse mr-3"></i>
+        Загрузка списка
     </h5>
 </div>
 <div id="js-guide__empty" class="hidden">
     <div class="text-center">
         <h2>
-            <i class="fas fa-info-circle font-100"></i><br>
+            <i class="fas fa-info-circle font-100"></i>
+            <br />
             Записи отсутствуют
         </h2>
-        <p class="m--padding-top-20">
-            <button class="btn btn-primary m-btn--icon" onclick="guideExample.showInsertForm()">
-                <span>
-                    <i class="fas fa-plus"></i>
-                    <span>Добавить</span>
-                </span>
+        <p class="pt-20">
+            <button type="button" class="btn btn-primary" onclick="guideExample.showInsertForm()">
+                <i class="fas fa-plus"></i>
+                Добавить
             </button>
         </p>
     </div>
 </div>
 <div id="js-guide__list" class="hidden">
-    <form class="form-inline">
-        <button type="button" class="btn btn-primary m-btn--icon" onclick="guideExample.showInsertForm()">
-            <span>
-                <i class="fas fa-plus"></i>
-                <span>Добавить</span>
-            </span>
+    <div class="form-inline">
+        <button type="button" class="btn btn-primary" onclick="guideExample.showInsertForm()">
+            <i class="fas fa-plus"></i>
+            Добавить
         </button>
-    </form>
+    </div>
 
-    <table id="js-guide__table" class="table table-hover m--margin-top-20">
+    <table id="js-guide__table" class="table table-hover">
         <thead>
             <tr>
                 <th class="w1">&nbsp;</th>
