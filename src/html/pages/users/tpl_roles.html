@@ -1,15 +1,14 @@
-<script id="js-tpl-user__roles" type="text/template">
+<script id="js-tpl-user__roles" type="text/template7">
     <tr>
         <td class="w1 text-nowrap">
             <strong>{{roleTitle}}</strong>
         </td>
         <td>
-            <div class="checkbox-inline">
+            <div class="m-checkbox-inline">
                 {{#each access}}
-                <label class="checkbox">
-                    <input type="checkbox" class="js-role" data-role="{{../roleName}}" data-access="{{code}}">
+                <label class="m-checkbox">
+                    <input type="checkbox" class="js-role" data-role="{{../roleName}}" data-access="{{code}}"> {{name}}
                     <span></span>
-                    {{name}}
                 </label>
                 {{/each}}
             </div>

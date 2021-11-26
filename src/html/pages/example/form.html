@@ -1,33 +1,39 @@
 <form id="js-example-form" data-id="0">
-    <h5 class="js-title">
+    <h5 class="js-title m--margin-bottom-20">
         Добавление мероприятия
     </h5>
-    <div class="form-group">
+    <div class="form-group m-form__group">
         <label>Наименование</label>
-        <input type="text" class="form-control" name="name" title="Наименование" required />
+        <input type="text" class="form-control m-input" name="name" title="Наименование" required>
     </div>
-    <div class="form-group">
+    <div class="form-group m-form__group">
         <label>Файлы</label>
         <table class="table">
             <!-- Динамический контент -->
             <tbody id="js-files__box"></tbody>
         </table>
-        <button type="button" id="js-files__upload" class="btn btn-success btn-sm">
-            <i class="fas fa-plus"></i>
-            Загрузить файл
+        <button type="button" id="js-files__upload" class="btn btn-brand btn-sm m-btn--icon">
+            <span>
+                <i class="fas fa-plus"></i>
+                <span>Загрузить файл</span>
+            </span>
         </button>
     </div>
     <div>
-        <button type="button" class="btn btn-primary js-action__insert" onclick="example.insert()">
-            <i class="fas fa-plus"></i>
-            Добавить
+        <button type="button" class="btn btn-primary m-btn--icon js-action__insert" onclick="example.insert()">
+            <span>
+                <i class="fas fa-plus"></i>
+                <span>Добавить</span>
+            </span>
         </button>
-        <button type="button" class="btn btn-success js-action__save" onclick="example.save()">
-            <i class="fas fa-save"></i>
-            Сохранить
+        <button type="button" class="btn btn-success m-btn--icon js-action__save" onclick="example.save()">
+            <span>
+                <i class="fas fa-save"></i>
+                <span>Сохранить</span>
+            </span>
         </button>
         &nbsp;
-        <button type="button" class="btn btn-light" onclick="lemurro.tabs.tabInsertEdit('hide')">
+        <button type="button" class="btn btn-secondary" onclick="lemurro.tabs.tabInsertEdit('hide')">
             Закрыть
         </button>
     </div>

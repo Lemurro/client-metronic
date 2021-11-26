@@ -5,7 +5,7 @@
  *
  * @author  Дмитрий Щербаков <atomcms@ya.ru>
  *
- * @version 07.10.2020
+ * @version 19.06.2020
  */
 example.remove = function (id) {
     lemurro.lightajax.post(true, pathServerAPI + 'example/' + id + '/remove', {}, function (result) {
@@ -23,7 +23,7 @@ example.remove = function (id) {
                 $('#js-example__list').hide();
             }
 
-            Swal.fire('Выполнено', 'Запись успешно удалена', 'success');
+            swal('Выполнено', 'Запись успешно удалена', 'success');
         }
     });
 };

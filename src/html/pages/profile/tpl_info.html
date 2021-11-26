@@ -1,19 +1,20 @@
 <script id="js-tpl-profile__info" type="text/template">
     <div class="text-center">
-        <h1>
+        <h3>
             {{last_name}}
-        </h1>
-        <h4>
+        </h3>
+        <h5>
             {{first_name}} {{second_name}}
-        </h4>
+        </h5>
+
         {{#if admin}}
-        <span class="label label-info label-inline label-xl mt-2">
+        <span class="m-badge m-badge--brand m-badge--wide m--margin-top-5">
             Администратор
         </span>
         {{/if}}
     </div>
 
-    <table class="table table-hover mt-10">
+    <table class="table table-hover m--margin-top-10">
         <tr>
             <th class="w1 text-nowrap">
                 Идентификатор:

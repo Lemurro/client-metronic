@@ -1,50 +1,50 @@
-<script id="js-tpl-user__item" type="text/template">
+<script id="js-tpl-user__item" type="text/template7">
     <tr data-item-id="{{id}}">
         <td class="align-middle">
             <div class="btn-group dropup">
-                <button type="button" class="btn btn-sm btn-outline-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button type="button" class="btn btn-sm btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fas fa-ellipsis-h"></i>
                 </button>
                 <div class="dropdown-menu" x-placement="top-start">
                     <a href="javascript:users.edit('{{id}}');" class="dropdown-item text-primary">
-                        <i class="fas fa-fw fa-pencil-alt mr-3"></i>
+                        <i class="fas fa-fw fa-pencil-alt"></i>
                         Редактировать
                     </a>
                     {{#js_if "this.id !== '1'"}}
                     {{#unless locked}}
                     <a href="javascript:lemurro.users.loginByUser('{{id}}');" class="dropdown-item text-primary js-login-by-user" data-toggle="confirmation">
-                        <i class="fas fa-fw fa-sign-in-alt mr-3"></i>
+                        <i class="fas fa-fw fa-sign-in-alt"></i>
                         Войти
                     </a>
                     {{/unless}}
                     {{#if locked}}
                     <a href="javascript:users.unlock('{{id}}');" class="dropdown-item text-primary" data-toggle="confirmation">
-                        <i class="fas fa-fw fa-unlock mr-3"></i>
+                        <i class="fas fa-fw fa-unlock"></i>
                         Разблокировать
                     </a>
                     {{else}}
                     <a href="javascript:users.lock('{{id}}');" class="dropdown-item text-primary" data-toggle="confirmation">
-                        <i class="fas fa-fw fa-lock mr-3"></i>
+                        <i class="fas fa-fw fa-lock"></i>
                         Заблокировать
                     </a>
                     {{/if}}
                     <div class="dropdown-divider"></div>
                     <a href="javascript:users.remove('{{id}}');" class="dropdown-item text-danger" data-toggle="confirmation">
-                        <i class="far fa-fw fa-trash-alt mr-3"></i>
+                        <i class="far fa-fw fa-trash-alt"></i>
                         Удалить
                     </a>
                     {{else}}
                     <a href="javascript:;" class="dropdown-item disabled">
-                        <i class="fas fa-fw fa-sign-in-alt mr-3"></i>
+                        <i class="fas fa-fw fa-sign-in-alt"></i>
                         Войти
                     </a>
                     <a href="javascript:;" class="dropdown-item disabled">
-                        <i class="fas fa-fw fa-lock mr-3"></i>
+                        <i class="fas fa-fw fa-lock"></i>
                         Заблокировать
                     </a>
                     <div class="dropdown-divider"></div>
                     <a href="javascript:;" class="dropdown-item disabled">
-                        <i class="far fa-fw fa-trash-alt mr-3"></i>
+                        <i class="far fa-fw fa-trash-alt"></i>
                         Удалить
                     </a>
                     {{/js_if}}

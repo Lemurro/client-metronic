@@ -1,14 +1,17 @@
-<script id="js-tpl-example__file" type="text/template">
+<script id="js-tpl-example__file" type="text/template7">
     <tr class="js-files__file" data-file-id="{{id}}" data-file-action="{{action}}">
-        <td class="w1 text-nowrap">
-            <button type="button" class="btn btn-danger btn-sm btn-icon" onclick="lemurro.file.remove('{{id}}')" title="Удалить файл">
-                <i class="far fa-trash-alt"></i>
-            </button>
-        </td>
         <td class="align-middle">
             <a href="javascript:lemurro.file.download('{{id}}', '{{name}}');">
                 <span class="js-name">{{name}}</span>
             </a>
+        </td>
+        <td class="w1 text-nowrap">
+            <button type="button" class="btn btn-danger btn-sm m-btn--icon" onclick="lemurro.file.remove('{{id}}')">
+            <span>
+                <i class="far fa-trash-alt"></i>
+                <span>удалить</span>
+            </span>
+            </button>
         </td>
     </tr>
 </script>
