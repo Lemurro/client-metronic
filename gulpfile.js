@@ -1,13 +1,14 @@
-var gulp = require('gulp');              // Сам Gulp JS
-var cleanCSS = require('gulp-clean-css');    // Минификация CSS
-var concat = require('gulp-concat');       // Склейка css и js файлов
+var gulp = require('gulp'); // Сам Gulp JS
+var cleanCSS = require('gulp-clean-css'); // Минификация CSS
+var concat = require('gulp-concat'); // Склейка css и js файлов
 var fileinclude = require('gulp-file-include'); // Склейка html файлов
-var rename = require('gulp-rename');       // Переименование файлов
-var rev = require('gulp-rev');          // Версионность файлов
-var revRewrite = require('gulp-rev-rewrite');  // Внедрение ссылок на css и js файлы в index.html
-var sort = require('gulp-sort');         // Сортировка списка файлов
-var uglify = require('gulp-uglify');       // Минификация JS
-var del = require('del');               // Удаление файлов
+var rename = require('gulp-rename'); // Переименование файлов
+var rev = require('gulp-rev'); // Версионность файлов
+var revRewrite = require('gulp-rev-rewrite'); // Внедрение ссылок на css и js файлы в index.html
+var sort = require('gulp-sort'); // Сортировка списка файлов
+var uglify = require('gulp-uglify'); // Минификация JS
+var del = require('del'); // Удаление файлов
+var {readFileSync} = require('fs');
 
 var pathsPlugins = [];
 
@@ -165,6 +166,8 @@ function pagesHTML() {
 }
 
 function indexHTML() {
+    var manifest = readFileSync('build/rev-manifest.json');
+
     return gulp
         .src('src/html/index.html')
         .pipe(
@@ -174,11 +177,7 @@ function indexHTML() {
                 basepath: './src/html',
             })
         )
-        .pipe(
-            revRewrite({
-                manifest: gulp.src('build/rev-manifest.json'),
-            })
-        )
+        .pipe(revRewrite({manifest}))
         .pipe(gulp.dest('build'));
 }
 
