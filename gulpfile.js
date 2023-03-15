@@ -75,7 +75,7 @@ function plugins(done) {
 }
 
 function copyToBuild() {
-    return gulp.src(['src/copy-to-build/**/*', 'src/copy-to-build/.htaccess'])
+    return gulp.src(['src/copy-to-build/**/*'])
         .pipe(gulp.dest('build'));
 }
 
